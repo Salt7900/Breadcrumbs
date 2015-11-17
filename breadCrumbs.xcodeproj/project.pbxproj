@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87F9387E1BFBEE47005DB677 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F9387D1BFBEE47005DB677 /* MapKit.framework */; };
 		9EABA4521BFBE65A0094EC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABA4511BFBE65A0094EC6A /* AppDelegate.swift */; };
-		9EABA4541BFBE65A0094EC6A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABA4531BFBE65A0094EC6A /* FirstViewController.swift */; };
-		9EABA4561BFBE65A0094EC6A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABA4551BFBE65A0094EC6A /* SecondViewController.swift */; };
+		9EABA4541BFBE65A0094EC6A /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABA4531BFBE65A0094EC6A /* MainMapViewController.swift */; };
+		9EABA4561BFBE65A0094EC6A /* AddBreadCrumbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABA4551BFBE65A0094EC6A /* AddBreadCrumbViewController.swift */; };
 		9EABA4591BFBE65A0094EC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA4571BFBE65A0094EC6A /* Main.storyboard */; };
 		9EABA45B1BFBE65A0094EC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */; };
 		9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87F9387D1BFBEE47005DB677 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9EABA44E1BFBE65A0094EC6A /* breadCrumbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breadCrumbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EABA4511BFBE65A0094EC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9EABA4531BFBE65A0094EC6A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		9EABA4551BFBE65A0094EC6A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9EABA4531BFBE65A0094EC6A /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
+		9EABA4551BFBE65A0094EC6A /* AddBreadCrumbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBreadCrumbViewController.swift; sourceTree = "<group>"; };
 		9EABA4581BFBE65A0094EC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EABA45D1BFBE65A0094EC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F9387E1BFBEE47005DB677 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 		9EABA4451BFBE65A0094EC6A = {
 			isa = PBXGroup;
 			children = (
+				87F9387D1BFBEE47005DB677 /* MapKit.framework */,
 				9EABA4501BFBE65A0094EC6A /* breadCrumbs */,
 				9EABA44F1BFBE65A0094EC6A /* Products */,
 			);
@@ -57,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				9EABA4511BFBE65A0094EC6A /* AppDelegate.swift */,
-				9EABA4531BFBE65A0094EC6A /* FirstViewController.swift */,
-				9EABA4551BFBE65A0094EC6A /* SecondViewController.swift */,
+				9EABA4531BFBE65A0094EC6A /* MainMapViewController.swift */,
+				9EABA4551BFBE65A0094EC6A /* AddBreadCrumbViewController.swift */,
 				9EABA4571BFBE65A0094EC6A /* Main.storyboard */,
 				9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */,
 				9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */,
@@ -99,7 +103,12 @@
 				TargetAttributes = {
 					9EABA44D1BFBE65A0094EC6A = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = W56D96232W;
+						DevelopmentTeam = GBRQ8M89YU;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -139,9 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EABA4561BFBE65A0094EC6A /* SecondViewController.swift in Sources */,
+				9EABA4561BFBE65A0094EC6A /* AddBreadCrumbViewController.swift in Sources */,
 				9EABA4521BFBE65A0094EC6A /* AppDelegate.swift in Sources */,
-				9EABA4541BFBE65A0094EC6A /* FirstViewController.swift in Sources */,
+				9EABA4541BFBE65A0094EC6A /* MainMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,10 +261,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = breadCrumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ben-fallon.breadCrumbs";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jen.breadCrumbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -263,10 +275,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = breadCrumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ben-fallon.breadCrumbs";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jen.breadCrumbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -289,6 +304,7 @@
 				9EABA4641BFBE65A0094EC6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
