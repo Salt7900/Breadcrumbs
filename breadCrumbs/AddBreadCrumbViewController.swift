@@ -62,8 +62,8 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("Got an image")
         if let pickedImage: UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
-            let selectorToCall = Selector("imageWasSavedSuccessfully:didFinishSavingWithError:conetext:")
-            UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
+            //let selectorToCall = Selector("imageWasSavedSuccessfully:didFinishSavingWithError:conetext:")
+            UIImageWriteToSavedPhotosAlbum(pickedImage, nil, nil, nil)
         }
         imagePicker.dismissViewControllerAnimated(true, completion: {
             //whatever we want to do when user saves image
