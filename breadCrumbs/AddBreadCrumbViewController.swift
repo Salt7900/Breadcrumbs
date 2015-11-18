@@ -61,13 +61,20 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     //function to deal with images once you have one
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("Got an image")
-        if let pickedImage: UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
-            //let selectorToCall = Selector("imageWasSavedSuccessfully:didFinishSavingWithError:conetext:")
-            UIImageWriteToSavedPhotosAlbum(pickedImage, nil, nil, nil)
-        }
-        imagePicker.dismissViewControllerAnimated(true, completion: {
-            //whatever we want to do when user saves image
+        
+        func displayImage(pickedImage: UIImage) {
+            imagePicker.dismissViewControllerAnimated(true, completion: {
+                //whatever we want to do when user saves image
+                self.currentImage.image = pickedImage
             })
+        }
+
+        if let pickedImage: UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
+            //saves image to user's camera roll
+            UIImageWriteToSavedPhotosAlbum(pickedImage, nil, nil, nil)
+            displayImage(pickedImage)
+        }
+        
         
         func imagePickerControllerDidCancel(picker: UIImagePickerController) {
             print("User canceled image")
