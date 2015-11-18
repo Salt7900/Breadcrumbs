@@ -11,6 +11,7 @@ import MapKit
 
 class FirstViewController: UIViewController {
 
+    //Create an outlet for the map -ben
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class FirstViewController: UIViewController {
 
     }
 
+    //Give function to the zoom button -ben
     @IBAction func zoomIn(sender: AnyObject) {
         let userLocation = mapView.userLocation
         
