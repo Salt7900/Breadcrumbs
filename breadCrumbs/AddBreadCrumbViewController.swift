@@ -14,6 +14,13 @@ import MapKit
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    //Jen allow save message
+    @IBOutlet weak var enterMessageField: UITextField!
+    
+    @IBAction func userMessage(sender: UITextField) {
+        
+    }
+    
     //Ben allow to iteract with map
     @IBOutlet weak var mapView: MKMapView!
     
@@ -74,7 +81,6 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         
         func displayImage(pickedImage: UIImage) {
             imagePicker.dismissViewControllerAnimated(true, completion: {
-                //whatever we want to do when user saves image
                 self.currentImage.image = pickedImage
             })
         }
