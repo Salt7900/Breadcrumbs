@@ -18,7 +18,6 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var mapView: MKMapView!
     
     
-    
     //JEN CAMERA LINKS TO VIEW
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var currentImage: UIImageView!
@@ -30,11 +29,20 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         // Do any additional setup after loading the view, typically from a nib.
             // sets controller as the camera delegate
         imagePicker.delegate = self
+        
+        //Ben - dealing with map and user location
+        mapView.showsUserLocation = true
 
     }
     
     //BEN Zoom in functionality
     @IBAction func zoomIn(sender: AnyObject) {
+        let userLocation = mapView.userLocation
+        
+        let region = MKCoordinateRegionMakeWithDistance(
+            userLocation.location!.coordinate, 2000, 2000)
+        
+        mapView.setRegion(region, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
