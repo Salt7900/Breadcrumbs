@@ -21,6 +21,9 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         
     }
     
+    @IBAction func onAdd(sender: AnyObject) {
+    }
+    
     //Ben allow to iteract with map
     @IBOutlet weak var mapView: MKMapView!
     

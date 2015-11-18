@@ -165,6 +165,17 @@
                                     <segment title="On Exit"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-2F-5Dq">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Add"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="334" y="48" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onAdd:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="8G8-Gd-Yol"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Add breadCrumb" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5" userLabel="Add BreadCrumb Title">
                                 <rect key="frame" x="161" y="20" width="279" height="42"/>
                                 <animations/>
@@ -220,6 +231,7 @@
                             <mask key="subviews">
                                 <exclude reference="kUD-BT-Phd"/>
                                 <exclude reference="Nwe-vh-aRr"/>
+                                <exclude reference="gfF-2F-5Dq"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="92R-YP-gAw"/>
@@ -252,6 +264,7 @@
                             <mask key="subviews">
                                 <include reference="kUD-BT-Phd"/>
                                 <include reference="Nwe-vh-aRr"/>
+                                <include reference="gfF-2F-5Dq"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="92R-YP-gAw"/>
@@ -331,7 +344,7 @@
         <!--Save BreadCrumb Scene-->
         <scene sceneID="rdP-1u-o3K">
             <objects>
-                <viewController id="umR-67-eon" userLabel="Save BreadCrumb Scene" sceneMemberID="viewController">
+                <viewController id="umR-67-eon" userLabel="Save BreadCrumb Scene" customClass="SaveBreadCrumbViewController" customModule="breadCrumbs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="69z-rV-WfM"/>
                         <viewControllerLayoutGuide type="bottom" id="9oY-23-eij"/>
