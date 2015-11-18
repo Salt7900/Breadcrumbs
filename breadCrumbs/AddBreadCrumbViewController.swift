@@ -9,13 +9,19 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
+import MapKit
 
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate {
     
+    //Add outlet to map -ben
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //Show current location on map - Ben
+        mapView.showsUserLocation = true
 
     }
 
