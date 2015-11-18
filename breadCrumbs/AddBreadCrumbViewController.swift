@@ -11,11 +11,19 @@ import MobileCoreServices
 import AVFoundation
 
 
-class SecondViewController: UIViewController, UINavigationControllerDelegate {
+class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    //JEN CAMERA LINKS TO VIEW
+    @IBOutlet weak var photoButton: UIButton!
+    @IBOutlet weak var currentImage: UIImageView!
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
+    //END JEN LINKS TO VIEW
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+            // sets controller as the camera delegate
+        imagePicker.delegate = self
 
     }
 
@@ -24,40 +32,64 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-// access camera on button press and begin a camera session if a camera exists
+// BEGIN JEN ALL NEW CAMERA CODE SHOUTOUT TO deege on Github
     
-    @IBOutlet var addPhotoButton: UIButton!
-    let captureSession = AVCaptureSession()
-    var captureDevice : AVCaptureDevice?
+    //function for alerting users to errors
+    func postAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message,
+            preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     
-    @IBAction func addPhotoButtonPressed(sender: AnyObject) {
-        captureSession.sessionPreset = AVCaptureSessionPresetLow
+    //function to check for cameras and if the exist open camera when photobutton pressed
+    @IBAction func takePicture(sender: UIButton) {
+        if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .Camera
+                imagePicker.cameraCaptureMode = .Photo
+                presentViewController(imagePicker, animated: true, completion: {})
+            } else {
+                postAlert("Rear camera not available", message: "breadCrumbs cannot access the camera")
+            }
+        } else {
+            postAlert("Camera not available", message: "breadCrumbs cannot access the camera")
+        }
+    }
+    
+    //function to deal with images once you have one
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        print("Got an image")
+        if let pickedImage: UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
+            let selectorToCall = Selector("imageWasSavedSuccessfully:didFinishSavingWithError:conetext:")
+            UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
+        }
+        imagePicker.dismissViewControllerAnimated(true, completion: {
+            //whatever we want to do when user saves image
+            })
         
-        let devices = AVCaptureDevice.devices()
+        func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+            print("User canceled image")
+            dismissViewControllerAnimated(true, completion: {
+                // Anything you want to happen when the user selects cancel
+            })
+        }
         
-        // go through each AV capture device and see if it is a camera
-        // if it is, check to see if back camera and store as captureDevice
-        for device in devices {
-            if device.hasMediaType(AVMediaTypeVideo) {
-                if device.position == AVCaptureDevicePosition.Back {
-                    captureDevice = device as? AVCaptureDevice
-                }
+        func imageWasSavedSuccessfully(image: UIImage, didFinishSavingWithError error: NSError!, context: UnsafeMutablePointer<()>){
+            print("Image saved")
+            if let theError = error {
+                print("An error happened while saving the image = \(theError)")
+            } else {
+                print("Displaying")
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.currentImage.image = image
+                })
             }
         }
-        
-        if captureDevice != nil {
-            beginCameraSession()
-        }
     }
     
-    func beginCameraSession() {
-        captureSession.addInput(try! AVCaptureDeviceInput(device: captureDevice))
-        var previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        self.view.layer.addSublayer(previewLayer)
-        previewLayer?.frame = self.view.layer.frame
-        captureSession.startRunning()
-    }
+// END JEN ALL NEW CAMERA CODE
     
-// end camera code
 
 }
