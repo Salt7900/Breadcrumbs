@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, MKMapViewDelegate {
 
     //Create an outlet for the map -ben
     @IBOutlet weak var mapView: MKMapView!
@@ -18,6 +18,9 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mapView.showsUserLocation = true
+        
+        //allow map to update upon moving
+        mapView.delegate = self
 
     }
 
@@ -34,6 +37,12 @@ class FirstViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Lets the phone update the location on the map when moving
+    func mapView(mapView: MKMapView!, didUpdateUserLocation
+        userLocation: MKUserLocation!) {
+            mapView.centerCoordinate = userLocation.location!.coordinate
     }
 
 
