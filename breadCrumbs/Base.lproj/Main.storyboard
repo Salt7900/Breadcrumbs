@@ -365,6 +365,31 @@
                                     <rect key="frame" x="233" y="611" width="48" height="30"/>
                                 </variation>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-Ah-hZS">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="87" y="204" width="240" height="195"/>
+                                </variation>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hvj-AR-ach">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="87" y="83" width="240" height="93"/>
+                                </variation>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your message here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvp-j9-u60">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="87" y="418" width="240" height="135"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -373,6 +398,9 @@
                                 <exclude reference="73b-CB-x0I"/>
                                 <exclude reference="YvV-pX-ibY"/>
                                 <exclude reference="dyJ-OP-MBp"/>
+                                <exclude reference="ThH-Ah-hZS"/>
+                                <exclude reference="Hvj-AR-ach"/>
+                                <exclude reference="kvp-j9-u60"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -380,6 +408,9 @@
                                 <include reference="73b-CB-x0I"/>
                                 <include reference="YvV-pX-ibY"/>
                                 <include reference="dyJ-OP-MBp"/>
+                                <include reference="ThH-Ah-hZS"/>
+                                <include reference="Hvj-AR-ach"/>
+                                <include reference="kvp-j9-u60"/>
                             </mask>
                         </variation>
                     </view>
@@ -387,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBG-ab-b2N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-207" y="703.5"/>
+            <point key="canvasLocation" x="-108" y="750.75"/>
         </scene>
     </scenes>
     <resources>
