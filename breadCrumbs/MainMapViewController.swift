@@ -20,6 +20,10 @@ class FirstViewController: UIViewController {
 
     }
 
+    //BEN Zoom in functionality
+    @IBAction func zoomIn(sender: AnyObject) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -9,9 +9,15 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
+import MapKit
 
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    //Ben allow to iteract with map
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
     
     //JEN CAMERA LINKS TO VIEW
     @IBOutlet weak var photoButton: UIButton!
@@ -25,6 +31,10 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             // sets controller as the camera delegate
         imagePicker.delegate = self
 
+    }
+    
+    //BEN Zoom in functionality
+    @IBAction func zoomIn(sender: AnyObject) {
     }
 
     override func didReceiveMemoryWarning() {
