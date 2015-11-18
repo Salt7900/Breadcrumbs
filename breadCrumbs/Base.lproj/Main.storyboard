@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nSV-2j-ClX">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nSV-2j-ClX">
                                 <rect key="frame" x="0.0" y="73" width="600" height="478"/>
                                 <animations/>
                             </mapView>
@@ -30,11 +30,21 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZT-QO-97Y">
+                                <rect key="frame" x="23" y="86" width="40" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Zoom"/>
+                                <connections>
+                                    <action selector="zoomIn:" destination="9pv-A4-QxB" eventType="touchUpInside" id="00q-4W-J9e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="6Fy-qB-yc5"/>
+                            <constraint firstItem="rZT-QO-97Y" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="5" id="B4H-Vy-vrQ"/>
+                            <constraint firstItem="rZT-QO-97Y" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="5" id="L93-9e-7XR"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="nSV-2j-ClX" secondAttribute="centerX" id="RTh-Ju-Boi"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="YKs-rQ-CWl"/>
                             <constraint firstItem="nSV-2j-ClX" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="11" id="aqx-EX-wHI"/>
@@ -43,13 +53,15 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main Map" image="first" id="acW-dT-cKf" userLabel="Main Map"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="nSV-2j-ClX" id="hQg-3s-Iql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="750" y="-332"/>
         </scene>
         <!--Add BreadCrumb Scene-->
         <scene sceneID="wg7-f3-ORb">

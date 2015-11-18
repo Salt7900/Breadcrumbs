@@ -20,6 +20,15 @@ class FirstViewController: UIViewController {
 
     }
 
+    @IBAction func zoomIn(sender: AnyObject) {
+        let userLocation = mapView.userLocation
+        
+        let region = MKCoordinateRegionMakeWithDistance(
+            userLocation.location!.coordinate, 2000,2000)
+        
+        mapView.setRegion(region, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
