@@ -24,6 +24,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     //Ben allow to iteract with map
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var eventTypeSegmentedControl: UISegmentedControl!
     
     //JEN CAMERA LINKS TO VIEW
     @IBOutlet weak var photoButton: UIButton!
@@ -103,7 +104,6 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         func imagePickerControllerDidCancel(picker: UIImagePickerController) {
             print("User canceled image")
             dismissViewControllerAnimated(true, completion: {
-                // Anything you want to happen when the user selects cancel
             })
         }
         
@@ -114,7 +114,8 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             } else {
                 print("Displaying")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.currentImage.image = image
+                self.currentImage.image = image
+                self.photoButton.setTitle("Change Photo", forState: .Normal)
                 })
             }
         }
