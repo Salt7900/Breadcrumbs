@@ -108,6 +108,9 @@
                                 <rect key="frame" x="23" y="81" width="40" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Zoom"/>
+                                <connections>
+                                    <action selector="zoomIn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="mUp-zw-Mfi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
