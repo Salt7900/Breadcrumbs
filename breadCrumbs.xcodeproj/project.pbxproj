@@ -15,6 +15,7 @@
 		9EABA4591BFBE65A0094EC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA4571BFBE65A0094EC6A /* Main.storyboard */; };
 		9EABA45B1BFBE65A0094EC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */; };
 		9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */; };
+		9EBA056C1BFD072600FC1EA7 /* Geotag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBA056B1BFD072600FC1EA7 /* Geotag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EABA45D1BFBE65A0094EC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EABA45F1BFBE65A0094EC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EBA056B1BFD072600FC1EA7 /* Geotag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */,
 				9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */,
 				9EABA45F1BFBE65A0094EC6A /* Info.plist */,
+				9EBA056B1BFD072600FC1EA7 /* Geotag.swift */,
 			);
 			path = breadCrumbs;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				9EABA4561BFBE65A0094EC6A /* AddBreadCrumbViewController.swift in Sources */,
 				9EABA4521BFBE65A0094EC6A /* AppDelegate.swift in Sources */,
 				872010CF1BFD2112000C1A8A /* SaveBreadCrumbViewController.swift in Sources */,
+				9EBA056C1BFD072600FC1EA7 /* Geotag.swift in Sources */,
 				9EABA4541BFBE65A0094EC6A /* MainMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
