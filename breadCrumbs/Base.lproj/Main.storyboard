@@ -3,6 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+
     </dependencies>
     <scenes>
         <!--Main Map Scene-->
@@ -17,10 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nSV-2j-ClX">
-                                <rect key="frame" x="0.0" y="73" width="600" height="478"/>
-                                <animations/>
-                            </mapView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Main Map" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD" userLabel="Main Map Title">
                                 <rect key="frame" x="221" y="20" width="159" height="42"/>
                                 <animations/>
@@ -29,14 +28,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nSV-2j-ClX">
+                                <rect key="frame" x="0.0" y="73" width="600" height="478"/>
+                                <animations/>
+                            </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="6Fy-qB-yc5"/>
-                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="nSV-2j-ClX" secondAttribute="centerX" id="RTh-Ju-Boi"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="YKs-rQ-CWl"/>
-                            <constraint firstItem="nSV-2j-ClX" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="11" id="aqx-EX-wHI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main Map" image="first" id="acW-dT-cKf" userLabel="Main Map"/>
@@ -57,19 +58,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Ad-SG-Cx9">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Ad-SG-Cx9">
                                 <rect key="frame" x="20" y="78" width="560" height="221"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="221" id="xPs-31-Lxu"/>
+                                </constraints>
                             </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="enter your message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N1O-v1-kPh" userLabel="Enter Message Field">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="enter your message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N1O-v1-kPh" userLabel="Enter Message Field">
                                 <rect key="frame" x="20" y="312" width="560" height="172"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxp-lH-gID" userLabel="Add Photo Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxp-lH-gID" userLabel="Add Photo Button">
                                 <rect key="frame" x="264" y="506" width="72" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Yc0-EJ-Sj4"/>
+                                </constraints>
                                 <state key="normal" title="Add Photo"/>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Add BreadCrumb" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5" userLabel="Add BreadCrumb Title">
@@ -86,10 +93,15 @@
                         <constraints>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="90s-k9-gsK"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="centerX" secondItem="N1O-v1-kPh" secondAttribute="centerX" id="B82-2V-hJk"/>
-                            <constraint firstItem="zEq-FU-wV5" firstAttribute="centerX" secondItem="7Ad-SG-Cx9" secondAttribute="centerX" id="LKA-n1-VbT"/>
+                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="PqK-TP-3Uk"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Rzb-1n-zX0"/>
-                            <constraint firstItem="zEq-FU-wV5" firstAttribute="centerX" secondItem="Qxp-lH-gID" secondAttribute="centerX" id="YMz-Hg-UhP"/>
-                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="16" id="z4p-7z-HyX"/>
+                            <constraint firstItem="Qxp-lH-gID" firstAttribute="centerX" secondItem="N1O-v1-kPh" secondAttribute="centerX" id="a04-Ce-MHU"/>
+                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" constant="78" id="ghd-o7-9Xe"/>
+                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="N1O-v1-kPh" secondAttribute="trailing" id="mQN-9o-Uxk"/>
+                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="leading" secondItem="N1O-v1-kPh" secondAttribute="leading" id="oAc-Du-TC0"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Qxp-lH-gID" secondAttribute="bottom" constant="20" id="qsx-di-n0G"/>
+                            <constraint firstItem="N1O-v1-kPh" firstAttribute="top" secondItem="7Ad-SG-Cx9" secondAttribute="bottom" constant="13" id="rtf-TC-ppL"/>
+                            <constraint firstItem="Qxp-lH-gID" firstAttribute="top" secondItem="N1O-v1-kPh" secondAttribute="bottom" constant="22" id="vEd-dW-9OE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add BreadCrumb" image="second" id="cPa-gy-q4n" userLabel="Add BreadCrumb"/>
