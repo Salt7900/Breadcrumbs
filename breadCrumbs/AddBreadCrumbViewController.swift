@@ -22,8 +22,17 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         //Show current location on map - Ben
         mapView.showsUserLocation = true
+        
+        var lgpr = UILongPressGestureRecognizer(target: self, action: "action:")
+        lgpr.minimumPressDuration = 2.0;
+        mapView.addGestureRecognizer(lgpr)
 
     }
+    
+    func action(gestureRecognizer:UIGestureRecognizer) {
+        print("long press")
+    }
+    
 
     //Add zoom button functionality -ben
     @IBAction func zoomIn(sender: AnyObject) {
