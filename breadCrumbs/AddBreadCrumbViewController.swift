@@ -9,31 +9,55 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
+import MapKit
 
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
+
     //JEN CAMERA LINKS TO VIEW
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var currentImage: UIImageView!
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     //END JEN LINKS TO VIEW
-    
+
+    //Add outlet to map -ben
+    @IBOutlet weak var mapView: MKMapView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
             // sets controller as the camera delegate
         imagePicker.delegate = self
 
+        //Show current location on map - Ben
+        mapView.showsUserLocation = true
+
+        var lgpr = UILongPressGestureRecognizer(target: self, action: "action:")
+        lgpr.minimumPressDuration = 2.0;
+        mapView.addGestureRecognizer(lgpr)
+
+    }
+
+    func action(gestureRecognizer:UIGestureRecognizer) {
+        print("long press")
+    }
+
+
+    //Add zoom button functionality -ben
+    @IBAction func zoomIn(sender: AnyObject) {
+        let userLocation = mapView.userLocation
+        let region = MKCoordinateRegionMakeWithDistance(
+            userLocation.location!.coordinate, 2000, 2000)
+        mapView.setRegion(region, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 // BEGIN JEN ALL NEW CAMERA CODE SHOUTOUT TO deege on Github
-    
+
     //function for alerting users to errors
     func postAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message,
@@ -41,7 +65,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
+
     //function to check for cameras and if the exist open camera when photobutton pressed
     @IBAction func takePicture(sender: UIButton) {
         if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
@@ -57,7 +81,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             postAlert("Camera not available", message: "breadCrumbs cannot access the camera")
         }
     }
-    
+
     //function to deal with images once you have one
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("Got an image")
@@ -68,14 +92,14 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         imagePicker.dismissViewControllerAnimated(true, completion: {
             //whatever we want to do when user saves image
             })
-        
+
         func imagePickerControllerDidCancel(picker: UIImagePickerController) {
             print("User canceled image")
             dismissViewControllerAnimated(true, completion: {
                 // Anything you want to happen when the user selects cancel
             })
         }
-        
+
         func imageWasSavedSuccessfully(image: UIImage, didFinishSavingWithError error: NSError!, context: UnsafeMutablePointer<()>){
             print("Image saved")
             if let theError = error {
@@ -88,8 +112,8 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             }
         }
     }
-    
+
 // END JEN ALL NEW CAMERA CODE
-    
+
 
 }
