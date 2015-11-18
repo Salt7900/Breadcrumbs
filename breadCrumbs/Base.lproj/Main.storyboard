@@ -40,6 +40,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main Map" image="first" id="acW-dT-cKf" userLabel="Main Map"/>
+                    <connections>
+                        <outlet property="mapView" destination="nSV-2j-ClX" id="hQg-3s-Iql"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
