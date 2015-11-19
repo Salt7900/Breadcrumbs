@@ -7,7 +7,20 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class crumb: NSObject {
+class Crumb: NSObject, MKAnnotation {
+    let coordinate: CLLocationCoordinate2D
+    let radius: CLLocationDistance
+    let title: String?
+    let subtitle: String?
+    
+    init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, note: String, message: String){
+        self.coordinate = coordinate
+        self.radius = radius
+        self.title = note
+        self.subtitle = message
+    }
 
 }

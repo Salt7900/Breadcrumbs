@@ -13,14 +13,25 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    func placepins(){
+    func placePins(){
+        var locations: [AnyObject] = []
+        
         let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 41.889, longitude: -87.637)
         
-        var anotation = MKPointAnnotation()
-        anotation.coordinate = location
-        anotation.title = "DBC"
-        anotation.subtitle = "HELLO TO YOUR WOLRLD, CODERS"
-        mapView.addAnnotation(anotation)
+        let mapAnno = Crumb(coordinate: location, radius: 50, note: "DBC", message: "Hello to your world coders")
+        
+        let mapPoint = Crumb(coordinate: CLLocationCoordinate2D(latitude: 42.889, longitude: -87.637), radius: 50, note: "Not DBC", message: "Hello to your world coders")
+        
+        locations += [mapAnno]
+        locations += [mapPoint]
+        
+//        var anotation = MKPointAnnotation()
+//        anotation.coordinate = mapAnno.coordinate
+//        anotation.title = mapAnno.note
+//        anotation.subtitle = mapAnno.message
+       mapView.addAnnotation(mapAnno)
+        
+        
     }
     
     override func viewDidLoad() {
@@ -30,7 +41,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         mapView.showsUserLocation = true
         //Ben - Update location when moving
         mapView.delegate = self
-        placepins()
+        placePins()
+
     }
 
     //BEN Zoom in functionality
