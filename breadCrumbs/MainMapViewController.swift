@@ -9,12 +9,14 @@
 import UIKit
 import MapKit
 
-class FirstViewController: UIViewController, MKMapViewDelegate {
+class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    let locationManager = CLLocationManager()
+    
     func placePins(){
-        var locations: [AnyObject] = []
+       // var locations: [AnyObject] = []
         
         let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 41.889, longitude: -87.637)
         
@@ -22,16 +24,12 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         
         let mapPoint = Crumb(coordinate: CLLocationCoordinate2D(latitude: 42.889, longitude: -87.637), radius: 50, note: "Not DBC", message: "Hello to your world coders")
         
-        locations += [mapAnno]
-        locations += [mapPoint]
-        
 //        var anotation = MKPointAnnotation()
 //        anotation.coordinate = mapAnno.coordinate
 //        anotation.title = mapAnno.note
 //        anotation.subtitle = mapAnno.message
-       mapView.addAnnotation(mapAnno)
-        
-        
+       mapView.addAnnotation(mapPoint)
+        addRadiusCircle(mapPoint.coordinate)
     }
     
     override func viewDidLoad() {
@@ -39,10 +37,29 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         //Ben - Show current user location
         mapView.showsUserLocation = true
+        locationManager.requestAlwaysAuthorization()
         //Ben - Update location when moving
-        mapView.delegate = self
+        //mapView.delegate = self
         placePins()
 
+    }
+    
+    func addRadiusCircle(location: CLLocationCoordinate2D){
+        mapView.delegate = self
+        var circle = MKCircle(centerCoordinate: location, radius: 50 as CLLocationDistance)
+        self.mapView.addOverlay(circle)
+    }
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer!{
+        if overlay is MKCircle{
+            var circle = MKCircleRenderer(overlay: overlay)
+            circle.strokeColor = UIColor.purpleColor()
+            circle.fillColor = UIColor(red: 0, green: 150, blue: 255, alpha: 0.1)
+            circle.lineWidth = 1
+            return circle
+        }else{
+            return nil
+        }
     }
 
     //BEN Zoom in functionality
