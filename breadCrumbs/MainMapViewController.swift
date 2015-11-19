@@ -13,6 +13,16 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    func placepins(){
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 41.889, longitude: -87.637)
+        
+        var anotation = MKPointAnnotation()
+        anotation.coordinate = location
+        anotation.title = "DBC"
+        anotation.subtitle = "HELLO TO YOUR WOLRLD, CODERS"
+        mapView.addAnnotation(anotation)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,7 +30,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         mapView.showsUserLocation = true
         //Ben - Update location when moving
         mapView.delegate = self
-
+        placepins()
     }
 
     //BEN Zoom in functionality
