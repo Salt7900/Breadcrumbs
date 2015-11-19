@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
@@ -76,7 +75,6 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Ad-SG-Cx9">
                                 <rect key="frame" x="20" y="78" width="374" height="175"/>
-
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="Xms-3Q-Ykh"/>
@@ -103,8 +101,6 @@
                                     <action selector="takePicture:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ONT-oL-DVl"/>
                                 </connections>
                             </button>
-
-                            
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="enter your message" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N1O-v1-kPh" userLabel="Enter Message Field">
                                 <rect key="frame" x="20" y="261" width="260" height="223"/>
                                 <animations/>
@@ -178,36 +174,25 @@
                                     <rect key="frame" x="118" y="12" width="178" height="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="add-photo-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-0V-w5m">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add-photo-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-0V-w5m">
                                 <rect key="frame" x="288" y="261" width="106" height="223"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-
-                                <variation key="default">
-
-                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" preservesSuperviewLayoutMargins="YES"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-
-                                </variation>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="98" id="2my-Qw-hP5"/>
                             <constraint firstItem="N1O-v1-kPh" firstAttribute="leading" secondItem="7Ad-SG-Cx9" secondAttribute="leading" id="5LT-Fd-DR2"/>
-
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="7EI-Ht-W4Z"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="90s-k9-gsK"/>
                             <constraint firstItem="a4Z-E4-HrN" firstAttribute="top" secondItem="Nwe-vh-aRr" secondAttribute="top" id="92R-YP-gAw"/>
-
                             <constraint firstItem="Nwe-vh-aRr" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="Ayq-8f-mWt"/>
                             <constraint firstItem="N1O-v1-kPh" firstAttribute="top" secondItem="7Ad-SG-Cx9" secondAttribute="bottom" constant="8" symbolic="YES" id="B2I-Xs-2ae"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="centerX" secondItem="N1O-v1-kPh" secondAttribute="centerX" id="B82-2V-hJk"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="kUD-BT-Phd" secondAttribute="bottom" constant="19" id="Bt5-sN-jkf"/>
-
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Qxp-lH-gID" secondAttribute="bottom" constant="20" id="DQq-ze-suh"/>
                             <constraint firstItem="Qxp-lH-gID" firstAttribute="centerX" secondItem="kUD-BT-Phd" secondAttribute="centerX" id="Dtp-g5-jQ8"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="top" secondItem="Nwe-vh-aRr" secondAttribute="bottom" id="EFs-Tx-21K"/>
@@ -217,7 +202,6 @@
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="Twz-9K-ytP"/>
                             <constraint firstItem="kUD-BT-Phd" firstAttribute="top" secondItem="Qxp-lH-gID" secondAttribute="bottom" constant="16" id="XR2-h0-HUf"/>
                             <constraint firstItem="N1O-v1-kPh" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="Xat-Qe-QMi"/>
-
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="centerX" secondItem="Qxp-lH-gID" secondAttribute="centerX" id="YMz-Hg-UhP"/>
                             <constraint firstItem="kUD-BT-Phd" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="20" id="YVY-ML-ycH"/>
                             <constraint firstItem="a4Z-E4-HrN" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="30" id="Yf9-cx-baK"/>
@@ -225,14 +209,10 @@
                             <constraint firstItem="N1O-v1-kPh" firstAttribute="top" secondItem="7Ad-SG-Cx9" secondAttribute="bottom" constant="8" symbolic="YES" id="haV-K5-QoA"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" constant="12" id="iSZ-Ss-nTi"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="lJd-xB-8Qa"/>
-
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="p6h-Vg-TT7"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="N1O-v1-kPh" secondAttribute="trailing" id="q4Z-Hx-JYh"/>
-
-
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="centerX" secondItem="Nwe-vh-aRr" secondAttribute="centerX" id="voB-OC-kUz"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="16" id="w7z-Yz-59L"/>
-
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -257,13 +237,8 @@
                                 <exclude reference="B82-2V-hJk"/>
                                 <exclude reference="iSZ-Ss-nTi"/>
                                 <exclude reference="B2I-Xs-2ae"/>
-                                <exclude reference="Cfc-Vg-yaw"/>
                                 <exclude reference="Xat-Qe-QMi"/>
-                                <exclude reference="AVx-rC-P4s"/>
-                                <exclude reference="YMv-gS-P5A"/>
-                                <exclude reference="xRr-RV-17q"/>
                                 <exclude reference="Bt5-sN-jkf"/>
-                                <exclude reference="rgL-4G-Mej"/>
                                 <exclude reference="Dtp-g5-jQ8"/>
                             </mask>
                         </variation>
@@ -294,21 +269,12 @@
                                 <exclude reference="90s-k9-gsK"/>
                                 <exclude reference="YMz-Hg-UhP"/>
                                 <include reference="iSZ-Ss-nTi"/>
-                                <exclude reference="0PN-Xf-LgO"/>
                                 <exclude reference="5LT-Fd-DR2"/>
                                 <include reference="B2I-Xs-2ae"/>
-                                <include reference="Cfc-Vg-yaw"/>
                                 <include reference="Xat-Qe-QMi"/>
                                 <exclude reference="haV-K5-QoA"/>
-                                <exclude reference="lgs-RU-HUV"/>
-                                <exclude reference="66B-Bs-qKK"/>
-                                <include reference="AVx-rC-P4s"/>
-                                <include reference="YMv-gS-P5A"/>
-                                <exclude reference="vPq-df-jXR"/>
-                                <include reference="xRr-RV-17q"/>
                                 <include reference="Bt5-sN-jkf"/>
                                 <exclude reference="DQq-ze-suh"/>
-                                <include reference="rgL-4G-Mej"/>
                                 <include reference="Dtp-g5-jQ8"/>
                                 <exclude reference="Loy-AO-aR7"/>
                             </mask>
