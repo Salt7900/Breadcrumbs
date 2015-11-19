@@ -23,13 +23,34 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let mapAnno = Crumb(coordinate: location, radius: 50, note: "DBC", message: "Hello to your world coders")
         
         let mapPoint = Crumb(coordinate: CLLocationCoordinate2D(latitude: 42.889, longitude: -87.637), radius: 50, note: "Not DBC", message: "Hello to your world coders")
-        
+////
 //        var anotation = MKPointAnnotation()
-//        anotation.coordinate = mapAnno.coordinate
-//        anotation.title = mapAnno.note
-//        anotation.subtitle = mapAnno.message
-       mapView.addAnnotation(mapPoint)
+////        anotation.coordinate = mapAnno.coordinate
+////        anotation.title = mapAnno.note
+////        anotation.subtitle = mapAnno.message
+        mapView.addAnnotation(mapPoint)
+        mapView.addAnnotation(mapAnno)
+        addRadiusCircle(mapAnno.coordinate)
         addRadiusCircle(mapPoint.coordinate)
+    
+        
+//        if let data = NSUserDefaults.standardUserDefaults().objectForKey("allCrumbs") as? NSData {
+//            let things = NSKeyedUnarchiver.unarchiveObjectWithData(data)
+//            if things is NSArray{
+//                for var thing in things{
+//                    if things is Crumb {
+//                        print(thing!.subtitle)
+//                        print(thing)
+//                }
+//                }
+//            }
+//        }
+
+//
+    }
+    
+    func addCrumbs(crumb: Crumb){
+        mapView.addAnnotation(crumb)
     }
     
     override func viewDidLoad() {
