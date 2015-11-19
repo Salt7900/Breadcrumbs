@@ -17,6 +17,7 @@
 		9EABA45B1BFBE65A0094EC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */; };
 		9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */; };
 		9EBA056C1BFD072600FC1EA7 /* Geotag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBA056B1BFD072600FC1EA7 /* Geotag.swift */; };
+		9ED2C45D1BFE4CDC008AC393 /* predefinedlocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ED2C45C1BFE4CDC008AC393 /* predefinedlocations.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9EABA45D1BFBE65A0094EC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EABA45F1BFBE65A0094EC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EBA056B1BFD072600FC1EA7 /* Geotag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotag.swift; sourceTree = "<group>"; };
+		9ED2C45C1BFE4CDC008AC393 /* predefinedlocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = predefinedlocations.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */,
 				9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */,
 				9EABA45F1BFBE65A0094EC6A /* Info.plist */,
+				9ED2C45C1BFE4CDC008AC393 /* predefinedlocations.plist */,
 				9EBA056B1BFD072600FC1EA7 /* Geotag.swift */,
 				9E799FE21BFE1DA8002232FD /* crumb.swift */,
 			);
@@ -112,7 +115,7 @@
 				TargetAttributes = {
 					9EABA44D1BFBE65A0094EC6A = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = GBRQ8M89YU;
+						DevelopmentTeam = W56D96232W;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */,
+				9ED2C45D1BFE4CDC008AC393 /* predefinedlocations.plist in Resources */,
 				9EABA45B1BFBE65A0094EC6A /* Assets.xcassets in Resources */,
 				9EABA4591BFBE65A0094EC6A /* Main.storyboard in Resources */,
 			);
@@ -277,7 +281,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = breadCrumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.befallon;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ben-fallon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -291,7 +295,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = breadCrumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.befallon;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ben-fallon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
