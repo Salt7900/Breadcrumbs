@@ -174,7 +174,7 @@
                                     <rect key="frame" x="118" y="12" width="178" height="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add-photo-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-0V-w5m">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="add-photo-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-0V-w5m">
                                 <rect key="frame" x="288" y="261" width="106" height="223"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -205,10 +205,12 @@
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="centerX" secondItem="Qxp-lH-gID" secondAttribute="centerX" id="YMz-Hg-UhP"/>
                             <constraint firstItem="kUD-BT-Phd" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="20" id="YVY-ML-ycH"/>
                             <constraint firstItem="a4Z-E4-HrN" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="30" id="Yf9-cx-baK"/>
+                            <constraint firstItem="Cwj-0V-w5m" firstAttribute="top" secondItem="7Ad-SG-Cx9" secondAttribute="bottom" constant="50" id="ck1-rk-kQA"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="leading" secondItem="N1O-v1-kPh" secondAttribute="leading" id="gXo-IS-8Vf"/>
                             <constraint firstItem="N1O-v1-kPh" firstAttribute="top" secondItem="7Ad-SG-Cx9" secondAttribute="bottom" constant="8" symbolic="YES" id="haV-K5-QoA"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" constant="12" id="iSZ-Ss-nTi"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="lJd-xB-8Qa"/>
+                            <constraint firstAttribute="trailing" secondItem="Cwj-0V-w5m" secondAttribute="trailing" constant="206" id="mZi-WO-W9z"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="p6h-Vg-TT7"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="N1O-v1-kPh" secondAttribute="trailing" id="q4Z-Hx-JYh"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="centerX" secondItem="Nwe-vh-aRr" secondAttribute="centerX" id="voB-OC-kUz"/>
