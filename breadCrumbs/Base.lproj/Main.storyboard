@@ -181,7 +181,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" preservesSuperviewLayoutMargins="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addPin" translatesAutoresizingMaskIntoConstraints="NO" id="erw-83-5Cv">
-                                <rect key="frame" x="185" y="143" width="45" height="46"/>
+                                <rect key="frame" x="174" y="132" width="67" height="68"/>
                                 <animations/>
                             </imageView>
                         </subviews>
