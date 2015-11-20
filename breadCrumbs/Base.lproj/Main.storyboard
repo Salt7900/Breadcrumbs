@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -286,6 +287,8 @@
                                 <exclude reference="3mB-ov-OBO"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="3lp-W7-LuX"/>
+                                <exclude reference="ayn-qh-XyV"/>
                                 <exclude reference="3Z1-4t-CGB"/>
                                 <exclude reference="Yf9-cx-baK"/>
                                 <exclude reference="rvQ-Lb-UJM"/>
@@ -302,20 +305,18 @@
                                 <exclude reference="eVe-2s-wqo"/>
                                 <exclude reference="iSZ-Ss-nTi"/>
                                 <exclude reference="u3O-05-QWM"/>
-                                <exclude reference="CC7-xU-9YV"/>
-                                <exclude reference="azh-0g-hQK"/>
-                                <exclude reference="zY1-p8-iAQ"/>
                                 <exclude reference="67S-Ej-u5e"/>
                                 <exclude reference="B2I-Xs-2ae"/>
                                 <exclude reference="Gh7-L2-7wJ"/>
                                 <exclude reference="Xat-Qe-QMi"/>
+                                <exclude reference="CC7-xU-9YV"/>
+                                <exclude reference="azh-0g-hQK"/>
+                                <exclude reference="zY1-p8-iAQ"/>
                                 <exclude reference="CHn-dl-KUq"/>
                                 <exclude reference="G4X-0B-WO7"/>
                                 <exclude reference="UET-u5-1Vw"/>
                                 <exclude reference="ck1-rk-kQA"/>
                                 <exclude reference="grX-u0-v4M"/>
-                                <exclude reference="3lp-W7-LuX"/>
-                                <exclude reference="ayn-qh-XyV"/>
                                 <exclude reference="xob-G0-HIw"/>
                                 <exclude reference="D2j-dh-ApN"/>
                                 <exclude reference="FZa-Ub-Yd5"/>
@@ -330,6 +331,8 @@
                                 <include reference="3mB-ov-OBO"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="3lp-W7-LuX"/>
+                                <include reference="ayn-qh-XyV"/>
                                 <include reference="3Z1-4t-CGB"/>
                                 <exclude reference="WQQ-NH-IhP"/>
                                 <include reference="rvQ-Lb-UJM"/>
@@ -348,14 +351,14 @@
                                 <include reference="eVe-2s-wqo"/>
                                 <exclude reference="qRP-14-A5V"/>
                                 <include reference="u3O-05-QWM"/>
+                                <include reference="67S-Ej-u5e"/>
+                                <include reference="Gh7-L2-7wJ"/>
+                                <exclude reference="Mjk-bG-Mdt"/>
                                 <include reference="CC7-xU-9YV"/>
                                 <exclude reference="KYz-SD-MbC"/>
                                 <include reference="azh-0g-hQK"/>
                                 <exclude reference="tXN-9d-ru8"/>
                                 <include reference="zY1-p8-iAQ"/>
-                                <include reference="67S-Ej-u5e"/>
-                                <include reference="Gh7-L2-7wJ"/>
-                                <exclude reference="Mjk-bG-Mdt"/>
                                 <exclude reference="1vx-0B-rfO"/>
                                 <include reference="CHn-dl-KUq"/>
                                 <include reference="G4X-0B-WO7"/>
@@ -364,8 +367,6 @@
                                 <exclude reference="bVF-Le-OfY"/>
                                 <include reference="grX-u0-v4M"/>
                                 <exclude reference="lZq-cq-ean"/>
-                                <include reference="3lp-W7-LuX"/>
-                                <include reference="ayn-qh-XyV"/>
                                 <include reference="xob-G0-HIw"/>
                                 <exclude reference="yHd-Hf-Erq"/>
                                 <exclude reference="D2j-dh-ApN"/>

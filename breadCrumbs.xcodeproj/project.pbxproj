@@ -18,6 +18,7 @@
 		9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */; };
 		9EBA056C1BFD072600FC1EA7 /* Geotag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBA056B1BFD072600FC1EA7 /* Geotag.swift */; };
 		9ED2C45D1BFE4CDC008AC393 /* predefinedlocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ED2C45C1BFE4CDC008AC393 /* predefinedlocations.plist */; };
+		9ED2C45F1BFE9783008AC393 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2C45E1BFE9783008AC393 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9EABA45F1BFBE65A0094EC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EBA056B1BFD072600FC1EA7 /* Geotag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotag.swift; sourceTree = "<group>"; };
 		9ED2C45C1BFE4CDC008AC393 /* predefinedlocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = predefinedlocations.plist; sourceTree = "<group>"; };
+		9ED2C45E1BFE9783008AC393 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				9ED2C45C1BFE4CDC008AC393 /* predefinedlocations.plist */,
 				9EBA056B1BFD072600FC1EA7 /* Geotag.swift */,
 				9E799FE21BFE1DA8002232FD /* crumb.swift */,
+				9ED2C45E1BFE9783008AC393 /* Utilities.swift */,
 			);
 			path = breadCrumbs;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				9EABA4561BFBE65A0094EC6A /* AddBreadCrumbViewController.swift in Sources */,
 				9EABA4521BFBE65A0094EC6A /* AppDelegate.swift in Sources */,
+				9ED2C45F1BFE9783008AC393 /* Utilities.swift in Sources */,
 				872010CF1BFD2112000C1A8A /* SaveBreadCrumbViewController.swift in Sources */,
 				9EBA056C1BFD072600FC1EA7 /* Geotag.swift in Sources */,
 				9EABA4541BFBE65A0094EC6A /* MainMapViewController.swift in Sources */,
