@@ -66,7 +66,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     
     func regionWithCrumb(crumb: Crumb) -> CLCircularRegion {
-        let region = CLCircularRegion(center: crumb.coordinate, radius: 50 as CLLocationDistance, identifier: crumb.identity)
+        let region = CLCircularRegion(center: crumb.coordinate, radius: 100 as CLLocationDistance, identifier: crumb.identity)
         region.notifyOnEntry = ( true )
         return region
     }
@@ -96,7 +96,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     func addRadiusCircle(crumb: Crumb){
         //Draws circle on the map
-        var circle = MKCircle(centerCoordinate: crumb.coordinate, radius: 50 as CLLocationDistance)
+        var circle = MKCircle(centerCoordinate: crumb.coordinate, radius: 100 as CLLocationDistance)
         self.mapView.addOverlay(circle)
     }
     
