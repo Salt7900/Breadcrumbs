@@ -10,18 +10,15 @@ import UIKit
 import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate{
+var window: UIWindow?
 
-    var window: UIWindow?
-    var locationManager: CLLocationManager?
+let locationManager = CLLocationManager()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        locationManager = CLLocationManager()
-        locationManager?.requestWhenInUseAuthorization()
-        
-        // Override point for customization after application launch.
+        locationManager.delegate = self                // Add this line
+        locationManager.requestAlwaysAuthorization()   // And this one
         return true
     }
 
@@ -45,6 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func handleRegionEvent(region: CLRegion!){
+        print("Entered Region")
+    }
+    
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+            handleRegionEvent(region)
     }
 
 
