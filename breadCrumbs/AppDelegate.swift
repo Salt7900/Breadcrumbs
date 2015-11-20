@@ -20,8 +20,9 @@ let locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         
-        //application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes:.Sound | .Alert | .Badge, categories: nil))
-        
+        if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
+            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil))
+        }
         UIApplication.sharedApplication().cancelAllLocalNotifications()
         
         return true
@@ -52,22 +53,38 @@ let locationManager = CLLocationManager()
     //BEN - Allow notifications when a geofence has been crossed
     func handleRegionEvent(region: CLRegion!){
         if UIApplication.sharedApplication().applicationState == .Active {
-           // if let message = notefromRegionIdentifier(region.identifier) {
+            if let message = notefromRegionIdentifier(region.identifier) {
                 if let viewController = window?.rootViewController {
-                    showSimpleAlertWithTitle(nil, message: "Region Crossed", viewController: viewController)
+                    showSimpleAlertWithTitle(nil, message: message, viewController: viewController)
+                    print("HELLO FROM LOCAL")
                 }
-            //}
+            }
         } else {
             // Otherwise present a local notification
             var notification = UILocalNotification()
             notification.alertBody = "Region Crossed"
             notification.soundName = "Default";
+            print("HELLO FROM GLOBAL")
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         }
     }
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
             handleRegionEvent(region)
+    }
+    
+    func notefromRegionIdentifier(identifier: String) -> String? {
+//        if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
+//            for savedItem in savedItems {
+//                if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
+//                    if geotification.identifier == identifier {
+//                        return geotification.note
+//                    }
+//                }
+//            }
+//        }
+//        return nil
+        return "HELLO"
     }
 
 

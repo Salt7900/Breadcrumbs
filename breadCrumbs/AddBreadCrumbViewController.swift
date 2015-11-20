@@ -133,6 +133,9 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     //Ben - Save all info into a new crumb object
     @IBAction func saveCrumb(sender: AnyObject) {
         
+        let newCrumb = Crumb(coordinate: mapView.centerCoordinate, radius: 50, note: "By Me-", message: enterMessageField.text!)
+        newCrumb.saveToWeb()
+        
 //        BEN - Code for dealing with NSUserDefaults
 //        let allCrumbs = NSMutableArray()
 //        
