@@ -14,8 +14,7 @@ import MapKit
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
-    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     //Jen allow save message
     @IBOutlet weak var enterMessageField: UITextField!
@@ -40,7 +39,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBAction func saveCrumb(sender: AnyObject) {
         var crumb = Crumb(coordinate: mapView.centerCoordinate, radius: 50 as CLLocationDistance, note: enterMessageField.text!, message: "HELLO")
         
-        Main().addCrumb(crumb)
+        appDelegate.userSession.addCrumb(crumb)
         self.performSegueWithIdentifier("backToMainMap", sender: self)
     }
     

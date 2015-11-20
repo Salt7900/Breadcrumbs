@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class Main {
     var everyCrumb: Array<Crumb>
@@ -16,9 +17,14 @@ class Main {
     }
     
     func addCrumb(crumb: Crumb) {
-        everyCrumb.append(crumb)
-        print(crumb)
-        print("===========")
+        self.everyCrumb.append(crumb)
+        print("ADDED")
+        print(everyCrumb)
+    }
+    
+    func returnCrumb() -> Array<Crumb>{
+        return self.everyCrumb
+
     }
 
 }
