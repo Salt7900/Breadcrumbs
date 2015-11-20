@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 var window: UIWindow?
 
 let locationManager = CLLocationManager()
+    
+    let userSession = Main()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -24,6 +26,7 @@ let locationManager = CLLocationManager()
             UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil))
         }
         UIApplication.sharedApplication().cancelAllLocalNotifications()
+        
         
         return true
     }
@@ -74,17 +77,12 @@ let locationManager = CLLocationManager()
     }
     
     func notefromRegionIdentifier(identifier: String) -> String? {
-//        if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
-//            for savedItem in savedItems {
-//                if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
-//                    if geotification.identifier == identifier {
-//                        return geotification.note
-//                    }
-//                }
-//            }
-//        }
-//        return nil
-        return "HELLO"
+            for savedItem in Main().returnCrumb() {
+                    if savedItem.identity == identifier {
+                        return savedItem.title
+                    }
+            }
+        return "You have a notification"
     }
 
 

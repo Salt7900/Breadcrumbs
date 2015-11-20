@@ -13,6 +13,8 @@ import CoreLocation
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
@@ -22,37 +24,15 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
-        runner()
-        
     }
-    
-    func runner(){
-        let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 41.889, longitude: -87.637)
-        let mapAnno = Crumb(coordinate: location, radius: 50, note: "DBC", message: "Hello to your world coders")
-        let mapPoint = Crumb(coordinate: CLLocationCoordinate2D(latitude: 42.889, longitude: -87.637), radius: 50, note: "Not DBC", message: "Hello to your world coders")
-        let testingPoint = Crumb(coordinate: CLLocationCoordinate2D(latitude: 37.334, longitude: -122.0387), radius: 500, note: "Not DBC", message: "Hello to your world coders")
-        
-        addCrumbs(mapAnno)
-        addCrumbs(mapPoint)
-        addCrumbs(testingPoint)
-        
-    }
-    
-    func placePins(){
 
-//        if let data = NSUserDefaults.standardUserDefaults().objectForKey("allCrumbs") as? NSData {
-//            let things = NSKeyedUnarchiver.unarchiveObjectWithData(data)
-//            if things is NSArray{
-//                for var thing in things{
-//                    if things is Crumb {
-//                        print(thing!.subtitle)
-//                        print(thing)
-//                }
-//                }
-//            }
-//        }
-
-//
+    
+    override func viewDidAppear(animated: Bool) {
+        var allCrumbs = appDelegate.userSession.returnCrumb()
+        print(allCrumbs)
+        for item in allCrumbs{
+            addCrumbs(item)
+        }
     }
     
     func addCrumbs(crumb: Crumb){
