@@ -59,8 +59,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         mapView.addAnnotation(crumb)
         //addRadiusCircle(crumb)
         regionWithCrumb(crumb)
+        addRadiusCircle(crumb)
         startMonitoringCrumb(crumb)
-        
         
     }
 
