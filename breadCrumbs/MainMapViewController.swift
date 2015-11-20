@@ -65,7 +65,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     
     func regionWithCrumb(crumb: Crumb) -> CLCircularRegion {
-        let region = CLCircularRegion(center: crumb.coordinate, radius: 100 as CLLocationDistance, identifier: crumb.identity)
+        let region = CLCircularRegion(center: crumb.coordinate, radius: 100 as CLLocationDistance, identifier: crumb.identity!)
         region.notifyOnEntry = ( true )
         return region
     }
