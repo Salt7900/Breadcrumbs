@@ -57,7 +57,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     func addCrumbs(crumb: Crumb){
         mapView.addAnnotation(crumb)
-        //addRadiusCircle(crumb)
         regionWithCrumb(crumb)
         addRadiusCircle(crumb)
         startMonitoringCrumb(crumb)
@@ -82,6 +81,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         }
         let region = regionWithCrumb(crumb)
         locationManager.startMonitoringForRegion(region)
+        
     }
     
     func stopMonitoringGeolocation(crumb: Crumb){
@@ -135,14 +135,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     func mapView(mapView: MKMapView!, didUpdateUserLocation
         userLocation: MKUserLocation!){
             mapView.centerCoordinate = userLocation.location!.coordinate
-    }
-    
-    func locationManager(manager: CLLocationManager!, monitoringDidFailForRegion region: CLRegion!, withError error: NSError!) {
-        print("Monitoring failed for region with identifier: \(region.identifier)")
-    }
-    
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        print("Location Manager failed with the following error: \(error)")
     }
 
 }
