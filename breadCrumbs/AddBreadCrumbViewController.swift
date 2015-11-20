@@ -15,7 +15,7 @@ import MapKit
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
-
+    
     
     //Jen allow save message
     @IBOutlet weak var enterMessageField: UITextField!
@@ -23,9 +23,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBAction func userMessage(sender: UITextField) {
         
     }
-    
-//    @IBAction func onAdd(sender: AnyObject) {
-//    }
+
     
     //Ben allow to iteract with map
     @IBOutlet weak var mapView: MKMapView!
@@ -38,6 +36,14 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     //END JEN LINKS TO VIEW
     
+    //Ben - Save all info into a new crumb object
+    @IBAction func saveCrumb(sender: AnyObject) {
+        var crumb = Crumb(coordinate: mapView.centerCoordinate, radius: 50 as CLLocationDistance, note: enterMessageField.text!, message: "HELLO")
+        
+        Main().addCrumb(crumb)
+        self.performSegueWithIdentifier("backToMainMap", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,7 +52,6 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         
         //Ben - dealing with map and user location
         mapView.showsUserLocation = true
-
     }
     
     //BEN Zoom in functionality
@@ -130,35 +135,13 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
 // END JEN ALL NEW CAMERA CODE
     
     
-    //Ben - Save all info into a new crumb object
-    @IBAction func saveCrumb(sender: AnyObject) {
-        
-        let newCrumb = Crumb(coordinate: mapView.centerCoordinate, radius: 50, note: "By Me-", message: enterMessageField.text!)
-        newCrumb.saveToWeb()
-        
-//        BEN - Code for dealing with NSUserDefaults
-//        let allCrumbs = NSMutableArray()
+    //DELETE ME..?
+//    @IBAction func onAdd(sender: AnyObject) {
+//        var crumb = Crumb(coordinate: mapView.centerCoordinate, radius: 50 as CLLocationDistance, note: enterMessageField.text!, message: "HELLO")
 //        
-//        if userDefaults.objectForKey("allCrumbs") != nil{
-//            let allCrumbs = NSMutableArray()
-//        }else{
-//            let allCrumbs = userDefaults.objectForKey("allCrumbs")
-//        }
-//        
-//        
-//        let newCrumb = Crumb(coordinate: mapView.centerCoordinate, radius: 50, note: "By Me-", message: enterMessageField.text!)
-//        
-//        let item = NSKeyedArchiver.archivedDataWithRootObject(newCrumb)
-//        allCrumbs.addObject(item)
-//        
-//        userDefaults.setObject(allCrumbs, forKey: "allCrumbs")
-//        userDefaults.synchronize()
-//        
-//        print("___________")
-//        print(allCrumbs.count)
-//        print(newCrumb.coordinate)
- 
-    }
+//        Main().addCrumb(crumb)
+//    }
+//    
     
 
 }
