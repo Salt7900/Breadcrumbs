@@ -23,47 +23,41 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self
+        self.mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
-        pullCrumbs(4)
     }
     
-    func pullCrumbs(id: Int){
-        let pseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/pseudocrumbs/\(id).json"
-        Alamofire.request(.GET, pseudocrumbUrl).validate().responseJSON { response in
+    override func viewDidAppear(animated: Bool) {
+        pullCrumbs("crazy@email.com")
+    }
+    
+    func pullCrumbs(email: String){
+        let pseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/retrieve.json"
+        Alamofire.request(.GET, pseudocrumbUrl, parameters:[email: email]).validate().responseJSON { response in
             switch response.result {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    let crumb: Dictionary<String,JSON> = json["pseudocrumb"].dictionaryValue
-                    let lat : Double = crumb["lat"]!.doubleValue
-                    let long : Double = crumb["long"]!.doubleValue
-                    let identifier : String = crumb["identifier"]!.stringValue
-                    let title : String = crumb["title"]!.stringValue
-                    let subtitle : String = crumb["subtitle"]!.stringValue
-                    let email : String = crumb["creatorEmail"]!.stringValue
-                    let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle, creatorEmail: email)
-                    
-                    self.addCrumbs(pseudocrumb)
+                    print(json)
+//                    let crumb: Dictionary<String,JSON> = json["pseudocrumb"].dictionaryValue
+//                    let lat : Double = crumb["lat"]!.doubleValue
+//                    let long : Double = crumb["long"]!.doubleValue
+//                    let identifier : String = crumb["identifier"]!.stringValue
+//                    let title : String = crumb["title"]!.stringValue
+//                    let subtitle : String = crumb["subtitle"]!.stringValue
+//                    let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
+//
+//                    self.addCrumbs(pseudocrumb)
                 }
             case .Failure(let error):
                 print(error)
             }
         }
     }
-
-    
-//    override func viewDidAppear(animated: Bool) {
-//        var allCrumbs = appDelegate.userSession.returnCrumb()
-//        print(allCrumbs)
-//        for item in allCrumbs{
-//            addCrumbs(item)
-//        }
-//    }
     
     func addCrumbs(crumb: Crumb){
-        mapView.addAnnotation(crumb)
+        self.mapView.addAnnotation(crumb)
         regionWithCrumb(crumb)
         addRadiusCircle(crumb)
         startMonitoringCrumb(crumb)
@@ -74,6 +68,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let region = CLCircularRegion(center: crumb.coordinate, radius: crumb.radius, identifier: crumb.identity!)
         region.notifyOnEntry = ( true )
         region.notifyOnExit = ( false )
+        print("HJELLO FROM REGION WITH CRUMB")
+        print(crumb.subtitle)
         return region
     }
     
@@ -103,14 +99,14 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     func addRadiusCircle(crumb: Crumb){
         //Draws circle on the map
-        var circle = MKCircle(centerCoordinate: crumb.coordinate, radius: 100 as CLLocationDistance)
+        let circle = MKCircle(centerCoordinate: crumb.coordinate, radius: crumb.radius)
         self.mapView.addOverlay(circle)
     }
     
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
-        var crumb = view.annotation as? Crumb
-        stopMonitoringGeolocation(crumb!)
-    }
+//    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+//        var crumb = view.annotation as? Crumb
+//        stopMonitoringGeolocation(crumb!)
+//    }
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer!{
         if overlay is MKCircle{
