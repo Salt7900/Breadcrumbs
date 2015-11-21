@@ -3,7 +3,7 @@
 //  breadCrumbs
 //
 //  Created by Ben Fallon on 11/17/15.
-//  Copyright © 2015 Ben Fallon. All rights reserved.
+//  Copyright © 2015 Ben Fallon, Jen Trudell, and Katelyn Dinkgrave. All rights reserved.
 //
 
 import UIKit
@@ -12,13 +12,13 @@ import AVFoundation
 
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
+
     //JEN CAMERA LINKS TO VIEW
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var currentImage: UIImageView!
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     //END JEN LINKS TO VIEW
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,9 +31,9 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 // BEGIN JEN ALL NEW CAMERA CODE SHOUTOUT TO deege on Github
-    
+
     //function for alerting users to errors
     func postAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message,
@@ -41,7 +41,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
+
     //function to check for cameras and if the exist open camera when photobutton pressed
     @IBAction func takePicture(sender: UIButton) {
         if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
@@ -57,11 +57,11 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             postAlert("Camera not available", message: "breadCrumbs cannot access the camera")
         }
     }
-    
+
     //function to deal with images once you have one
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("Got an image")
-        
+
         func displayImage(pickedImage: UIImage) {
             imagePicker.dismissViewControllerAnimated(true, completion: {
                 //whatever we want to do when user saves image
@@ -74,15 +74,15 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             UIImageWriteToSavedPhotosAlbum(pickedImage, nil, nil, nil)
             displayImage(pickedImage)
         }
-        
-        
+
+
         func imagePickerControllerDidCancel(picker: UIImagePickerController) {
             print("User canceled image")
             dismissViewControllerAnimated(true, completion: {
                 // Anything you want to happen when the user selects cancel
             })
         }
-        
+
         func imageWasSavedSuccessfully(image: UIImage, didFinishSavingWithError error: NSError!, context: UnsafeMutablePointer<()>){
             print("Image saved")
             if let theError = error {
@@ -95,8 +95,8 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             }
         }
     }
-    
+
 // END JEN ALL NEW CAMERA CODE
-    
+
 
 }

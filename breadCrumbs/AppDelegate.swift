@@ -3,7 +3,7 @@
 //  breadCrumbs
 //
 //  Created by Ben Fallon on 11/17/15.
-//  Copyright © 2015 Ben Fallon. All rights reserved.
+//  Copyright © 2015 Ben Fallon, Jen Trudell, and Katelyn Dinkgrave. All rights reserved.
 //
 
 import UIKit
@@ -14,20 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 var window: UIWindow?
 
 let locationManager = CLLocationManager()
-    
+
     let userSession = Main()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
-        
+
         if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
             UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil))
         }
         UIApplication.sharedApplication().cancelAllLocalNotifications()
-        
-        
+
+
         return true
     }
 
@@ -52,7 +52,7 @@ let locationManager = CLLocationManager()
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
+
     //BEN - Allow notifications when a geofence has been crossed
     func handleRegionEvent(region: CLRegion!){
         if UIApplication.sharedApplication().applicationState == .Active {
@@ -71,11 +71,11 @@ let locationManager = CLLocationManager()
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         }
     }
-    
+
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
             handleRegionEvent(region)
     }
-    
+
     func notefromRegionIdentifier(identifier: String) -> String? {
             for savedItem in Main().returnCrumb() {
                     if savedItem.identity == identifier {
@@ -87,4 +87,3 @@ let locationManager = CLLocationManager()
 
 
 }
-
