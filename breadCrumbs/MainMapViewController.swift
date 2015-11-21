@@ -34,21 +34,23 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     func pullCrumbs(email: String){
         let pseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/retrieve.json"
-        Alamofire.request(.GET, pseudocrumbUrl, parameters:[email: email]).validate().responseJSON { response in
+        Alamofire.request(.GET, pseudocrumbUrl, parameters:["creatorEmail": email]).validate().responseJSON { response in
             switch response.result {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
                     print(json)
-//                    let crumb: Dictionary<String,JSON> = json["pseudocrumb"].dictionaryValue
-//                    let lat : Double = crumb["lat"]!.doubleValue
-//                    let long : Double = crumb["long"]!.doubleValue
-//                    let identifier : String = crumb["identifier"]!.stringValue
-//                    let title : String = crumb["title"]!.stringValue
-//                    let subtitle : String = crumb["subtitle"]!.stringValue
-//                    let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
-//
-//                    self.addCrumbs(pseudocrumb)
+                        for crumb in json{
+                            let crumb: Dictionary<String,JSON> = json["pseudocrumb"].dictionaryValue
+                            let lat : Double = crumb["lat"]!.doubleValue
+                            let long : Double = crumb["long"]!.doubleValue
+                            let identifier : String = crumb["identifier"]!.stringValue
+                            let title : String = crumb["title"]!.stringValue
+                            let subtitle : String = crumb["subtitle"]!.stringValue
+                            let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
+
+                    self.addCrumbs(pseudocrumb)
+                    }
                 }
             case .Failure(let error):
                 print(error)
