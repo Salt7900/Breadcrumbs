@@ -76,7 +76,10 @@ let locationManager = CLLocationManager()
     }
 
     func notefromRegionIdentifier(identifier: String) -> String? {
-            for savedItem in Main().returnCrumb() {
+        print("HELLO FROM NOTEFROMREGIONID")
+            for savedItem in everySingleCrumb {
+                print("Saved Item:")
+                print(savedItem)
                     if savedItem.identity == identifier {
                         return savedItem.subtitle
                     }

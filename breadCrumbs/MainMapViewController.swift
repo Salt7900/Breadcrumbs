@@ -12,8 +12,11 @@ import SwiftyJSON
 import Alamofire
 import CoreLocation
 
+var everySingleCrumb = [Crumb]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    //let userSession = Main()
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -30,6 +33,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
+        everySingleCrumb = [Crumb]()
         pullCrumbs("crazy@email.com")
     }
     
@@ -41,7 +45,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    print(json)
                         for crumb in json{
                             let crumb: Dictionary<String,JSON> = json[counter].dictionaryValue
                             let lat : Double = crumb["lat"]!.doubleValue
@@ -50,9 +53,10 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                             let title : String = crumb["title"]!.stringValue
                             let subtitle : String = crumb["subtitle"]!.stringValue
                             let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
-                            print(crumb)
                             counter += 1
-                    self.addCrumbs(pseudocrumb)
+                            
+                            self.addCrumbs(pseudocrumb)
+                            everySingleCrumb.append(pseudocrumb)
                     }
                 }
             case .Failure(let error):
@@ -63,7 +67,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     func addCrumbs(crumb: Crumb){
         self.mapView.addAnnotation(crumb)
-        regionWithCrumb(crumb)
         addRadiusCircle(crumb)
         startMonitoringCrumb(crumb)
     }
@@ -73,8 +76,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let region = CLCircularRegion(center: crumb.coordinate, radius: crumb.radius, identifier: crumb.identity!)
         region.notifyOnEntry = ( true )
         region.notifyOnExit = ( false )
-        print("HJELLO FROM REGION WITH CRUMB")
-        print(crumb.subtitle)
+        print("Region Identifier:")
+        print(region.identifier)
         return region
     }
     
