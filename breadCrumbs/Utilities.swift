@@ -3,7 +3,7 @@
 //  breadCrumbs
 //
 //  Created by Ben Fallon on 11/19/15.
-//  Copyright © 2015 Ben Fallon. All rights reserved.
+//  Copyright © 2015 Ben Fallon, Jen Trudell, and Katelyn Dinkgrave. All rights reserved.
 //
 
 import UIKit
