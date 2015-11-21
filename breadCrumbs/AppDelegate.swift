@@ -59,15 +59,13 @@ let locationManager = CLLocationManager()
             if let message = notefromRegionIdentifier(region.identifier) {
                 if let viewController = window?.rootViewController {
                     showSimpleAlertWithTitle(nil, message: message, viewController: viewController)
-                    print("HELLO FROM LOCAL")
                 }
             }
         } else {
             // Otherwise present a local notification
             var notification = UILocalNotification()
-            notification.alertBody = "Region Crossed"
+            notification.alertBody = notefromRegionIdentifier(region.identifier)
             notification.soundName = "Default";
-            print("HELLO FROM GLOBAL")
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         }
     }
@@ -77,13 +75,13 @@ let locationManager = CLLocationManager()
     }
 
     func notefromRegionIdentifier(identifier: String) -> String? {
-            for savedItem in Main().returnCrumb() {
+            for savedItem in everySingleCrumb {
                     if savedItem.identity == identifier {
-                        return savedItem.title
+                        return savedItem.subtitle
                     }
             }
         return "You have a notification"
     }
-
+//
 
 }
