@@ -3,7 +3,7 @@
 //  breadCrumbs
 //
 //  Created by Ben Fallon on 11/19/15.
-//  Copyright © 2015 Ben Fallon. All rights reserved.
+//  Copyright © 2015 Ben Fallon, Jen Trudell, and Katelyn Dinkgrave. All rights reserved.
 //
 
 import UIKit
@@ -11,14 +11,6 @@ import MapKit
 import CoreLocation
 import SwiftyJSON
 import Alamofire
-
-let kCrumbLat = "latitude"
-let kCrumbLong = "longitude"
-let KCrumbRadius = "radius"
-let KCrumbNote = "note"
-let KCrumbMessage = "message"
-let kCrumbIdent = "identity"
-
 
 class Crumb: NSObject, MKAnnotation {
     var latitude: Double
@@ -28,27 +20,18 @@ class Crumb: NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
     var identity: String?
-    
-//    init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, note: String, message: String){
-//        self.coordinate = coordinate
-//        self.radius = radius
-//        self.title = note
-//        self.subtitle = message
-//        self.latitude = coordinate.latitude
-//        self.longitude = coordinate.longitude
-//        self.identity = NSUUID().UUIDString
-//    }
-    
-    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, coordinate: CLLocationCoordinate2D){
+
+
+    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String){
         self.radius = 50 as CLLocationDistance
         self.latitude = lat;
         self.longitude = long;
         self.identity = identifier;
         self.title = title;
         self.subtitle = subtitle;
-        self.coordinate = coordinate
+        self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
     }
- 
+
     func saveToWeb(){
         var crumb : [String:Dictionary<String,NSObject>] = [
             "pseudocrumb": [
@@ -61,9 +44,9 @@ class Crumb: NSObject, MKAnnotation {
         ]
         let newPseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/pseudocrumbs"
         Alamofire.request(.POST, newPseudocrumbUrl, parameters: crumb)
-        
+
     }
-    
+
 
 
 }
