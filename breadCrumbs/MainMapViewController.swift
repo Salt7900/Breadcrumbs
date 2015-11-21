@@ -33,6 +33,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
     
     func pullCrumbs(email: String){
+        var counter = 0
         let pseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/retrieve.json"
         Alamofire.request(.GET, pseudocrumbUrl, parameters:["creatorEmail": email]).validate().responseJSON { response in
             switch response.result {
@@ -41,7 +42,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                     let json = JSON(value)
                     print(json)
                         for crumb in json{
-                            let crumb: Dictionary<String,JSON> = json["pseudocrumb"].dictionaryValue
+                            let crumb: Dictionary<String,JSON> = json[counter].dictionaryValue
                             let lat : Double = crumb["lat"]!.doubleValue
                             let long : Double = crumb["long"]!.doubleValue
                             let identifier : String = crumb["identifier"]!.stringValue
@@ -49,6 +50,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                             let subtitle : String = crumb["subtitle"]!.stringValue
                             let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
                             print(crumb)
+                            counter += 1
                     self.addCrumbs(pseudocrumb)
                     }
                 }
