@@ -20,7 +20,7 @@ class Crumb: NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
     var identity: String?
-    var creatorEmail: String
+    var creatorEmail: String?
 
 
     init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, creatorEmail: String){
@@ -42,7 +42,7 @@ class Crumb: NSObject, MKAnnotation {
                 "identifier": self.identity!,
                 "title": self.title!,
                 "subtitle": self.subtitle!,
-                "creatorEmail": self.creatorEmail
+                "creatorEmail": self.creatorEmail!
             ]
         ]
         let newPseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/pseudocrumbs"
