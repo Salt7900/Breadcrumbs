@@ -43,7 +43,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                     let identifier : String = crumb["identifier"]!.stringValue
                     let title : String = crumb["title"]!.stringValue
                     let subtitle : String = crumb["subtitle"]!.stringValue
-                    let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
+                    let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
                     
                     print(pseudocrumb.identity)
                     self.addCrumbs(pseudocrumb)
