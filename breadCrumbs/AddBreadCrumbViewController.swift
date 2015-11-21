@@ -37,9 +37,9 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     
     //Ben - Save all info into a new crumb object
     @IBAction func saveCrumb(sender: AnyObject) {
-        var crumb = Crumb(coordinate: mapView.centerCoordinate, radius: 50 as CLLocationDistance, note: enterMessageField.text!, message: "HELLO")
+       // var crumb = Crumb(coordinate: mapView.centerCoordinate, radius: 50 as CLLocationDistance, note: enterMessageField.text!, message: "HELLO")
         
-        appDelegate.userSession.addCrumb(crumb)
+     //   appDelegate.userSession.addCrumb(crumb)
         self.performSegueWithIdentifier("backToMainMap", sender: self)
     }
     
