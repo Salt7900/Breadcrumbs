@@ -29,15 +29,6 @@ class Crumb: NSObject, MKAnnotation {
     var subtitle: String?
     var identity: String?
     
-//    init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, note: String, message: String){
-//        self.coordinate = coordinate
-//        self.radius = radius
-//        self.title = note
-//        self.subtitle = message
-//        self.latitude = coordinate.latitude
-//        self.longitude = coordinate.longitude
-//        self.identity = NSUUID().UUIDString
-//    }
     
     init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, coordinate: CLLocationCoordinate2D){
         self.radius = 50 as CLLocationDistance
