@@ -29,6 +29,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
     
     override func viewDidAppear(animated: Bool) {
+        stopMonitoringAll()
         pullCrumbs("crazy@email.com")
     }
     
@@ -121,6 +122,12 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             return circle
         }else{
             return nil
+        }
+    }
+    
+    func stopMonitoringAll(){
+        for region in locationManager.monitoredRegions{
+            locationManager.stopMonitoringForRegion(region)
         }
     }
 

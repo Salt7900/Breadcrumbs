@@ -18,7 +18,6 @@ class Main {
     
     func addCrumb(crumb: Crumb) {
         self.everyCrumb.append(crumb)
-        print("ADDED")
         print(everyCrumb)
     }
     
