@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import SwiftyJSON
+import Alamofire
 
 let kCrumbLat = "latitude"
 let kCrumbLong = "longitude"
@@ -18,7 +20,7 @@ let KCrumbMessage = "message"
 let kCrumbIdent = "identity"
 
 
-class Crumb: NSObject, MKAnnotation, NSCoding {
+class Crumb: NSObject, MKAnnotation {
     var latitude: Double
     var longitude: Double
     var coordinate: CLLocationCoordinate2D
@@ -27,46 +29,41 @@ class Crumb: NSObject, MKAnnotation, NSCoding {
     var subtitle: String?
     var identity: String?
     
-    init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, note: String, message: String){
+//    init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, note: String, message: String){
+//        self.coordinate = coordinate
+//        self.radius = radius
+//        self.title = note
+//        self.subtitle = message
+//        self.latitude = coordinate.latitude
+//        self.longitude = coordinate.longitude
+//        self.identity = NSUUID().UUIDString
+//    }
+    
+    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, coordinate: CLLocationCoordinate2D){
+        self.radius = 50 as CLLocationDistance
+        self.latitude = lat;
+        self.longitude = long;
+        self.identity = identifier;
+        self.title = title;
+        self.subtitle = subtitle;
         self.coordinate = coordinate
-        self.radius = radius
-        self.title = note
-        self.subtitle = message
-        self.latitude = coordinate.latitude
-        self.longitude = coordinate.longitude
-        self.identity = NSUUID().UUIDString
     }
  
     func saveToWeb(){
-        var crumb = Dictionary<String, Any>()
-        crumb["coordinate"] = self.coordinate
-        crumb["title"] = self.title
-        crumb["subtitle"] = self.subtitle
-        crumb["identity"] = self.identity
+        var crumb : [String:Dictionary<String,NSObject>] = [
+            "pseudocrumb": [
+                "lat": self.latitude,
+                "long": self.longitude,
+                "identifier": self.identity!,
+                "title": self.title!,
+                "subtitle": self.subtitle!
+            ]
+        ]
+        let newPseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/pseudocrumbs"
+        Alamofire.request(.POST, newPseudocrumbUrl, parameters: crumb)
         
     }
     
-
-    //Required for core data
-     //Also require the class to be a part of NSCoding
-    required init?(coder decoder: NSCoder) {
-        longitude = decoder.decodeDoubleForKey(kCrumbLong)
-        latitude = decoder.decodeDoubleForKey(kCrumbLat)
-        coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        radius = decoder.decodeDoubleForKey(KCrumbRadius)
-        title = decoder.decodeObjectForKey(KCrumbNote) as? String
-        subtitle = decoder.decodeObjectForKey(KCrumbMessage) as! String
-        identity = decoder.decodeObjectForKey(KCrumbMessage) as! String
-    }
-    
-    func encodeWithCoder(coder: NSCoder) {
-        coder.encodeDouble(self.coordinate.latitude, forKey: kCrumbLat)
-        coder.encodeDouble(self.coordinate.longitude, forKey: kCrumbLong)
-        coder.encodeDouble(self.radius, forKey: KCrumbRadius)
-        coder.encodeObject(self.title, forKey: KCrumbNote)
-        coder.encodeObject(self.subtitle, forKey: KCrumbMessage)
-        coder.encodeObject(self.identity, forKey: kCrumbIdent)
-    }
 
 
 }

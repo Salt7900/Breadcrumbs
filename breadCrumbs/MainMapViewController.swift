@@ -9,6 +9,9 @@
 import UIKit
 import MapKit
 
+import SwiftyJSON
+import Alamofire
+
 import CoreLocation
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
@@ -24,6 +27,31 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
+        pullCrumbs(4)
+    }
+    
+    func pullCrumbs(id: Int){
+        let pseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/pseudocrumbs/\(id).json"
+        Alamofire.request(.GET, pseudocrumbUrl).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    let crumb: Dictionary<String,JSON> = json["pseudocrumb"].dictionaryValue
+                    let lat : Double = crumb["lat"]!.doubleValue
+                    let long : Double = crumb["long"]!.doubleValue
+                    let identifier : String = crumb["identifier"]!.stringValue
+                    let title : String = crumb["title"]!.stringValue
+                    let subtitle : String = crumb["subtitle"]!.stringValue
+                    let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
+                    
+                    print(pseudocrumb.identity)
+                    self.addCrumbs(pseudocrumb)
+                }
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
 
     
@@ -37,6 +65,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     func addCrumbs(crumb: Crumb){
         mapView.addAnnotation(crumb)
+        crumb.saveToWeb()
         regionWithCrumb(crumb)
         addRadiusCircle(crumb)
         startMonitoringCrumb(crumb)
