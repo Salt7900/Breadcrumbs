@@ -3,16 +3,15 @@
 //  breadCrumbs
 //
 //  Created by Ben Fallon on 11/17/15.
-//  Copyright © 2015 Ben Fallon. All rights reserved.
+//  Copyright © 2015 Ben Fallon, Jen Trudell, and Katelyn Dinkgrave. All rights reserved.
 //
 
 import UIKit
 import MapKit
-
 import SwiftyJSON
 import Alamofire
-
 import CoreLocation
+
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -43,9 +42,9 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                     let identifier : String = crumb["identifier"]!.stringValue
                     let title : String = crumb["title"]!.stringValue
                     let subtitle : String = crumb["subtitle"]!.stringValue
-                    let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
+                    let email : String = crumb["creatorEmail"]!.stringValue
+                    let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle, creatorEmail: email)
                     
-                    print(pseudocrumb.identity)
                     self.addCrumbs(pseudocrumb)
                 }
             case .Failure(let error):
@@ -55,27 +54,26 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
 
     
-    override func viewDidAppear(animated: Bool) {
-        var allCrumbs = appDelegate.userSession.returnCrumb()
-        print(allCrumbs)
-        for item in allCrumbs{
-            addCrumbs(item)
-        }
-    }
+//    override func viewDidAppear(animated: Bool) {
+//        var allCrumbs = appDelegate.userSession.returnCrumb()
+//        print(allCrumbs)
+//        for item in allCrumbs{
+//            addCrumbs(item)
+//        }
+//    }
     
     func addCrumbs(crumb: Crumb){
         mapView.addAnnotation(crumb)
-        crumb.saveToWeb()
         regionWithCrumb(crumb)
         addRadiusCircle(crumb)
         startMonitoringCrumb(crumb)
-        
     }
 
     
     func regionWithCrumb(crumb: Crumb) -> CLCircularRegion {
-        let region = CLCircularRegion(center: crumb.coordinate, radius: 100 as CLLocationDistance, identifier: crumb.identity!)
+        let region = CLCircularRegion(center: crumb.coordinate, radius: crumb.radius, identifier: crumb.identity!)
         region.notifyOnEntry = ( true )
+        region.notifyOnExit = ( false )
         return region
     }
     
@@ -134,11 +132,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         
         mapView.setRegion(region, animated: true)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     //Ben- Allow map to track location
     func mapView(mapView: MKMapView!, didUpdateUserLocation
