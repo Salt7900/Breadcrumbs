@@ -12,14 +12,6 @@ import CoreLocation
 import SwiftyJSON
 import Alamofire
 
-let kCrumbLat = "latitude"
-let kCrumbLong = "longitude"
-let KCrumbRadius = "radius"
-let KCrumbNote = "note"
-let KCrumbMessage = "message"
-let kCrumbIdent = "identity"
-
-
 class Crumb: NSObject, MKAnnotation {
     var latitude: Double
     var longitude: Double
@@ -30,14 +22,14 @@ class Crumb: NSObject, MKAnnotation {
     var identity: String?
     
     
-    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, coordinate: CLLocationCoordinate2D){
+    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String){
         self.radius = 50 as CLLocationDistance
         self.latitude = lat;
         self.longitude = long;
         self.identity = identifier;
         self.title = title;
         self.subtitle = subtitle;
-        self.coordinate = coordinate
+        self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
     }
  
     func saveToWeb(){
