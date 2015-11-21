@@ -16,14 +16,16 @@ class Main {
         self.everyCrumb = []
     }
     
+    func clearEntries(){
+        self.everyCrumb = []
+    }
+    
     func addCrumb(crumb: Crumb) {
         self.everyCrumb.append(crumb)
-        print(everyCrumb)
     }
     
     func returnCrumb() -> Array<Crumb>{
         return self.everyCrumb
-
     }
 
 }
