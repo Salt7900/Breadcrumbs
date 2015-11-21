@@ -59,7 +59,6 @@ let locationManager = CLLocationManager()
             if let message = notefromRegionIdentifier(region.identifier) {
                 if let viewController = window?.rootViewController {
                     showSimpleAlertWithTitle(nil, message: message, viewController: viewController)
-                    print("HELLO FROM LOCAL")
                 }
             }
         } else {
@@ -76,10 +75,7 @@ let locationManager = CLLocationManager()
     }
 
     func notefromRegionIdentifier(identifier: String) -> String? {
-        print("HELLO FROM NOTEFROMREGIONID")
             for savedItem in everySingleCrumb {
-                print("Saved Item:")
-                print(savedItem)
                     if savedItem.identity == identifier {
                         return savedItem.subtitle
                     }

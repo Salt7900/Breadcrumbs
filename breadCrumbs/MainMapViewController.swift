@@ -15,28 +15,30 @@ import CoreLocation
 var everySingleCrumb = [Crumb]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    
+
     //let userSession = Main()
-    
+
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
+
     @IBOutlet weak var mapView: MKMapView!
-    
+
     let locationManager = CLLocationManager()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
     }
-    
+
+    //Start to pull geolocations - BEN
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
         everySingleCrumb = [Crumb]()
         pullCrumbs("crazy@email.com")
     }
-    
+
+    //Pull and parse JSON for locations - BEN
     func pullCrumbs(email: String){
         var counter = 0
         let pseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/retrieve.json"
@@ -54,33 +56,35 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                             let subtitle : String = crumb["subtitle"]!.stringValue
                             let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
                             counter += 1
-                            
+
                             self.addCrumbs(pseudocrumb)
                             everySingleCrumb.append(pseudocrumb)
                     }
                 }
             case .Failure(let error):
-                print(error)
+
+                (error)
             }
         }
     }
-    
+
+    //Draw pins on map BEN
     func addCrumbs(crumb: Crumb){
         self.mapView.addAnnotation(crumb)
         addRadiusCircle(crumb)
         startMonitoringCrumb(crumb)
     }
 
-    
+
+    //Create circular regions for monitoring BEN
     func regionWithCrumb(crumb: Crumb) -> CLCircularRegion {
         let region = CLCircularRegion(center: crumb.coordinate, radius: crumb.radius, identifier: crumb.identity!)
         region.notifyOnEntry = ( true )
         region.notifyOnExit = ( false )
-        print("Region Identifier:")
-        print(region.identifier)
         return region
     }
-    
+
+    //Start to monitor the region BEN
     func startMonitoringCrumb(crumb: Crumb) {
         if !CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion) {
             showSimpleAlertWithTitle("Error", message: "Geofencing is not supported on this device!", viewController: self)
@@ -92,9 +96,9 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         }
         let region = regionWithCrumb(crumb)
         locationManager.startMonitoringForRegion(region)
-        
+
     }
-    
+
     func stopMonitoringGeolocation(crumb: Crumb){
         for region in locationManager.monitoredRegions{
             if let circularRegion = region as? CLCircularRegion {
@@ -104,18 +108,18 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             }
         }
     }
-    
+
     func addRadiusCircle(crumb: Crumb){
         //Draws circle on the map
         let circle = MKCircle(centerCoordinate: crumb.coordinate, radius: crumb.radius)
         self.mapView.addOverlay(circle)
     }
-    
+
 //    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
 //        var crumb = view.annotation as? Crumb
 //        stopMonitoringGeolocation(crumb!)
 //    }
-    
+
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer!{
         if overlay is MKCircle{
             var circle = MKCircleRenderer(overlay: overlay)
@@ -127,7 +131,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             return nil
         }
     }
-    
+
     func stopMonitoringAll(){
         for region in locationManager.monitoredRegions{
             locationManager.stopMonitoringForRegion(region)
@@ -139,11 +143,11 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let userLocation = mapView.userLocation
         let region = MKCoordinateRegionMakeWithDistance(
             userLocation.location!.coordinate, 2000, 2000)
-        
+
         mapView.setRegion(region, animated: true)
     }
 
-    
+
     //Ben- Allow map to track location
     func mapView(mapView: MKMapView!, didUpdateUserLocation
         userLocation: MKUserLocation!){
@@ -152,4 +156,3 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
 
 }
-
