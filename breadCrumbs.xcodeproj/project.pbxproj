@@ -21,6 +21,7 @@
 		9EABA45B1BFBE65A0094EC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */; };
 		9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */; };
 		9ECA09481C011553000C0952 /* SaveBreadCrumbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECA09471C011553000C0952 /* SaveBreadCrumbViewController.swift */; };
+		9ECA093B1C01139E000C0952 /* SaveBreadCrumbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECA093A1C01139E000C0952 /* SaveBreadCrumbViewController.swift */; };
 		9ED2C45F1BFE9783008AC393 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2C45E1BFE9783008AC393 /* Utilities.swift */; };
 		9EE810131C010FE300DE1159 /* PushCrumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE810121C010FE300DE1159 /* PushCrumb.swift */; };
 		A915B2CFD9491DC5DA64BB33 /* Pods_breadCrumbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5770B87D734234A34B7B2B59 /* Pods_breadCrumbs.framework */; };
@@ -117,6 +118,7 @@
 		9EABA45D1BFBE65A0094EC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EABA45F1BFBE65A0094EC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ECA09471C011553000C0952 /* SaveBreadCrumbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveBreadCrumbViewController.swift; path = ../../../SaveBreadCrumbViewController.swift; sourceTree = "<group>"; };
+		9ECA093A1C01139E000C0952 /* SaveBreadCrumbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveBreadCrumbViewController.swift; path = ../../../SaveBreadCrumbViewController.swift; sourceTree = "<group>"; };
 		9ED2C45E1BFE9783008AC393 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		9EE810121C010FE300DE1159 /* PushCrumb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushCrumb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 				9EABA4551BFBE65A0094EC6A /* AddBreadCrumbViewController.swift */,
 				9EABA4571BFBE65A0094EC6A /* Main.storyboard */,
 				9ECA09471C011553000C0952 /* SaveBreadCrumbViewController.swift */,
+				9ECA093A1C01139E000C0952 /* SaveBreadCrumbViewController.swift */,
 				9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */,
 				9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */,
 				9EABA45F1BFBE65A0094EC6A /* Info.plist */,
@@ -402,6 +405,7 @@
 				9EABA4541BFBE65A0094EC6A /* MainMapViewController.swift in Sources */,
 				9E799FE31BFE1DA8002232FD /* crumb.swift in Sources */,
 				9ECA09481C011553000C0952 /* SaveBreadCrumbViewController.swift in Sources */,
+				9ECA093B1C01139E000C0952 /* SaveBreadCrumbViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
