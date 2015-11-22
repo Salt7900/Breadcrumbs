@@ -45,7 +45,7 @@ class Crumb: NSObject, MKAnnotation {
     }
     
     func saveToWeb(){
-        var crumb : [String:Dictionary<String,NSObject>] = [
+        let crumb : [String:Dictionary<String,NSObject>] = [
             "breadcrumb": [
                 "lat": self.latitude,
                 "long": self.longitude,

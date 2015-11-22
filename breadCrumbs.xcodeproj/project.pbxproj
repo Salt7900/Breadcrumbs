@@ -22,7 +22,6 @@
 		9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */; };
 		9ED2C45F1BFE9783008AC393 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2C45E1BFE9783008AC393 /* Utilities.swift */; };
 		9EE810131C010FE300DE1159 /* PushCrumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE810121C010FE300DE1159 /* PushCrumb.swift */; };
-		A915B2CFD9491DC5DA64BB33 /* Pods_breadCrumbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5770B87D734234A34B7B2B59 /* Pods_breadCrumbs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +125,6 @@
 			files = (
 				9E996ABB1C00DFA80072B916 /* Pods_breadCrumbs.framework in Frameworks */,
 				87F9387E1BFBEE47005DB677 /* MapKit.framework in Frameworks */,
-				A915B2CFD9491DC5DA64BB33 /* Pods_breadCrumbs.framework in Frameworks */,
 				9E996AD61C00E0780072B916 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

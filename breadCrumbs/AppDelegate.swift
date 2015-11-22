@@ -61,7 +61,7 @@ let locationManager = CLLocationManager()
             }
         } else {
             // Otherwise present a local notification
-            var notification = UILocalNotification()
+            let notification = UILocalNotification()
             notification.alertBody = notefromRegionIdentifier(region.identifier)
             notification.soundName = "Default";
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
