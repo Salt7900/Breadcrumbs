@@ -52,6 +52,9 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         let crumb = Crumb(lat: pinLocation.latitude, long: pinLocation.longitude, identifier: NSUUID().UUIDString, title: "You've got a breadCrumb!", subtitle: enterMessageField.text!, photo: self.currentImage.image!, creatorEmail: "crazy@email.com", receiverEmail: enterRecipientEmail.text!)
         
         crumb.saveToWeb()
+        if crumb.receiverEmail != ""{
+            newCrumbs.append(crumb)
+        }
         
         self.performSegueWithIdentifier("backToMainMap", sender: self)
     }
