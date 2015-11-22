@@ -30,6 +30,9 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBAction func userMessage(sender: UITextField) {
 
     }
+    
+    
+    @IBOutlet weak var enterRecipientEmail: UITextField!
 
     //Ben allow to interact with map
     @IBOutlet weak var mapView: MKMapView!
@@ -45,7 +48,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBAction func saveCrumb(sender: AnyObject) {
         let pinLocation = mapView.centerCoordinate
 
-        var crumb = Crumb(lat: pinLocation.latitude, long: pinLocation.longitude, identifier: NSUUID().UUIDString, title: "You've got a breadCrumb!", subtitle: enterMessageField.text!, photo: self.currentImage.image!, creatorEmail: "crazy@email.com")
+        let crumb = Crumb(lat: pinLocation.latitude, long: pinLocation.longitude, identifier: NSUUID().UUIDString, title: "You've got a breadCrumb!", subtitle: enterMessageField.text!, photo: self.currentImage.image!, creatorEmail: "crazy@email.com", recieverEmail: enterRecipientEmail.text!)
         
         crumb.saveToWeb()
         
