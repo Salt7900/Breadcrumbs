@@ -83,10 +83,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="246" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Ad-SG-Cx9">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="246" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Ad-SG-Cx9">
+                                <rect key="frame" x="20" y="90" width="335" height="198"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="198" id="7lf-3N-CY5"/>
+                                </constraints>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="36" y="51" width="344" height="175"/>
                                 </variation>
@@ -94,8 +98,8 @@
                                     <rect key="frame" x="20" y="78" width="374" height="204"/>
                                 </variation>
                             </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="enter your message" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N1O-v1-kPh" userLabel="Enter Message Field">
-                                <rect key="frame" x="0.0" y="0.0" width="149" height="22"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="enter your message" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N1O-v1-kPh" userLabel="Enter Message Field">
+                                <rect key="frame" x="20" y="341" width="177" height="269"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -110,10 +114,13 @@
                                     <action selector="userMessage:" destination="8rJ-Kc-sve" eventType="editingDidEndOnExit" id="4pz-0c-Qbd"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Add breadCrumb" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5" userLabel="Add BreadCrumb Title">
-                                <rect key="frame" x="0.0" y="0.0" width="153" height="23"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="New breadCrumb" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5" userLabel="Add BreadCrumb Title">
+                                <rect key="frame" x="20" y="50" width="335" height="32"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="c8O-U7-jJe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -124,8 +131,8 @@
                                     <rect key="frame" x="118" y="12" width="178" height="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="addPin" translatesAutoresizingMaskIntoConstraints="NO" id="erw-83-5Cv">
-                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="addPin" translatesAutoresizingMaskIntoConstraints="NO" id="erw-83-5Cv">
+                                <rect key="frame" x="150" y="151" width="75" height="75"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="I5Y-3Z-hEG"/>
@@ -145,17 +152,42 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="add-photo-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-0V-w5m">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="add-photo-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-0V-w5m">
+                                <rect key="frame" x="205" y="341" width="150" height="150"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="dCp-wy-ioM"/>
+                                </constraints>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="196" y="242" width="197" height="216"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" preservesSuperviewLayoutMargins="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4Z-E4-HrN">
-                                <rect key="frame" x="0.0" y="0.0" width="42" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mB-ov-OBO">
+                                <rect key="frame" x="215" y="578" width="131" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Save breadCrumb">
+                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveCrumb:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="e17-BV-k5O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxp-lH-gID" userLabel="Add Photo Button">
+                                <rect key="frame" x="205" y="499" width="150" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Add a Photo">
+                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ONT-oL-DVl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4Z-E4-HrN">
+                                <rect key="frame" x="29" y="90" width="317" height="32"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Zoom">
@@ -171,31 +203,37 @@
                                     <action selector="zoomIn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="OKu-9c-nZn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxp-lH-gID" userLabel="Add Photo Button">
-                                <rect key="frame" x="0.0" y="0.0" width="89" height="32"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Add a Photo">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePicture:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ONT-oL-DVl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mB-ov-OBO">
-                                <rect key="frame" x="0.0" y="0.0" width="131" height="32"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Save breadCrumb">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveCrumb:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="e17-BV-k5O"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cwj-0V-w5m" secondAttribute="trailing" constant="4" id="087-9Q-RRQ"/>
+                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="4AP-Yc-9Tr"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="3mB-ov-OBO" secondAttribute="bottom" constant="13" id="58p-q3-MZq"/>
+                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Dm1-nX-ScR"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Cwj-0V-w5m" secondAttribute="bottom" constant="132" id="PFK-sW-Rei"/>
+                            <constraint firstItem="N1O-v1-kPh" firstAttribute="leading" secondItem="7Ad-SG-Cx9" secondAttribute="leading" id="StH-25-yw8"/>
+                            <constraint firstItem="erw-83-5Cv" firstAttribute="centerX" secondItem="7Ad-SG-Cx9" secondAttribute="centerX" id="Tq5-Wi-2N6"/>
+                            <constraint firstItem="N1O-v1-kPh" firstAttribute="bottom" secondItem="3mB-ov-OBO" secondAttribute="bottom" id="UaG-Vy-ub8"/>
+                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="Cwj-0V-w5m" secondAttribute="trailing" id="VEY-Jg-d0v"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="N1O-v1-kPh" secondAttribute="bottom" constant="13" id="WI3-hQ-hNy"/>
+                            <constraint firstItem="N1O-v1-kPh" firstAttribute="top" secondItem="Cwj-0V-w5m" secondAttribute="top" id="Xcf-Ky-mIm"/>
+                            <constraint firstItem="a4Z-E4-HrN" firstAttribute="trailing" secondItem="3mB-ov-OBO" secondAttribute="trailing" id="c4J-qW-epx"/>
+                            <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="a4Z-E4-HrN" secondAttribute="bottom" constant="18" id="cKH-Yp-XCc"/>
+                            <constraint firstItem="a4Z-E4-HrN" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="cPW-gQ-tBX"/>
+                            <constraint firstItem="a4Z-E4-HrN" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="13" id="crM-E0-wgD"/>
+                            <constraint firstItem="a4Z-E4-HrN" firstAttribute="top" secondItem="7Ad-SG-Cx9" secondAttribute="top" id="gW3-5Y-hjd"/>
+                            <constraint firstItem="Qxp-lH-gID" firstAttribute="trailing" secondItem="Cwj-0V-w5m" secondAttribute="trailing" id="ikk-5U-7Vv"/>
+                            <constraint firstItem="Cwj-0V-w5m" firstAttribute="leading" secondItem="N1O-v1-kPh" secondAttribute="trailing" constant="8" symbolic="YES" id="ocf-JV-7f5"/>
+                            <constraint firstItem="Qxp-lH-gID" firstAttribute="top" secondItem="Cwj-0V-w5m" secondAttribute="bottom" constant="8" symbolic="YES" id="ra6-32-r11"/>
+                            <constraint firstItem="Cwj-0V-w5m" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="321" id="rvD-Gi-YDR"/>
+                            <constraint firstItem="zEq-FU-wV5" firstAttribute="leading" secondItem="7Ad-SG-Cx9" secondAttribute="leading" id="tq6-6c-rlT"/>
+                            <constraint firstItem="3mB-ov-OBO" firstAttribute="centerX" secondItem="Qxp-lH-gID" secondAttribute="centerX" id="u2F-GX-z8b"/>
+                            <constraint firstItem="Qxp-lH-gID" firstAttribute="leading" secondItem="Cwj-0V-w5m" secondAttribute="leading" id="uDt-NH-cVW"/>
+                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="top" secondItem="erw-83-5Cv" secondAttribute="bottom" constant="15" id="uEk-En-LoA"/>
+                            <constraint firstItem="zEq-FU-wV5" firstAttribute="trailing" secondItem="7Ad-SG-Cx9" secondAttribute="trailing" id="xo1-Bn-WYs"/>
+                            <constraint firstItem="Cwj-0V-w5m" firstAttribute="top" secondItem="7Ad-SG-Cx9" secondAttribute="bottom" constant="53" id="yIV-ep-lgP"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="3mB-ov-OBO"/>
@@ -220,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849.5" y="385.5"/>
+            <point key="canvasLocation" x="847.5" y="421.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
