@@ -120,6 +120,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             } else {
                 print("Displaying")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
                 self.currentImage.image = image
                 self.photoButton.setTitle("Change Photo", forState: .Normal)
                 })

@@ -52,7 +52,7 @@ class Crumb: NSObject, MKAnnotation {
                 "title": self.title!,
                 "subtitle": self.subtitle!,
                 "creatorEmail": self.creatorEmail!,
-                "photo": self.imageString!
+                "image_data": self.imageString!
             ]
         ]
         let newCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/breadcrumbs"
