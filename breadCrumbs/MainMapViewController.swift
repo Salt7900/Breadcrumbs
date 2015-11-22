@@ -173,7 +173,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         // Delete geotification
         let crumb = view.annotation as! RetrievedCrumb
         removeCrumb(crumb)
-        //saveAllGeotifications()
     }
     
     func removeCrumb(crumb: RetrievedCrumb) {
@@ -184,11 +183,12 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         mapView.removeAnnotation(crumb)
         stopMonitoringGeolocation(crumb)
         removeRadiusOverlayForGeotification(crumb)
-        removeCrumbFromDatabase(crumb)
+        removeCrumbFromDatabase(crumb.identity)
     }
     
-    func removeCrumbFromDatabase(crumb: RetrievedCrumb){
-        Alamofire.request(.DELETE, "https://gentle-fortress-2146.herokuapp.com/breadcrumbs/\(crumb.identity)")
+    func removeCrumbFromDatabase(crumbID: String!){
+        let deleteCrumbURL = "https://gentle-fortress-2146.herokuapp.com/breadcrumbs/\(crumbID)"
+        Alamofire.request(.DELETE, deleteCrumbURL)
     }
     
     //When deleteed, remove the radius -BEN
