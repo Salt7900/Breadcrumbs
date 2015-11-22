@@ -24,11 +24,15 @@ let locationManager = CLLocationManager()
             UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil))
         }
         UIApplication.sharedApplication().cancelAllLocalNotifications()
-
+        
+        let notification = launchOptions?[UIApplicationLaunchOptionsLocalNotificationKey] as! UILocalNotification!
+        if (notification != nil) {
+            print("Hello, this should be from a notificiation")
+        }
 
         return true
     }
-
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -69,12 +73,13 @@ let locationManager = CLLocationManager()
     }
 
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-            handleRegionEvent(region)
+        handleRegionEvent(region)
     }
 
     func notefromRegionIdentifier(identifier: String) -> String? {
             for savedItem in everySingleCrumb {
                     if savedItem.identity == identifier {
+                        latestCrumb[0] = savedItem
                         return savedItem.subtitle
                     }
             }
