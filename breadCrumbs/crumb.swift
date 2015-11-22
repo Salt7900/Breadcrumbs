@@ -20,9 +20,13 @@ class Crumb: NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
     var identity: String?
+    var photo: UIImage?
+    var creatorEmail: String?
+    var imageString: String?
 
 
-    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String){
+
+    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, photo: UIImage, creatorEmail: String){
         self.radius = 50 as CLLocationDistance
         self.latitude = lat;
         self.longitude = long;
@@ -30,7 +34,32 @@ class Crumb: NSObject, MKAnnotation {
         self.title = title;
         self.subtitle = subtitle;
         self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long);
+        self.creatorEmail = creatorEmail;
+        self.photo = photo;
+        
+        let imageData: NSData = UIImagePNGRepresentation(self.photo!)!
+        
+        self.imageString = imageData.base64EncodedStringWithOptions(.EncodingEndLineWithLineFeed)
+        
     }
+    
+    func saveToWeb(){
+        var crumb : [String:Dictionary<String,NSObject>] = [
+            "breadcrumb": [
+                "lat": self.latitude,
+                "long": self.longitude,
+                "identifier": self.identity!,
+                "title": self.title!,
+                "subtitle": self.subtitle!,
+                "creatorEmail": self.creatorEmail!,
+                "photo": self.imageString!
+            ]
+        ]
+        let newCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/breadcrumbs"
+        Alamofire.request(.POST, newCrumbUrl, parameters: crumb)
+        
+    }
+
 
 
 }
