@@ -31,12 +31,15 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         self.mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
-        pullCrumbs("trump@email.com")
+        everySingleCrumb = [RetrievedCrumb]()
+        pullCrumbs("crazy@email.com")
     }
 
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
-        everySingleCrumb = [RetrievedCrumb]()
+        if newCrumbs.count != 0{
+            convertCrumbToRetrivedCrumb(newCrumbs[0])
+        }
     }
 
     //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
@@ -69,6 +72,13 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                 (error)
             }
         }
+    }
+    
+    func convertCrumbToRetrivedCrumb(crumb: Crumb){
+       let newCrumb = RetrievedCrumb(lat: crumb.latitude, long: crumb.longitude, identifier: crumb.identity!, title: crumb.title!, subtitle: crumb.subtitle!, imageURL: crumb.imageString!)
+        
+        self.addCrumbs(newCrumb)
+        everySingleCrumb.append(newCrumb)
     }
 
     //Draw pins on map BEN
