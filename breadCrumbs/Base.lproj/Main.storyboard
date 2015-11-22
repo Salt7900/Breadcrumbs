@@ -382,6 +382,11 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="messageField" destination="LDy-FX-bzo" id="XUq-HQ-Ini"/>
+                        <outlet property="messageFrom" destination="rkp-PB-LG2" id="OMC-Xn-Mc7"/>
+                        <outlet property="messagePicture" destination="olb-NX-OhN" id="Jis-FE-9QA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ez1-lq-oHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
