@@ -45,7 +45,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                        for crumb in json{
+                        for _ in json{
                             let crumb: Dictionary<String,JSON> = json[counter].dictionaryValue
                             let lat : Double = crumb["lat"]!.doubleValue
                             let long : Double = crumb["long"]!.doubleValue
@@ -120,7 +120,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer!{
         if overlay is MKCircle{
-            var circle = MKCircleRenderer(overlay: overlay)
+            let circle = MKCircleRenderer(overlay: overlay)
             circle.strokeColor = UIColor.purpleColor()
             circle.fillColor = UIColor(red: 0, green: 150, blue: 255, alpha: 0.1)
             circle.lineWidth = 1
