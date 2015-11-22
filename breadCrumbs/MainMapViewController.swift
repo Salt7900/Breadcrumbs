@@ -16,26 +16,24 @@ var everySingleCrumb = [Crumb]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    //let userSession = Main()
-
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     @IBOutlet weak var mapView: MKMapView!
 
     let locationManager = CLLocationManager()
+    
 
+    //Pull user geolocations and crumbs before view loads - BEN and JEN
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
+        pullCrumbs("crazy@email.com")
     }
 
-    //Start to pull geolocations - BEN
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
-        everySingleCrumb = [Crumb]()
-        pullCrumbs("crazy@email.com")
     }
 
     //Pull and parse JSON for locations - BEN
