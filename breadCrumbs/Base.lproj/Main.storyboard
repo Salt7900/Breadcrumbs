@@ -280,7 +280,7 @@
         <!--Show Single Breadcrumb Controller-->
         <scene sceneID="jAT-LA-FCW">
             <objects>
-                <viewController id="A3c-ZZ-5Mu" userLabel="Show Single Breadcrumb Controller" sceneMemberID="viewController">
+                <viewController id="A3c-ZZ-5Mu" userLabel="Show Single Breadcrumb Controller" customClass="SingleCrumbViewController" customModule="breadCrumbs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hjR-vy-Dx4"/>
                         <viewControllerLayoutGuide type="bottom" id="czc-aH-goR"/>
