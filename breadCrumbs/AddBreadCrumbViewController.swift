@@ -14,12 +14,11 @@ import MapKit
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // sets controller as the camera delegate
+        
+        // Jen - sets controller as the camera delegate
         imagePicker.delegate = self
 
         //Ben - dealing with map and user location
@@ -32,7 +31,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
 
     }
 
-    //Ben allow to iteract with map
+    //Ben allow to interact with map
     @IBOutlet weak var mapView: MKMapView!
 
     //JEN CAMERA LINKS TO VIEW
@@ -45,11 +44,10 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     //Ben - Save all info into a new crumb object
     @IBAction func saveCrumb(sender: AnyObject) {
         let pinLocation = mapView.centerCoordinate
-        var crumb = PushCrumb(lat: pinLocation.latitude, long: pinLocation.longitude, identifier: NSUUID().UUIDString, title: "Note From yourself-", subtitle: enterMessageField.text!, creatorEmail: "crazy@email.com")
+        var crumb = Crumb(lat: pinLocation.latitude, long: pinLocation.longitude, identifier: NSUUID().UUIDString, title: "You've got a breadCrumb!", subtitle: enterMessageField.text!, photo: self.currentImage.image!, creatorEmail: "crazy@email.com")
         
         crumb.saveToWeb()
         
-        //appDelegate.userSession.addCrumb(crumb)
         self.performSegueWithIdentifier("backToMainMap", sender: self)
     }
 
@@ -120,6 +118,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             } else {
                 print("Displaying")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
                 self.currentImage.image = image
                 self.photoButton.setTitle("Change Photo", forState: .Normal)
                 })

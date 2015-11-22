@@ -15,8 +15,6 @@ var window: UIWindow?
 
 let locationManager = CLLocationManager()
 
-    let userSession = Main()
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         locationManager.delegate = self
