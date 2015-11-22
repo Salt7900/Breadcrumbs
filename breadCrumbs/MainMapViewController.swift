@@ -16,8 +16,6 @@ var everySingleCrumb = [RetrievedCrumb]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
-
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     @IBOutlet weak var mapView: MKMapView!
@@ -43,6 +41,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
     func pullCrumbs(email: String){
         var counter = 0
+        let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
         Alamofire.request(.GET, getCrumbUrl, parameters:["creatorEmail": email]).validate().responseJSON { response in
             switch response.result {
             case .Success:
@@ -189,7 +188,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
     
     func removeCrumbFromDatabase(crumb: RetrievedCrumb){
-        
+        Alamofire.request(.DELETE, "https://gentle-fortress-2146.herokuapp.com/breadcrumbs/\(crumb.identity)")
     }
     
     //When deleteed, remove the radius -BEN
