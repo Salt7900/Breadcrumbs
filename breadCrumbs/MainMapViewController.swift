@@ -15,6 +15,8 @@ import CoreLocation
 var everySingleCrumb = [RetrievedCrumb]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
 
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
@@ -41,7 +43,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
     func pullCrumbs(email: String){
         var counter = 0
-        let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
         Alamofire.request(.GET, getCrumbUrl, parameters:["creatorEmail": email]).validate().responseJSON { response in
             switch response.result {
             case .Success:
@@ -100,7 +101,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     }
 
-    func stopMonitoringGeolocation(crumb: Crumb){
+    func stopMonitoringGeolocation(crumb: RetrievedCrumb){
         for region in locationManager.monitoredRegions{
             if let circularRegion = region as? CLCircularRegion {
                 if circularRegion.identifier == crumb.identity{
@@ -147,7 +148,65 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
         mapView.setRegion(region, animated: true)
     }
+    
+    //Allow the annotations to display the delete button
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView! {
+        let identifier = "myCrumb"
+        if annotation is RetrievedCrumb {
+            var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView
+            if annotationView == nil {
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView?.canShowCallout = true
+                let removeButton = UIButton(type: .Custom)
+                removeButton.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
+                removeButton.setImage(UIImage(named: "DeleteCrumb")!, forState: .Normal)
+                annotationView?.leftCalloutAccessoryView = removeButton
+            } else {
+                annotationView?.annotation = annotation
+            }
+            return annotationView
+        }
+        return nil
+    }
 
+
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // Delete geotification
+        let crumb = view.annotation as! RetrievedCrumb
+        removeCrumb(crumb)
+        //saveAllGeotifications()
+    }
+    
+    func removeCrumb(crumb: RetrievedCrumb) {
+        if let indexInArray = everySingleCrumb.indexOf(crumb) {
+            everySingleCrumb.removeAtIndex(indexInArray)
+        }
+        
+        mapView.removeAnnotation(crumb)
+        stopMonitoringGeolocation(crumb)
+        removeRadiusOverlayForGeotification(crumb)
+        removeCrumbFromDatabase(crumb)
+    }
+    
+    func removeCrumbFromDatabase(crumb: RetrievedCrumb){
+        
+    }
+    
+    //When deleteed, remove the radius -BEN
+    func removeRadiusOverlayForGeotification(crumb: RetrievedCrumb) {
+        // Find exactly one overlay which has the same coordinates & radius to remove
+        if let overlays = mapView?.overlays {
+            for overlay in overlays {
+                if let circleOverlay = overlay as? MKCircle {
+                    let coord = circleOverlay.coordinate
+                    if coord.latitude == crumb.coordinate.latitude && coord.longitude == crumb.coordinate.longitude && circleOverlay.radius == crumb.radius {
+                        mapView?.removeOverlay(circleOverlay)
+                        break
+                    }
+                }
+            }
+        }
+    }
 
     //Ben- Allow map to track location
     func mapView(mapView: MKMapView!, didUpdateUserLocation
