@@ -21,15 +21,17 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     @IBOutlet weak var mapView: MKMapView!
 
     let locationManager = CLLocationManager()
+    
 
+    //Pull user geolocations and crumbs before view loads - BEN and JEN
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
+        pullCrumbs("crazy@email.com")
     }
 
-    //Start to pull geolocations - BEN
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
         everySingleCrumb = [RetrievedCrumb]()
@@ -45,7 +47,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                        for crumb in json{
+                        for _ in json{
                             let crumb: Dictionary<String,JSON> = json[counter].dictionaryValue
                             let lat : Double = crumb["lat"]!.doubleValue
                             let long : Double = crumb["long"]!.doubleValue

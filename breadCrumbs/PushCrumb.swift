@@ -35,7 +35,7 @@ class PushCrumb: NSObject, MKAnnotation {
     }
     
     func saveToWeb(){
-        var crumb : [String:Dictionary<String,NSObject>] = [
+        let crumb : [String:Dictionary<String,NSObject>] = [
             "pseudocrumb": [
                 "lat": self.latitude,
                 "long": self.longitude,

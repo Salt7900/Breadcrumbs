@@ -44,6 +44,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     //Ben - Save all info into a new crumb object
     @IBAction func saveCrumb(sender: AnyObject) {
         let pinLocation = mapView.centerCoordinate
+
         var crumb = Crumb(lat: pinLocation.latitude, long: pinLocation.longitude, identifier: NSUUID().UUIDString, title: "You've got a breadCrumb!", subtitle: enterMessageField.text!, photo: self.currentImage.image!, creatorEmail: "crazy@email.com")
         
         crumb.saveToWeb()
