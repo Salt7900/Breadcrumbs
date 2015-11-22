@@ -34,11 +34,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
-<<<<<<< HEAD
-=======
         everySingleCrumb = [RetrievedCrumb]()
         pullCrumbs("crazy@email.com")
->>>>>>> 034eadee7815cb53d4960be17e067c6d59a645ea
     }
 
     //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
