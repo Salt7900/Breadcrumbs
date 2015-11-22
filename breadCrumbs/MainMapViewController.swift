@@ -33,41 +33,42 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
         everySingleCrumb = [Crumb]()
-  //      pullCrumbs("crazy@email.com")
+        pullCrumbs("crazy@email.com")
     }
 
-//    //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
-//    func pullCrumbs(email: String){
-//        var counter = 0
-//        let pseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/retrieve.json"
-//        Alamofire.request(.GET, pseudocrumbUrl, parameters:["creatorEmail": email]).validate().responseJSON { response in
-//            switch response.result {
-//            case .Success:
-//                if let value = response.result.value {
-//                    let json = JSON(value)
-//                        for crumb in json{
-//                            let crumb: Dictionary<String,JSON> = json[counter].dictionaryValue
-//                            let lat : Double = crumb["lat"]!.doubleValue
-//                            let long : Double = crumb["long"]!.doubleValue
-//                            let identifier : String = crumb["identifier"]!.stringValue
-//                            let title : String = crumb["title"]!.stringValue
-//                            let subtitle : String = crumb["subtitle"]!.stringValue
-//                            let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
-//                            counter += 1
-//                            
-//                            pseudocrumb.imageURL =
-//
-//                            self.addCrumbs(pseudocrumb)
-//                            everySingleCrumb.append(pseudocrumb)
-//                    }
-//                }
-//            case .Failure(let error):
-//
-//                (error)
-//            }
-//        }
-//    }
-//
+    //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
+    func pullCrumbs(email: String){
+        var counter = 0
+        let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
+        Alamofire.request(.GET, getCrumbUrl, parameters:["creatorEmail": email]).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                        for crumb in json{
+                            let crumb: Dictionary<String,JSON> = json[counter].dictionaryValue
+                            let lat : Double = crumb["lat"]!.doubleValue
+                            let long : Double = crumb["long"]!.doubleValue
+                            let identifier : String = crumb["identifier"]!.stringValue
+                            let title : String = crumb["title"]!.stringValue
+                            let subtitle : String = crumb["subtitle"]!.stringValue
+                            let url : String = crumb["photo_aws_url"]!.stringValue
+                            let retrievedCrumb = RetrievedCrumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
+                            counter += 1
+                            
+                            retrievedCrumb.imageURL = url
+
+                            self.addCrumbs(retrievedCrumb)
+                            everySingleCrumb.append(retrievedCrumb)
+                    }
+                }
+            case .Failure(let error):
+
+                (error)
+            }
+        }
+    }
+
     //Draw pins on map BEN
     func addCrumbs(crumb: Crumb){
         self.mapView.addAnnotation(crumb)

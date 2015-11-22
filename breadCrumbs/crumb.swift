@@ -23,7 +23,6 @@ class Crumb: NSObject, MKAnnotation {
     var photo: UIImage?
     var creatorEmail: String?
     var imageString: String?
-    var imageURL: String?
 
 
         //JEN: add UIImage in inti to convert to string object when sent to server for paperclip/S3, and imageURL as setter property for setting S3 URL on crumb load from server
@@ -37,7 +36,6 @@ class Crumb: NSObject, MKAnnotation {
         self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long);
         self.creatorEmail = creatorEmail;
         self.photo = photo;
-        self.imageURL = ""
         
         
         //JEN: converts UIImage to NSData, then to 64-bit encoded string
@@ -63,6 +61,26 @@ class Crumb: NSObject, MKAnnotation {
         
     }
 
+}
 
+//JEN for pulling crumbs from server with different init values re photo, will make subclass of Crumb in refactor
 
+class RetrievedCrumb: NSObject {
+    var latitude: Double
+    var longitude: Double
+    var title: String?
+    var subtitle: String?
+    var identity: String?
+    var imageURL: String?
+    
+    
+    //JEN: add UIImage in init to convert to string object when sent to server for paperclip/S3, and imageURL as setter property for setting S3 URL on crumb load from server
+    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, imageURL: String){
+        self.latitude = lat;
+        self.longitude = long;
+        self.identity = identifier;
+        self.title = title;
+        self.subtitle = subtitle;
+        self.imageURL = imageURL;
+    }
 }
