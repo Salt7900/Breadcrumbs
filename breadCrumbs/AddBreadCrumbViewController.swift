@@ -17,7 +17,8 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // sets controller as the camera delegate
+        
+        // Jen - sets controller as the camera delegate
         imagePicker.delegate = self
 
         //Ben - dealing with map and user location
@@ -30,7 +31,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
 
     }
 
-    //Ben allow to iteract with map
+    //Ben allow to interact with map
     @IBOutlet weak var mapView: MKMapView!
 
     //JEN CAMERA LINKS TO VIEW
