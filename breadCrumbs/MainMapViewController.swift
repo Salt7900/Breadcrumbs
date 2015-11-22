@@ -12,11 +12,9 @@ import SwiftyJSON
 import Alamofire
 import CoreLocation
 
-var everySingleCrumb = [Crumb]()
+var everySingleCrumb = [RetrievedCrumb]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
-    //let userSession = Main()
 
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
@@ -34,15 +32,15 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     //Start to pull geolocations - BEN
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
-        everySingleCrumb = [Crumb]()
+        everySingleCrumb = [RetrievedCrumb]()
         pullCrumbs("crazy@email.com")
     }
 
-    //Pull and parse JSON for locations - BEN
+    //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
     func pullCrumbs(email: String){
         var counter = 0
-        let pseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/retrieve.json"
-        Alamofire.request(.GET, pseudocrumbUrl, parameters:["creatorEmail": email]).validate().responseJSON { response in
+        let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
+        Alamofire.request(.GET, getCrumbUrl, parameters:["creatorEmail": email]).validate().responseJSON { response in
             switch response.result {
             case .Success:
                 if let value = response.result.value {
@@ -54,11 +52,12 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                             let identifier : String = crumb["identifier"]!.stringValue
                             let title : String = crumb["title"]!.stringValue
                             let subtitle : String = crumb["subtitle"]!.stringValue
-                            let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
+                            let imageURL : String = crumb["photo_aws_url"]!.stringValue
+                            let retrievedCrumb = RetrievedCrumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle, imageURL: imageURL)
                             counter += 1
-
-                            self.addCrumbs(pseudocrumb)
-                            everySingleCrumb.append(pseudocrumb)
+                            
+                            self.addCrumbs(retrievedCrumb)
+                            everySingleCrumb.append(retrievedCrumb)
                     }
                 }
             case .Failure(let error):
@@ -69,7 +68,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
 
     //Draw pins on map BEN
-    func addCrumbs(crumb: Crumb){
+    func addCrumbs(crumb: RetrievedCrumb){
         self.mapView.addAnnotation(crumb)
         addRadiusCircle(crumb)
         startMonitoringCrumb(crumb)
@@ -77,7 +76,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
 
     //Create circular regions for monitoring BEN
-    func regionWithCrumb(crumb: Crumb) -> CLCircularRegion {
+    func regionWithCrumb(crumb: RetrievedCrumb) -> CLCircularRegion {
         let region = CLCircularRegion(center: crumb.coordinate, radius: crumb.radius, identifier: crumb.identity!)
         region.notifyOnEntry = ( true )
         region.notifyOnExit = ( false )
@@ -85,7 +84,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
 
     //Start to monitor the region BEN
-    func startMonitoringCrumb(crumb: Crumb) {
+    func startMonitoringCrumb(crumb: RetrievedCrumb) {
         if !CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion) {
             showSimpleAlertWithTitle("Error", message: "Geofencing is not supported on this device!", viewController: self)
             return
@@ -109,7 +108,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         }
     }
 
-    func addRadiusCircle(crumb: Crumb){
+    func addRadiusCircle(crumb: RetrievedCrumb){
         //Draws circle on the map
         let circle = MKCircle(centerCoordinate: crumb.coordinate, radius: crumb.radius)
         self.mapView.addOverlay(circle)
@@ -122,7 +121,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer!{
         if overlay is MKCircle{
-            var circle = MKCircleRenderer(overlay: overlay)
+            let circle = MKCircleRenderer(overlay: overlay)
             circle.strokeColor = UIColor.purpleColor()
             circle.fillColor = UIColor(red: 0, green: 150, blue: 255, alpha: 0.1)
             circle.lineWidth = 1
