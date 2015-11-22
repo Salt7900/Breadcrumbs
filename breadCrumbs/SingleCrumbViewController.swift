@@ -12,5 +12,14 @@ import MapKit
 
 
 class SingleCrumbViewController: UIViewController {
+    
+    
+    @IBOutlet weak var messagePicture: UIImageView!
+    @IBOutlet weak var messageFrom: UILabel!
+    @IBOutlet weak var messageField: UILabel!
+    
+    override func viewDidLoad() {
+        
+    }
 
 }
