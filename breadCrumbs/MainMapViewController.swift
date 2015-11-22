@@ -13,6 +13,8 @@ import Alamofire
 import CoreLocation
 
 var everySingleCrumb = [RetrievedCrumb]()
+var newCrumbs = [Crumb]()
+var latestCrumb = [RetrievedCrumb]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -29,20 +31,20 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         self.mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
-        pullCrumbs("crazy@email.com")
+        pullCrumbs("trump@email.com")
     }
 
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
         everySingleCrumb = [RetrievedCrumb]()
-        pullCrumbs("crazy@email.com")
     }
 
     //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
     func pullCrumbs(email: String){
+        everySingleCrumb = [RetrievedCrumb]()
         var counter = 0
         let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
-        Alamofire.request(.GET, getCrumbUrl, parameters:["creatorEmail": email]).validate().responseJSON { response in
+        Alamofire.request(.GET, getCrumbUrl, parameters:["receiverEmail": email]).validate().responseJSON { response in
             switch response.result {
             case .Success:
                 if let value = response.result.value {
