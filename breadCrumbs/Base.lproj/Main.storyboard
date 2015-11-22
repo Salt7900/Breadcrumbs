@@ -133,7 +133,7 @@
                                     <rect key="frame" x="118" y="12" width="178" height="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="addPin" translatesAutoresizingMaskIntoConstraints="NO" id="erw-83-5Cv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPin" translatesAutoresizingMaskIntoConstraints="NO" id="erw-83-5Cv">
                                 <rect key="frame" x="150" y="151" width="75" height="75"/>
                                 <animations/>
                                 <constraints>
@@ -221,11 +221,11 @@
                             <constraint firstItem="a4Z-E4-HrN" firstAttribute="baseline" secondItem="zEq-FU-wV5" secondAttribute="baseline" id="Etf-k2-nU1"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Cwj-0V-w5m" secondAttribute="bottom" constant="132" id="PFK-sW-Rei"/>
                             <constraint firstItem="N1O-v1-kPh" firstAttribute="leading" secondItem="7Ad-SG-Cx9" secondAttribute="leading" id="StH-25-yw8"/>
-                            <constraint firstItem="erw-83-5Cv" firstAttribute="centerX" secondItem="7Ad-SG-Cx9" secondAttribute="centerX" id="Tq5-Wi-2N6"/>
                             <constraint firstItem="N1O-v1-kPh" firstAttribute="bottom" secondItem="3mB-ov-OBO" secondAttribute="bottom" id="UaG-Vy-ub8"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="Cwj-0V-w5m" secondAttribute="trailing" id="VEY-Jg-d0v"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="N1O-v1-kPh" secondAttribute="bottom" constant="13" id="WI3-hQ-hNy"/>
                             <constraint firstItem="N1O-v1-kPh" firstAttribute="top" secondItem="Cwj-0V-w5m" secondAttribute="top" id="Xcf-Ky-mIm"/>
+                            <constraint firstItem="erw-83-5Cv" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="Z8h-SZ-orn"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="a4Z-E4-HrN" secondAttribute="bottom" constant="-36" id="cKH-Yp-XCc"/>
                             <constraint firstItem="Qxp-lH-gID" firstAttribute="trailing" secondItem="Cwj-0V-w5m" secondAttribute="trailing" id="ikk-5U-7Vv"/>
                             <constraint firstItem="a4Z-E4-HrN" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="17" id="kfg-GI-zhT"/>
@@ -235,8 +235,8 @@
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="leading" secondItem="7Ad-SG-Cx9" secondAttribute="leading" id="tq6-6c-rlT"/>
                             <constraint firstItem="3mB-ov-OBO" firstAttribute="centerX" secondItem="Qxp-lH-gID" secondAttribute="centerX" id="u2F-GX-z8b"/>
                             <constraint firstItem="Qxp-lH-gID" firstAttribute="leading" secondItem="Cwj-0V-w5m" secondAttribute="leading" id="uDt-NH-cVW"/>
-                            <constraint firstItem="7Ad-SG-Cx9" firstAttribute="top" secondItem="erw-83-5Cv" secondAttribute="bottom" constant="15" id="uEk-En-LoA"/>
                             <constraint firstItem="3mB-ov-OBO" firstAttribute="bottom" secondItem="N1O-v1-kPh" secondAttribute="bottom" id="w4H-id-rDT"/>
+                            <constraint firstItem="erw-83-5Cv" firstAttribute="centerY" secondItem="7Ad-SG-Cx9" secondAttribute="centerY" id="xRP-YL-zRF"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="trailing" secondItem="7Ad-SG-Cx9" secondAttribute="trailing" id="xo1-Bn-WYs"/>
                             <constraint firstItem="Cwj-0V-w5m" firstAttribute="top" secondItem="7Ad-SG-Cx9" secondAttribute="bottom" constant="53" id="yIV-ep-lgP"/>
                         </constraints>
