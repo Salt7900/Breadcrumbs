@@ -16,8 +16,6 @@ var everySingleCrumb = [Crumb]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    //let userSession = Main()
-
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     @IBOutlet weak var mapView: MKMapView!
@@ -35,10 +33,10 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     override func viewDidAppear(animated: Bool) {
         stopMonitoringAll()
         everySingleCrumb = [Crumb]()
-//        pullCrumbs("crazy@email.com")
+  //      pullCrumbs("crazy@email.com")
     }
 
-    //Pull and parse JSON for locations - BEN
+//    //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
 //    func pullCrumbs(email: String){
 //        var counter = 0
 //        let pseudocrumbUrl = "https://gentle-fortress-2146.herokuapp.com/retrieve.json"
@@ -56,6 +54,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 //                            let subtitle : String = crumb["subtitle"]!.stringValue
 //                            let pseudocrumb = Crumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle)
 //                            counter += 1
+//                            
+//                            pseudocrumb.imageURL =
 //
 //                            self.addCrumbs(pseudocrumb)
 //                            everySingleCrumb.append(pseudocrumb)
@@ -67,7 +67,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 //            }
 //        }
 //    }
-
+//
     //Draw pins on map BEN
     func addCrumbs(crumb: Crumb){
         self.mapView.addAnnotation(crumb)
@@ -122,7 +122,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer!{
         if overlay is MKCircle{
-            var circle = MKCircleRenderer(overlay: overlay)
+            let circle = MKCircleRenderer(overlay: overlay)
             circle.strokeColor = UIColor.purpleColor()
             circle.fillColor = UIColor(red: 0, green: 150, blue: 255, alpha: 0.1)
             circle.lineWidth = 1

@@ -23,9 +23,10 @@ class Crumb: NSObject, MKAnnotation {
     var photo: UIImage?
     var creatorEmail: String?
     var imageString: String?
+    var imageURL: String?
 
 
-
+        //JEN: add UIImage in inti to convert to string object when sent to server for paperclip/S3, and imageURL as setter property for setting S3 URL on crumb load from server
     init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, photo: UIImage, creatorEmail: String){
         self.radius = 50 as CLLocationDistance
         self.latitude = lat;
@@ -36,9 +37,11 @@ class Crumb: NSObject, MKAnnotation {
         self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long);
         self.creatorEmail = creatorEmail;
         self.photo = photo;
+        self.imageURL = ""
         
+        
+        //JEN: converts UIImage to NSData, then to 64-bit encoded string
         let imageData: NSData = UIImagePNGRepresentation(self.photo!)!
-        
         self.imageString = imageData.base64EncodedStringWithOptions(.EncodingEndLineWithLineFeed)
         
     }

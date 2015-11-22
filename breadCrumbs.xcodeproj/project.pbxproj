@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		87F9387E1BFBEE47005DB677 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F9387D1BFBEE47005DB677 /* MapKit.framework */; };
-		87FDC8991C014CE500C63886 /* duck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87FDC8981C014CE500C63886 /* duck.jpg */; };
 		9E5764151BFFB6D000D12066 /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5764141BFFB6D000D12066 /* global.swift */; };
 		9E799FE31BFE1DA8002232FD /* crumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E799FE21BFE1DA8002232FD /* crumb.swift */; };
 		9E996ABB1C00DFA80072B916 /* Pods_breadCrumbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5770B87D734234A34B7B2B59 /* Pods_breadCrumbs.framework */; };
@@ -19,7 +18,6 @@
 		9EABA4541BFBE65A0094EC6A /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABA4531BFBE65A0094EC6A /* MainMapViewController.swift */; };
 		9EABA4561BFBE65A0094EC6A /* AddBreadCrumbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABA4551BFBE65A0094EC6A /* AddBreadCrumbViewController.swift */; };
 		9EABA4591BFBE65A0094EC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA4571BFBE65A0094EC6A /* Main.storyboard */; };
-		9EABA45B1BFBE65A0094EC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */; };
 		9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */; };
 		9ED2C45F1BFE9783008AC393 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2C45E1BFE9783008AC393 /* Utilities.swift */; };
 		9EE810131C010FE300DE1159 /* PushCrumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE810121C010FE300DE1159 /* PushCrumb.swift */; };
@@ -104,7 +102,6 @@
 		499731D010E4BF87B3CE7F13 /* Pods-breadCrumbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breadCrumbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-breadCrumbs/Pods-breadCrumbs.debug.xcconfig"; sourceTree = "<group>"; };
 		5770B87D734234A34B7B2B59 /* Pods_breadCrumbs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_breadCrumbs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F9387D1BFBEE47005DB677 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		87FDC8981C014CE500C63886 /* duck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = duck.jpg; path = ../../duck.jpg; sourceTree = "<group>"; };
 		9DF57BFC88E6D74F6033EC9B /* Pods-breadCrumbs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breadCrumbs.release.xcconfig"; path = "Pods/Target Support Files/Pods-breadCrumbs/Pods-breadCrumbs.release.xcconfig"; sourceTree = "<group>"; };
 		9E5764141BFFB6D000D12066 /* global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = global.swift; path = ../global.swift; sourceTree = "<group>"; };
 		9E799FE21BFE1DA8002232FD /* crumb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = crumb.swift; sourceTree = "<group>"; };
@@ -114,7 +111,6 @@
 		9EABA4531BFBE65A0094EC6A /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		9EABA4551BFBE65A0094EC6A /* AddBreadCrumbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBreadCrumbViewController.swift; sourceTree = "<group>"; };
 		9EABA4581BFBE65A0094EC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EABA45D1BFBE65A0094EC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EABA45F1BFBE65A0094EC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ED2C45E1BFE9783008AC393 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -189,14 +185,12 @@
 		9EABA4501BFBE65A0094EC6A /* breadCrumbs */ = {
 			isa = PBXGroup;
 			children = (
-				87FDC8981C014CE500C63886 /* duck.jpg */,
 				9E996ABE1C00E0690072B916 /* Alamofire.xcodeproj */,
 				9E5764141BFFB6D000D12066 /* global.swift */,
 				9EABA4511BFBE65A0094EC6A /* AppDelegate.swift */,
 				9EABA4531BFBE65A0094EC6A /* MainMapViewController.swift */,
 				9EABA4551BFBE65A0094EC6A /* AddBreadCrumbViewController.swift */,
 				9EABA4571BFBE65A0094EC6A /* Main.storyboard */,
-				9EABA45A1BFBE65A0094EC6A /* Assets.xcassets */,
 				9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */,
 				9EABA45F1BFBE65A0094EC6A /* Info.plist */,
 				9E799FE21BFE1DA8002232FD /* crumb.swift */,
@@ -334,8 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */,
-				9EABA45B1BFBE65A0094EC6A /* Assets.xcassets in Resources */,
-				87FDC8991C014CE500C63886 /* duck.jpg in Resources */,
 				9EABA4591BFBE65A0094EC6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

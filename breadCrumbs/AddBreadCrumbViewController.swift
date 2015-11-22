@@ -14,8 +14,6 @@ import MapKit
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,7 +47,6 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         
         crumb.saveToWeb()
         
-        //appDelegate.userSession.addCrumb(crumb)
         self.performSegueWithIdentifier("backToMainMap", sender: self)
     }
 
