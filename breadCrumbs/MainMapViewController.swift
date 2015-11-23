@@ -233,6 +233,13 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                 mapView.centerCoordinate = userLocation.location!.coordinate
             }
     }
+    
+    //Jen - login button logs out ADD CONNECTION
+//    @IBAction func userLogout(sender: AnyObject) {
+//        CrumbUser.logOut()
+//        dismissViewControllerAnimated(true, completion: {
+//        })
+//    }
 
 
 }

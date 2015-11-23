@@ -39,8 +39,10 @@ class RegistrationViewController: UIViewController {
         let enteredConfirmPassword = confirmPassword.text
         
         if enteredPassword != enteredConfirmPassword {
+            
             // pop error if confirm password doesn't match
             showSimpleAlertWithTitle("Registration Failed", message: "Check that your password and confirm password match", viewController: self)
+            
         } else {
             
             let registrationDetails : [String: Dictionary<String,String>] = [
@@ -56,17 +58,30 @@ class RegistrationViewController: UIViewController {
             
             func registerNewUser(parameters:[String:Dictionary<String,String>]) {
                 let newUserUrl = "https://gentle-fortress-2146.herokuapp.com/users"
-                Alamofire.request(.POST, newUserUrl, parameters: parameters)
+                Alamofire.request(.POST, newUserUrl, parameters: parameters).validate().responseJSON {
+                    response in
+
+                    switch response.result {
+                    case .Success:
+                        if let value = response.result.value {
+                            let json = JSON(value)
+
+                        }
+                        
+                        // if registration succeeds go back to login view
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                        
+                    case .Failure(let error):
+                        
+                        // if registration fails pop up an error
+                        showSimpleAlertWithTitle("Registration Failed", message: "Please try again", viewController: self)
+                    }
+                }
             }
             
             registerNewUser(registrationDetails)
             
-            // if registration fails pop up an error
-            showSimpleAlertWithTitle("Registration Failed", message: "Please try again", viewController: self)
-            
-            // else go to login view
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+            }
         
     }
     
