@@ -20,7 +20,6 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -67,8 +66,6 @@ class RegistrationViewController: UIViewController {
             
             // else go to login view
             self.dismissViewControllerAnimated(true, completion: nil)
-            
-            print("got here")
         }
         
     }
