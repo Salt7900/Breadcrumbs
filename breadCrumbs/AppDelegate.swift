@@ -17,6 +17,7 @@ let locationManager = CLLocationManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
         //JEN if no one has logged ininsert login view before tabbed view main controller by creating new storyboard object and assigning it to LoginVC
         
         if CrumbUser.retrieveLoginStatus() == "no" {
