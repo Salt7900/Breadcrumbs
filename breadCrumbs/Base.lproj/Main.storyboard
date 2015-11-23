@@ -70,12 +70,13 @@
                         <viewControllerLayoutGuide type="bottom" id="6e0-oy-uRP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YSv-c1-FZC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.047058823529411764" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="YF1-i5-227"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8z-z0-wjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
