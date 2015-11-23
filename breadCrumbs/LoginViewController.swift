@@ -74,6 +74,12 @@ class LoginViewController: UIViewController {
         
     }
 
+    //goes back to register view if not a member pressed
+    @IBAction func goToRegister(sender: AnyObject) {
+        self.performSegueWithIdentifier("goRegister", sender: self)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
