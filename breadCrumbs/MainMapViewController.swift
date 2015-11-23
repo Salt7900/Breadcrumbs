@@ -150,10 +150,10 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     //BEN Zoom in functionality
     @IBAction func zoomIn(sender: AnyObject) {
         let userLocation = mapView.userLocation
-        let region = MKCoordinateRegionMakeWithDistance(
-            userLocation.location!.coordinate, 2000, 2000)
+            let region = MKCoordinateRegionMakeWithDistance(
 
-        mapView.setRegion(region, animated: true)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     //Allow the annotations to display the delete button
@@ -218,7 +218,9 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     //Ben- Allow map to track location
     func mapView(mapView: MKMapView!, didUpdateUserLocation
         userLocation: MKUserLocation!){
-            mapView.centerCoordinate = userLocation.location!.coordinate
+            if (userLocation != nil){
+                mapView.centerCoordinate = userLocation.location!.coordinate
+            }
     }
 
 
