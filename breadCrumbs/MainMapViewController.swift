@@ -152,7 +152,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let userLocation = mapView.userLocation
         let region = MKCoordinateRegionMakeWithDistance(
             userLocation.location!.coordinate, 2000, 2000)
-
+        
         mapView.setRegion(region, animated: true)
     }
     
@@ -218,7 +218,9 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     //Ben- Allow map to track location
     func mapView(mapView: MKMapView!, didUpdateUserLocation
         userLocation: MKUserLocation!){
-            mapView.centerCoordinate = userLocation.location!.coordinate
+            if (userLocation != nil){
+                mapView.centerCoordinate = userLocation.location!.coordinate
+            }
     }
 
 
