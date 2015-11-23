@@ -451,7 +451,7 @@
         <!--Registration View Controller-->
         <scene sceneID="GEa-0d-9pf">
             <objects>
-                <viewController id="FEC-Qf-MT0" userLabel="Registration View Controller" sceneMemberID="viewController">
+                <viewController id="FEC-Qf-MT0" userLabel="Registration View Controller" customClass="RegistrationViewController" customModule="breadCrumbs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VEq-GP-ZRC"/>
                         <viewControllerLayoutGuide type="bottom" id="cfk-cd-dXF"/>
@@ -473,6 +473,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="FEC-Qf-MT0" eventType="touchUpInside" id="T4U-lZ-3y8"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lvZ-7q-Jtg">
                                 <rect key="frame" x="78" y="182" width="209" height="30"/>
@@ -498,6 +501,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYo-F6-BTT">
+                                <rect key="frame" x="81" y="403" width="203" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Already a Member? Go Login!">
+                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gotToLogin:" destination="FEC-Qf-MT0" eventType="touchUpInside" id="Xlk-bW-hBS"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZQ-bl-k7Y">
                                 <rect key="frame" x="78" y="230" width="209" height="30"/>
                                 <animations/>
@@ -509,6 +522,13 @@
                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="confirmPassword" destination="1sY-Rs-xPJ" id="a5c-dc-rKh"/>
+                        <outlet property="email" destination="lvZ-7q-Jtg" id="Qfk-eO-xk8"/>
+                        <outlet property="firstName" destination="z3j-Ef-6sr" id="mVy-SJ-2WR"/>
+                        <outlet property="lastName" destination="xre-1u-ZYB" id="2ez-bg-yf4"/>
+                        <outlet property="password" destination="hZQ-bl-k7Y" id="Hwv-Gk-nLm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFp-Sc-bcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
