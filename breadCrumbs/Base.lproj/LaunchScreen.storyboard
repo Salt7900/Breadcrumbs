@@ -39,20 +39,20 @@
                                 <rect key="frame" x="233" y="201" width="106" height="102"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="106" id="oTb-6W-FSf"/>
-                                    <constraint firstAttribute="height" constant="102" id="twS-DB-zD5"/>
+                                    <constraint firstAttribute="width" constant="106" id="DSS-2J-s2o"/>
+                                    <constraint firstAttribute="height" constant="102" id="c7C-Xn-JxL"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.047058823529411764" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="vqk-so-fO1" firstAttribute="centerX" secondItem="md3-Gm-D5S" secondAttribute="centerX" id="GIf-ef-3Sc"/>
+                            <constraint firstItem="md3-Gm-D5S" firstAttribute="top" secondItem="vqk-so-fO1" secondAttribute="bottom" constant="57" id="H7Q-tR-mAY"/>
                             <constraint firstItem="Pr3-l2-p7H" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="80" id="UIk-jY-ENn"/>
                             <constraint firstItem="md3-Gm-D5S" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="251" id="YxO-kK-Blh"/>
-                            <constraint firstItem="md3-Gm-D5S" firstAttribute="top" secondItem="vqk-so-fO1" secondAttribute="bottom" constant="57" id="bjl-PX-rTm"/>
                             <constraint firstItem="Pr3-l2-p7H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-14" id="cI3-B2-koL"/>
-                            <constraint firstItem="vqk-so-fO1" firstAttribute="top" secondItem="Pr3-l2-p7H" secondAttribute="bottom" constant="35" id="fbv-V6-Ofw"/>
-                            <constraint firstItem="vqk-so-fO1" firstAttribute="centerX" secondItem="md3-Gm-D5S" secondAttribute="centerX" id="qd8-1u-Yhq"/>
+                            <constraint firstItem="vqk-so-fO1" firstAttribute="top" secondItem="Pr3-l2-p7H" secondAttribute="bottom" constant="35" id="lSo-LM-z7e"/>
                         </constraints>
                     </view>
                 </viewController>
