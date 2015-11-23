@@ -17,7 +17,9 @@ let locationManager = CLLocationManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
+        //BEN Status bar defaults to white
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+
         //JEN if no one has logged ininsert login view before tabbed view main controller by creating new storyboard object and assigning it to LoginVC
         
         if CrumbUser.retrieveLoginStatus() == "no" {
