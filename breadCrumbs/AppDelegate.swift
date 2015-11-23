@@ -79,6 +79,7 @@ let locationManager = CLLocationManager()
     func notefromRegionIdentifier(identifier: String) -> String? {
             for savedItem in everySingleCrumb {
                     if savedItem.identity == identifier {
+                        latestCrumb.append(savedItem.identity!)
                         return savedItem.subtitle
                     }
             }

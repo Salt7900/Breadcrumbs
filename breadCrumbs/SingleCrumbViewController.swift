@@ -14,11 +14,22 @@ import MapKit
 class SingleCrumbViewController: UIViewController {
     
     override func viewDidLoad() {
-        
+        findLastCrumb()
     }
     
     @IBOutlet weak var messagePicture: UIImageView!
     @IBOutlet weak var messageFrom: UILabel!
     @IBOutlet weak var messageField: UILabel!
+    
+    func findLastCrumb() -> RetrievedCrumb{
+        var crumbIdentity = latestCrumb.last
+        for savedItem in everySingleCrumb {
+            if savedItem.identity == crumbIdentity {
+                return savedItem
+            }
+        }
+        //Could still return empty - need better solution -BEN
+        return everySingleCrumb.last!
+    }
 
 }
