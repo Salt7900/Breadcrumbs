@@ -9,11 +9,27 @@
 import UIKit
 
 class NavigationViewController: UIViewController {
+    
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+
+    
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let loggedIn = userDefaults.valueForKey("loggedin") as? String
+        
+        if (loggedIn == "no" || loggedIn == nil) {
+            self.performSegueWithIdentifier("goLogin", sender: self)
+        } else if loggedIn == "yes" {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            self.performSegueWithIdentifier("goLogin", sender: self)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

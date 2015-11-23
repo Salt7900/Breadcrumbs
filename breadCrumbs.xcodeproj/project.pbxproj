@@ -11,6 +11,7 @@
 		8761E2D61C035F0500F9D2C8 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8761E2D51C035F0500F9D2C8 /* NavigationViewController.swift */; };
 		8761E2D81C03629200F9D2C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8761E2D71C03629200F9D2C8 /* LoginViewController.swift */; };
 		8761E2DA1C0365E600F9D2C8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8761E2D91C0365E600F9D2C8 /* RegistrationViewController.swift */; };
+		8761E2DC1C036F8100F9D2C8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8761E2DB1C036F8100F9D2C8 /* UserModel.swift */; };
 		87F9387E1BFBEE47005DB677 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F9387D1BFBEE47005DB677 /* MapKit.framework */; };
 		9E5764151BFFB6D000D12066 /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5764141BFFB6D000D12066 /* global.swift */; };
 		9E799FE31BFE1DA8002232FD /* crumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E799FE21BFE1DA8002232FD /* crumb.swift */; };
@@ -109,6 +110,7 @@
 		8761E2D51C035F0500F9D2C8 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		8761E2D71C03629200F9D2C8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8761E2D91C0365E600F9D2C8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		8761E2DB1C036F8100F9D2C8 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		87F9387D1BFBEE47005DB677 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9DF57BFC88E6D74F6033EC9B /* Pods-breadCrumbs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breadCrumbs.release.xcconfig"; path = "Pods/Target Support Files/Pods-breadCrumbs/Pods-breadCrumbs.release.xcconfig"; sourceTree = "<group>"; };
 		9E5764141BFFB6D000D12066 /* global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = global.swift; path = ../global.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				9E996ABE1C00E0690072B916 /* Alamofire.xcodeproj */,
 				9E5764141BFFB6D000D12066 /* global.swift */,
+				8761E2DB1C036F8100F9D2C8 /* UserModel.swift */,
 				9EABA4511BFBE65A0094EC6A /* AppDelegate.swift */,
 				9EABA4531BFBE65A0094EC6A /* MainMapViewController.swift */,
 				9EABA4551BFBE65A0094EC6A /* AddBreadCrumbViewController.swift */,
@@ -411,6 +414,7 @@
 				9E5764151BFFB6D000D12066 /* global.swift in Sources */,
 				9EABA4541BFBE65A0094EC6A /* MainMapViewController.swift in Sources */,
 				8761E2D81C03629200F9D2C8 /* LoginViewController.swift in Sources */,
+				8761E2DC1C036F8100F9D2C8 /* UserModel.swift in Sources */,
 				9E799FE31BFE1DA8002232FD /* crumb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
