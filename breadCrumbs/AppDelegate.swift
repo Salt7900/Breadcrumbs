@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 var window: UIWindow?
 
 let locationManager = CLLocationManager()
+    
+let defaults = NSUserDefaults.standardUserDefaults()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -68,6 +70,7 @@ let locationManager = CLLocationManager()
             let notification = UILocalNotification()
             notification.alertBody = notefromRegionIdentifier(region.identifier)
             notification.soundName = "Default";
+            defaults.setObject(notification, forKey: "notification")
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         }
     }

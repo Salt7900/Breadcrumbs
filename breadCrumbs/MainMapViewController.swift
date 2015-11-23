@@ -15,6 +15,8 @@ import CoreLocation
 var everySingleCrumb = [RetrievedCrumb]()
 var newCrumbs = [Crumb]()
 var latestCrumb = [RetrievedCrumb]()
+let defaults = NSUserDefaults.standardUserDefaults()
+
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -32,6 +34,9 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
         pullCrumbs("trump@email.com")
+        if defaults.objectForKey("notification") != nil {
+            self.performSegueWithIdentifier("viewCrumb", sender: self)
+        }
     }
 
     override func viewDidAppear(animated: Bool) {
