@@ -72,6 +72,12 @@
                     <view key="view" contentMode="scaleToFill" id="YSv-c1-FZC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Icon-72" translatesAutoresizingMaskIntoConstraints="NO" id="VtI-fg-kal">
+                                <rect key="frame" x="151" y="429" width="72" height="72"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.047058823529411764" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -620,6 +626,7 @@
     </scenes>
     <resources>
         <image name="Bread Filled-32" width="32" height="32"/>
+        <image name="Icon-72" width="72" height="72"/>
         <image name="Icon-Small-50" width="50" height="50"/>
         <image name="Near Me Filled-32" width="32" height="32"/>
         <image name="Settings" width="32" height="32"/>
