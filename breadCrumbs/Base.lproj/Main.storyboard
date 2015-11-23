@@ -49,34 +49,19 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nul-R4-jbm">
-                                <rect key="frame" x="522" y="35" width="59" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="59" id="VEY-OU-nMc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nSV-2j-ClX" firstAttribute="top" secondItem="5yk-MN-Kq8" secondAttribute="bottom" constant="8" symbolic="YES" id="4w8-6D-v0N"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="6Fy-qB-yc5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nul-R4-jbm" secondAttribute="trailing" constant="-1" id="6JP-bM-mT1"/>
-                            <constraint firstItem="nul-R4-jbm" firstAttribute="baseline" secondItem="5yk-MN-Kq8" secondAttribute="firstBaseline" id="P7p-5Y-jcK"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="nSV-2j-ClX" secondAttribute="centerX" id="RTh-Ju-Boi"/>
                             <constraint firstItem="5yk-MN-Kq8" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="12" id="TqP-Op-C3I"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="YKs-rQ-CWl"/>
-                            <constraint firstItem="nul-R4-jbm" firstAttribute="firstBaseline" secondItem="5yk-MN-Kq8" secondAttribute="baseline" id="a97-wx-mk2"/>
                             <constraint firstItem="5yk-MN-Kq8" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="15" id="aaT-oQ-VUI"/>
                             <constraint firstItem="nSV-2j-ClX" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="11" id="aqx-EX-wHI"/>
                             <constraint firstItem="nSV-2j-ClX" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="fUa-kR-qpz"/>
                             <constraint firstItem="nSV-2j-ClX" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="hFD-dr-HQt"/>
-                            <constraint firstItem="nul-R4-jbm" firstAttribute="top" secondItem="5yk-MN-Kq8" secondAttribute="top" id="uGM-KD-wST"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main Map" image="Near Me Filled-32" id="acW-dT-cKf" userLabel="Main Map"/>
