@@ -14,6 +14,11 @@ import MapKit
 class SingleCrumbViewController: UIViewController {
     
     override func viewDidLoad() {
+        //var currentCrumb = findLastCrumb()
+        //setPageData(currentCrumb)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         var currentCrumb = findLastCrumb()
         setPageData(currentCrumb)
     }
