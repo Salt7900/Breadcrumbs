@@ -347,12 +347,17 @@
                                 <rect key="frame" x="12" y="464" width="351" height="128"/>
                                 <animations/>
                             </mapView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="addPin" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-Z0-nvG">
+                                <rect key="frame" x="150" y="490" width="75" height="75"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.047058823529411764" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0Sx-jL-4f7" firstAttribute="baseline" secondItem="B1Q-o7-LtC" secondAttribute="firstBaseline" id="5Zm-bp-bqT"/>
                             <constraint firstItem="0Sx-jL-4f7" firstAttribute="firstBaseline" secondItem="B1Q-o7-LtC" secondAttribute="baseline" id="EYd-Vf-tA3"/>
+                            <constraint firstItem="qEW-Z0-nvG" firstAttribute="centerX" secondItem="jXH-mh-dk7" secondAttribute="centerX" id="Kvx-EG-oGb"/>
                             <constraint firstItem="0Sx-jL-4f7" firstAttribute="top" secondItem="B1Q-o7-LtC" secondAttribute="top" id="LeW-Fy-6QI"/>
                             <constraint firstItem="rkp-PB-LG2" firstAttribute="leading" secondItem="6iY-oS-Ia5" secondAttribute="leadingMargin" constant="-4" id="M57-aZ-JMK"/>
                             <constraint firstItem="LDy-FX-bzo" firstAttribute="leading" secondItem="rkp-PB-LG2" secondAttribute="leading" id="O8C-lE-lTp"/>
@@ -363,6 +368,7 @@
                             <constraint firstItem="czc-aH-goR" firstAttribute="top" secondItem="LDy-FX-bzo" secondAttribute="bottom" constant="162" id="cLr-9x-Uwx"/>
                             <constraint firstItem="olb-NX-OhN" firstAttribute="centerX" secondItem="rkp-PB-LG2" secondAttribute="centerX" id="d4t-f9-3oE"/>
                             <constraint firstItem="LDy-FX-bzo" firstAttribute="top" secondItem="rkp-PB-LG2" secondAttribute="bottom" constant="8" id="dN4-uQ-sXg"/>
+                            <constraint firstItem="qEW-Z0-nvG" firstAttribute="centerY" secondItem="jXH-mh-dk7" secondAttribute="centerY" id="dwp-2w-Sz6"/>
                             <constraint firstItem="B1Q-o7-LtC" firstAttribute="top" secondItem="LDy-FX-bzo" secondAttribute="bottom" constant="161" id="fbt-Y3-0mb"/>
                             <constraint firstAttribute="bottom" secondItem="B1Q-o7-LtC" secondAttribute="bottom" constant="20" symbolic="YES" id="glY-zR-hE9"/>
                             <constraint firstItem="0Sx-jL-4f7" firstAttribute="leading" secondItem="6iY-oS-Ia5" secondAttribute="leadingMargin" constant="-4" id="gwc-66-JIc"/>
