@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
 //                    let sessionUser = CrumbUser(firstName: "jane", lastName: "smith", email: sentUsername)
 //                    sessionUser.setUserDefaults()
                     
-                    //send them to main tab bar view controller
+                    //send logged in user to main tabbar controller
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let tabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
                     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

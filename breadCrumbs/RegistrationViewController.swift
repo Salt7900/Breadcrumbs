@@ -72,7 +72,7 @@ class RegistrationViewController: UIViewController {
     
     //goes back to login view if already a member pressed
     @IBAction func gotToLogin(sender: AnyObject) {
-        self.performSegueWithIdentifier("goLogin", sender: self)
+        self.dismissViewControllerAnimated(true, completion: {})
     }
 
     

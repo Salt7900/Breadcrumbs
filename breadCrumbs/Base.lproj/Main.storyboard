@@ -443,6 +443,7 @@
                                 <connections>
                                     <action selector="goToRegister:" destination="flD-5c-aYd" eventType="touchUpInside" id="sUu-Zk-GcA"/>
                                     <action selector="gotToLogin:" destination="FEC-Qf-MT0" eventType="touchUpInside" id="wyK-De-BU8"/>
+                                    <segue destination="FEC-Qf-MT0" kind="show" identifier="goRegister" id="HIU-Kq-WFl"/>
                                 </connections>
                             </button>
                         </subviews>
