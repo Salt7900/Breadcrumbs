@@ -128,10 +128,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         self.mapView.addOverlay(circle)
     }
 
-//    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
-//        var crumb = view.annotation as? Crumb
-//        stopMonitoringGeolocation(crumb!)
-//    }
 
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer!{
         if overlay is MKCircle{
