@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8761E2CE1C035A8800F9D2C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8761E2CD1C035A8800F9D2C8 /* Assets.xcassets */; };
+		8761E2D61C035F0500F9D2C8 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8761E2D51C035F0500F9D2C8 /* NavigationViewController.swift */; };
+		8761E2D81C03629200F9D2C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8761E2D71C03629200F9D2C8 /* LoginViewController.swift */; };
+		8761E2DA1C0365E600F9D2C8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8761E2D91C0365E600F9D2C8 /* RegistrationViewController.swift */; };
+		8761E2DC1C036F8100F9D2C8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8761E2DB1C036F8100F9D2C8 /* UserModel.swift */; };
 		87F9387E1BFBEE47005DB677 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F9387D1BFBEE47005DB677 /* MapKit.framework */; };
 		9E5764151BFFB6D000D12066 /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5764141BFFB6D000D12066 /* global.swift */; };
 		9E799FE31BFE1DA8002232FD /* crumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E799FE21BFE1DA8002232FD /* crumb.swift */; };
@@ -21,7 +26,6 @@
 		9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */; };
 		9ED2C45F1BFE9783008AC393 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2C45E1BFE9783008AC393 /* Utilities.swift */; };
 		9EE810131C010FE300DE1159 /* PushCrumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE810121C010FE300DE1159 /* PushCrumb.swift */; };
-		9EED99A21C02681900F419C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EED99A11C02681900F419C6 /* Assets.xcassets */; };
 		9EFE50221C026754004C5791 /* SingleCrumbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFE50211C026754004C5791 /* SingleCrumbViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +106,11 @@
 /* Begin PBXFileReference section */
 		499731D010E4BF87B3CE7F13 /* Pods-breadCrumbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breadCrumbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-breadCrumbs/Pods-breadCrumbs.debug.xcconfig"; sourceTree = "<group>"; };
 		5770B87D734234A34B7B2B59 /* Pods_breadCrumbs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_breadCrumbs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8761E2CD1C035A8800F9D2C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8761E2D51C035F0500F9D2C8 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		8761E2D71C03629200F9D2C8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8761E2D91C0365E600F9D2C8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		8761E2DB1C036F8100F9D2C8 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		87F9387D1BFBEE47005DB677 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9DF57BFC88E6D74F6033EC9B /* Pods-breadCrumbs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breadCrumbs.release.xcconfig"; path = "Pods/Target Support Files/Pods-breadCrumbs/Pods-breadCrumbs.release.xcconfig"; sourceTree = "<group>"; };
 		9E5764141BFFB6D000D12066 /* global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = global.swift; path = ../global.swift; sourceTree = "<group>"; };
@@ -116,7 +125,6 @@
 		9EABA45F1BFBE65A0094EC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ED2C45E1BFE9783008AC393 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		9EE810121C010FE300DE1159 /* PushCrumb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushCrumb.swift; sourceTree = "<group>"; };
-		9EED99A11C02681900F419C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../breadcrumbsAll/breadCrumbs FRIDAY PM Copy/breadCrumbs/Assets.xcassets"; sourceTree = "<group>"; };
 		9EFE50211C026754004C5791 /* SingleCrumbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleCrumbViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,13 +195,17 @@
 		9EABA4501BFBE65A0094EC6A /* breadCrumbs */ = {
 			isa = PBXGroup;
 			children = (
-				9EED99A11C02681900F419C6 /* Assets.xcassets */,
 				9E996ABE1C00E0690072B916 /* Alamofire.xcodeproj */,
 				9E5764141BFFB6D000D12066 /* global.swift */,
+				8761E2DB1C036F8100F9D2C8 /* UserModel.swift */,
 				9EABA4511BFBE65A0094EC6A /* AppDelegate.swift */,
 				9EABA4531BFBE65A0094EC6A /* MainMapViewController.swift */,
 				9EABA4551BFBE65A0094EC6A /* AddBreadCrumbViewController.swift */,
 				9EABA4571BFBE65A0094EC6A /* Main.storyboard */,
+				8761E2D91C0365E600F9D2C8 /* RegistrationViewController.swift */,
+				8761E2D71C03629200F9D2C8 /* LoginViewController.swift */,
+				8761E2D51C035F0500F9D2C8 /* NavigationViewController.swift */,
+				8761E2CD1C035A8800F9D2C8 /* Assets.xcassets */,
 				9EFE50211C026754004C5791 /* SingleCrumbViewController.swift */,
 				9EABA45C1BFBE65A0094EC6A /* LaunchScreen.storyboard */,
 				9EABA45F1BFBE65A0094EC6A /* Info.plist */,
@@ -332,7 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EABA45E1BFBE65A0094EC6A /* LaunchScreen.storyboard in Resources */,
-				9EED99A21C02681900F419C6 /* Assets.xcassets in Resources */,
+				8761E2CE1C035A8800F9D2C8 /* Assets.xcassets in Resources */,
 				9EABA4591BFBE65A0094EC6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,10 +407,14 @@
 				9EE810131C010FE300DE1159 /* PushCrumb.swift in Sources */,
 				9EABA4561BFBE65A0094EC6A /* AddBreadCrumbViewController.swift in Sources */,
 				9EABA4521BFBE65A0094EC6A /* AppDelegate.swift in Sources */,
+				8761E2DA1C0365E600F9D2C8 /* RegistrationViewController.swift in Sources */,
+				8761E2D61C035F0500F9D2C8 /* NavigationViewController.swift in Sources */,
 				9ED2C45F1BFE9783008AC393 /* Utilities.swift in Sources */,
 				9EFE50221C026754004C5791 /* SingleCrumbViewController.swift in Sources */,
 				9E5764151BFFB6D000D12066 /* global.swift in Sources */,
 				9EABA4541BFBE65A0094EC6A /* MainMapViewController.swift in Sources */,
+				8761E2D81C03629200F9D2C8 /* LoginViewController.swift in Sources */,
+				8761E2DC1C036F8100F9D2C8 /* UserModel.swift in Sources */,
 				9E799FE31BFE1DA8002232FD /* crumb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
