@@ -226,13 +226,13 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         }
     }
 
-    //Ben- Allow map to track location
-    func mapView(mapView: MKMapView!, didUpdateUserLocation
-        userLocation: MKUserLocation!){
-            if (userLocation != nil){
-                mapView.centerCoordinate = userLocation.location!.coordinate
-            }
-    }
+//    //Ben- Allow map to track location
+//    func mapView(mapView: MKMapView!, didUpdateUserLocation
+//        userLocation: MKUserLocation!){
+//            if (userLocation != nil){
+//                mapView.centerCoordinate = userLocation.location!.coordinate
+//            }
+//    }
     
     //Jen - login button logs out ADD CONNECTION
 //    @IBAction func userLogout(sender: AnyObject) {
