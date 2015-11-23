@@ -66,8 +66,9 @@ class LoginViewController: UIViewController {
             case .Failure(let error):
                 print(error)
                 NSUserDefaults.standardUserDefaults().setObject("no", forKey: "loggedin")
-                
                 //pop error message
+                showSimpleAlertWithTitle("Login Failed", message: "Please try again", viewController: self)
+
             }
             
         }

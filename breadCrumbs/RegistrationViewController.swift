@@ -40,7 +40,8 @@ class RegistrationViewController: UIViewController {
         let enteredConfirmPassword = confirmPassword.text
         
         if enteredPassword != enteredConfirmPassword {
-            //pop error alert
+            // pop error if confirm password doesn't match
+            showSimpleAlertWithTitle("Registration Failed", message: "Check that your password and confirm password match", viewController: self)
         } else {
             
             let registrationDetails : [String: Dictionary<String,String>] = [
@@ -61,7 +62,9 @@ class RegistrationViewController: UIViewController {
             
             registerNewUser(registrationDetails)
             
-            // if fails pop up an error
+            // if registration fails pop up an error
+            showSimpleAlertWithTitle("Registration Failed", message: "Please try again", viewController: self)
+            
             // else go to login view
             self.dismissViewControllerAnimated(true, completion: nil)
             
