@@ -20,7 +20,6 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -40,7 +39,8 @@ class RegistrationViewController: UIViewController {
         let enteredConfirmPassword = confirmPassword.text
         
         if enteredPassword != enteredConfirmPassword {
-            //pop error alert
+            // pop error if confirm password doesn't match
+            showSimpleAlertWithTitle("Registration Failed", message: "Check that your password and confirm password match", viewController: self)
         } else {
             
             let registrationDetails : [String: Dictionary<String,String>] = [
@@ -61,18 +61,18 @@ class RegistrationViewController: UIViewController {
             
             registerNewUser(registrationDetails)
             
-            // if fails pop up an error
+            // if registration fails pop up an error
+            showSimpleAlertWithTitle("Registration Failed", message: "Please try again", viewController: self)
+            
             // else go to login view
             self.dismissViewControllerAnimated(true, completion: nil)
-            
-            print("got here")
         }
         
     }
     
     //goes back to login view if already a member pressed
     @IBAction func gotToLogin(sender: AnyObject) {
-        self.performSegueWithIdentifier("goLogin", sender: self)
+        self.dismissViewControllerAnimated(true, completion: {})
     }
 
     

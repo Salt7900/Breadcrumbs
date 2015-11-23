@@ -16,6 +16,15 @@ var window: UIWindow?
 let locationManager = CLLocationManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        //JEN insert login view before tabbed view main controller by creating new storyboard object and assigning it to LoginVC
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
+        self.window?.rootViewController = loginVC
+        
+        //BEN map and notifications
+        
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
 
