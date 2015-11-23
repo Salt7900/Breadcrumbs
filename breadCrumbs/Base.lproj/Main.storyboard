@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="689" y="314"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="ek9-bM-qRc">
             <objects>
-                <viewController id="0eU-C1-t8K" sceneMemberID="viewController">
+                <viewController id="0eU-C1-t8K" customClass="SettingsViewController" customModule="breadCrumbs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iYt-a5-zhA"/>
                         <viewControllerLayoutGuide type="bottom" id="6e0-oy-uRP"/>
@@ -75,7 +75,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="YF1-i5-227"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="YF1-i5-227"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8z-z0-wjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -621,6 +621,7 @@
         <image name="Bread Filled-32" width="32" height="32"/>
         <image name="Icon-Small-50" width="50" height="50"/>
         <image name="Near Me Filled-32" width="32" height="32"/>
+        <image name="Settings" width="32" height="32"/>
         <image name="Star" width="32" height="32"/>
         <image name="add-photo-icon" width="300" height="300"/>
         <image name="addPin" width="75" height="75"/>
