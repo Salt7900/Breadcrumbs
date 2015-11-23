@@ -38,12 +38,14 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         self.mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
-        everySingleCrumb = [RetrievedCrumb]()
-        pullCrumbs(userEmail)
+        //everySingleCrumb = [RetrievedCrumb]()
+        //pullCrumbs(userEmail)
     }
 
     override func viewDidAppear(animated: Bool) {
+        let userEmail = userDefaults.objectForKey("email") as! String
         stopMonitoringAll()
+        pullCrumbs(userEmail)
         if newCrumbs.count != 0{
             convertCrumbToRetrivedCrumb(newCrumbs[0])
         }
