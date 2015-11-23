@@ -17,7 +17,7 @@ let locationManager = CLLocationManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        //JEN insert login view before main story board view
+        //JEN insert login view before tabbed view main controller by creating new storyboard object and assigning it to LoginVC
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginVC = storyboard.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
