@@ -48,9 +48,8 @@ class SingleCrumbViewController: UIViewController {
     
     //Retirive and display photo - BEN
     func setPagePhoto(crumb: RetrievedCrumb){
-        ImageLoader.sharedLoader.imageForUrl(crumb.imageURL, completionHandler:{(image: UIImage?, url: String) in
-            self.messagePicture.image = image!
-        })
+        messagePicture.imageFromUrl(crumb.imageURL!)
+    
     }
 
 }

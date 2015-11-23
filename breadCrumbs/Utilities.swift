@@ -19,20 +19,17 @@ func showSimpleAlertWithTitle(title: String!, message: String, viewController: U
 }
 
 
-//Used to fetch image Asynchronously BEN
-//func downloadImage(url: NSURL){
-//    print("Started downloading \"\(url.URLByDeletingPathExtension!.lastPathComponent!)\".")
-//    getDataFromUrl(url) { (data, response, error)  in
-//        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//            guard let data = data where error == nil else { return }
-//            print("Finished downloading \"\(url.URLByDeletingPathExtension!.lastPathComponent!)\".")
-//            imageURL.image = UIImage(data: data)
-//        }
-//    }
-//}
-//
-//func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
-//    NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-//        completion(data: data, response: response, error: error)
-//        }.resume()
-//}
+//Used to download photo 
+extension UIImageView {
+    public func imageFromUrl(urlString: String) {
+        if let url = NSURL(string: urlString) {
+            let request = NSURLRequest(URL: url)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                if let imageData = data as NSData? {
+                    self.image = UIImage(data: imageData)
+                }
+            }
+        }
+    }
+}
