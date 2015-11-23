@@ -87,7 +87,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBAction func takePicture(sender: UIButton) {
         if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
             if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
-                imagePicker.allowsEditing = false
+                imagePicker.allowsEditing = true
                 imagePicker.sourceType = .Camera
                 imagePicker.cameraCaptureMode = .Photo
                 presentViewController(imagePicker, animated: true, completion: {})
@@ -109,7 +109,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             })
         }
 
-        if let pickedImage: UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
+        if let pickedImage: UIImage = (info[UIImagePickerControllerEditedImage]) as? UIImage {
             //saves image to user's camera roll
             UIImageWriteToSavedPhotosAlbum(pickedImage, nil, nil, nil)
             displayImage(pickedImage)
@@ -130,7 +130,9 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
                 print("Displaying")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
-                self.currentImage.image = image
+                let rotatedImage = fixImageOrientation(image)
+                    
+                self.currentImage.image = rotatedImage
                 self.photoButton.setTitle("Change Photo", forState: .Normal)
                 })
             }
