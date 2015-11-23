@@ -78,10 +78,11 @@ class RetrievedCrumb: NSObject, MKAnnotation {
     var subtitle: String?
     var identity: String?
     var imageURL: String?
+    var creatorEmail: String
 
 
     //JEN: add UIImage in init to convert to string object when sent to server for paperclip/S3, and imageURL as setter property for setting S3 URL on crumb load from server
-    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, imageURL: String){
+    init(lat: Double, long: Double, identifier: String, title: String, subtitle: String, imageURL: String, creatorEmail: String){
         self.radius = 50 as CLLocationDistance;
         self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long);
         self.latitude = lat;
@@ -90,5 +91,6 @@ class RetrievedCrumb: NSObject, MKAnnotation {
         self.title = title;
         self.subtitle = subtitle;
         self.imageURL = imageURL;
+        self.creatorEmail = creatorEmail
     }
 }

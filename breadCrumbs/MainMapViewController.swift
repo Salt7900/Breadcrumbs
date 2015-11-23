@@ -60,7 +60,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                             let title : String = crumb["title"]!.stringValue
                             let subtitle : String = crumb["subtitle"]!.stringValue
                             let imageURL : String = crumb["photo_aws_url"]!.stringValue
-                            let retrievedCrumb = RetrievedCrumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle, imageURL: imageURL)
+                            let creatorEmail : String = crumb["creator_email"]!.stringValue
+                            let retrievedCrumb = RetrievedCrumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle, imageURL: imageURL, creatorEmail: creatorEmail)
                             counter += 1
                             
                             self.addCrumbs(retrievedCrumb)
@@ -75,7 +76,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
     
     func convertCrumbToRetrivedCrumb(crumb: Crumb){
-       let newCrumb = RetrievedCrumb(lat: crumb.latitude, long: crumb.longitude, identifier: crumb.identity!, title: crumb.title!, subtitle: crumb.subtitle!, imageURL: crumb.imageString!)
+       let newCrumb = RetrievedCrumb(lat: crumb.latitude, long: crumb.longitude, identifier: crumb.identity!, title: crumb.title!, subtitle: crumb.subtitle!, imageURL: crumb.imageString!, creatorEmail: "crazy@email.com")
         
         self.addCrumbs(newCrumb)
         everySingleCrumb.append(newCrumb)

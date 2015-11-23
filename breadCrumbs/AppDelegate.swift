@@ -15,7 +15,6 @@ var window: UIWindow?
 
 let locationManager = CLLocationManager()
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
