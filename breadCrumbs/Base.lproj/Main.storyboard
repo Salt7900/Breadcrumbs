@@ -100,6 +100,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="enter your message" textAlignment="justified" minimumFontSize="15" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N1O-v1-kPh" userLabel="Enter Message Field">
+                                <rect key="frame" x="20" y="398" width="177" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.89411764705882346" green="0.92156862745098034" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="242" width="168" height="284"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="290" width="374" height="300"/>
+                                </variation>
+                                <connections>
+                                    <action selector="userMessage:" destination="8rJ-Kc-sve" eventType="editingDidEndOnExit" id="4pz-0c-Qbd"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4Z-E4-HrN">
+                                <rect key="frame" x="9" y="52" width="25" height="22"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="5yo-Jd-PIW"/>
+                                </constraints>
+                                <state key="normal" image="findLocation">
+                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="36" y="20" width="40" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="35" y="50" width="40" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="zoomIn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="OKu-9c-nZn"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="246" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Ad-SG-Cx9">
+                                <rect key="frame" x="0.0" y="46" width="375" height="305"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="315" id="7lf-3N-CY5"/>
+                                </constraints>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="36" y="51" width="344" height="175"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="78" width="374" height="204"/>
+                                </variation>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter recipient email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-f1-b94">
+                                <rect key="frame" x="20" y="359" width="335" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.86073407842454197" green="0.88760737159404923" blue="0.96439790575916229" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxp-lH-gID" userLabel="Add Photo Button">
+                                <rect key="frame" x="205" y="550" width="150" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Add a Photo">
+                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ONT-oL-DVl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mB-ov-OBO">
+                                <rect key="frame" x="0.0" y="0.0" width="131" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Save breadCrumb">
+                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveCrumb:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="e17-BV-k5O"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="add-photo-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-0V-w5m">
+                                <rect key="frame" x="205" y="398" width="150" height="150"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="dCp-wy-ioM"/>
+                                </constraints>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="196" y="242" width="197" height="216"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" preservesSuperviewLayoutMargins="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="New breadCrumb" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5" userLabel="Add BreadCrumb Title">
                                 <rect key="frame" x="20" y="20" width="335" height="24"/>
                                 <animations/>
@@ -138,97 +229,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="add-photo-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-0V-w5m">
-                                <rect key="frame" x="205" y="398" width="150" height="150"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="dCp-wy-ioM"/>
-                                </constraints>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="196" y="242" width="197" height="216"/>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=compact" preservesSuperviewLayoutMargins="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mB-ov-OBO">
-                                <rect key="frame" x="0.0" y="0.0" width="131" height="32"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Save breadCrumb">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveCrumb:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="e17-BV-k5O"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxp-lH-gID" userLabel="Add Photo Button">
-                                <rect key="frame" x="205" y="550" width="150" height="32"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Add a Photo">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePicture:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ONT-oL-DVl"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter recipient email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-f1-b94">
-                                <rect key="frame" x="20" y="359" width="335" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.86073407842454197" green="0.88760737159404923" blue="0.96439790575916229" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="246" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Ad-SG-Cx9">
-                                <rect key="frame" x="0.0" y="46" width="375" height="305"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="315" id="7lf-3N-CY5"/>
-                                </constraints>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="36" y="51" width="344" height="175"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="78" width="374" height="204"/>
-                                </variation>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4Z-E4-HrN">
-                                <rect key="frame" x="9" y="52" width="25" height="22"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="5yo-Jd-PIW"/>
-                                </constraints>
-                                <state key="normal" image="findLocation">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="36" y="20" width="40" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="35" y="50" width="40" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="zoomIn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="OKu-9c-nZn"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="enter your message" textAlignment="justified" minimumFontSize="15" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N1O-v1-kPh" userLabel="Enter Message Field">
-                                <rect key="frame" x="20" y="398" width="177" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.89411764705882346" green="0.92156862745098034" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="242" width="168" height="284"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="290" width="374" height="300"/>
-                                </variation>
-                                <connections>
-                                    <action selector="userMessage:" destination="8rJ-Kc-sve" eventType="editingDidEndOnExit" id="4pz-0c-Qbd"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.046046257167766898" green="0.0" blue="0.19895287958115182" alpha="1" colorSpace="calibratedRGB"/>
