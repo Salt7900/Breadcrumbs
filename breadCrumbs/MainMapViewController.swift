@@ -33,10 +33,10 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         self.mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
-        pullCrumbs("trump@email.com")
-        if defaults.objectForKey("notification") != nil {
-            self.performSegueWithIdentifier("viewCrumb", sender: self)
-        }
+        pullCrumbs("crazy@email.com")
+//        if defaults.objectForKey("notification") != nil {
+//            self.performSegueWithIdentifier("viewCrumb", sender: self)
+//        }
     }
 
     override func viewDidAppear(animated: Bool) {

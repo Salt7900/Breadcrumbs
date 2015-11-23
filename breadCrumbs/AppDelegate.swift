@@ -70,7 +70,7 @@ let defaults = NSUserDefaults.standardUserDefaults()
             let notification = UILocalNotification()
             notification.alertBody = notefromRegionIdentifier(region.identifier)
             notification.soundName = "Default";
-            defaults.setObject(notification, forKey: "notification")
+            // defaults.setObject(notification, forKey: "notification")
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         }
     }
@@ -82,7 +82,6 @@ let defaults = NSUserDefaults.standardUserDefaults()
     func notefromRegionIdentifier(identifier: String) -> String? {
             for savedItem in everySingleCrumb {
                     if savedItem.identity == identifier {
-                        latestCrumb[0] = savedItem
                         return savedItem.subtitle
                     }
             }
