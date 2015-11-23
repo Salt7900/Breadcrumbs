@@ -14,7 +14,8 @@ import MapKit
 class SingleCrumbViewController: UIViewController {
     
     override func viewDidLoad() {
-        findLastCrumb()
+        var currentCrumb = findLastCrumb()
+        setPageData(currentCrumb)
     }
     
     @IBOutlet weak var messagePicture: UIImageView!
@@ -28,8 +29,13 @@ class SingleCrumbViewController: UIViewController {
                 return savedItem
             }
         }
-        //Could still return empty - need better solution -BEN
-        return everySingleCrumb.last!
+        var dummyCrumb = RetrievedCrumb(lat: 41.88790, long: -87.6375, identifier: "HELLO", title: "Your Message", subtitle: "Hello to your world, coders", imageURL: "https://pbs.twimg.com/profile_images/634740140003295234/bpnVhq8Z.jpg")
+        return dummyCrumb
+    }
+    
+    func setPageData(crumb: RetrievedCrumb){
+        self.messageFrom.text = crumb.title
+        self.messageField.text = crumb.subtitle
     }
 
 }
