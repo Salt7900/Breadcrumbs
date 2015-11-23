@@ -172,7 +172,7 @@
                                     <action selector="takePicture:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ONT-oL-DVl"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter recipient email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-f1-b94">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter recipient email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-f1-b94">
                                 <rect key="frame" x="20" y="359" width="335" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.86073407842454197" green="0.88760737159404923" blue="0.96439790575916229" alpha="1" colorSpace="calibratedRGB"/>
@@ -213,14 +213,17 @@
                                     <action selector="zoomIn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="OKu-9c-nZn"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="enter your message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hbf-nR-g6O">
-                                <rect key="frame" x="20" y="397" width="177" height="213"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here's my breadCrumb for you:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hbf-nR-g6O">
+                                <rect key="frame" x="16" y="397" width="185" height="213"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.82745098039215681" green="0.85882352941176465" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="UMv-lP-57v"/>
+                                </constraints>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                         </subviews>
                         <animations/>
@@ -233,11 +236,14 @@
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="3mB-ov-OBO" secondAttribute="bottom" constant="13" id="58p-q3-MZq"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="leading" secondItem="FeT-f1-b94" secondAttribute="leading" id="7lN-An-iHp"/>
                             <constraint firstItem="3mB-ov-OBO" firstAttribute="centerX" secondItem="Qxp-lH-gID" secondAttribute="centerX" id="8ah-bn-y7L"/>
+                            <constraint firstItem="hbf-nR-g6O" firstAttribute="leading" secondItem="FeT-f1-b94" secondAttribute="leading" id="CJV-TZ-5CL"/>
                             <constraint firstItem="FeT-f1-b94" firstAttribute="trailing" secondItem="Cwj-0V-w5m" secondAttribute="trailing" id="G9F-Lx-Qmy"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="GVE-B4-Sva"/>
+                            <constraint firstItem="Cwj-0V-w5m" firstAttribute="leading" secondItem="hbf-nR-g6O" secondAttribute="trailing" constant="8" symbolic="YES" id="I83-Tl-5BH"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="IO9-ST-nQH"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Cwj-0V-w5m" secondAttribute="bottom" constant="82" id="PFK-sW-Rei"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="2" id="PTf-FY-Qx3"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="hbf-nR-g6O" secondAttribute="bottom" constant="13" id="SM3-2u-UWx"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="trailing" secondItem="FeT-f1-b94" secondAttribute="trailing" id="UAB-v8-6ke"/>
                             <constraint firstItem="7Ad-SG-Cx9" firstAttribute="trailing" secondItem="Cwj-0V-w5m" secondAttribute="trailing" constant="20" id="VEY-Jg-d0v"/>
                             <constraint firstItem="zEq-FU-wV5" firstAttribute="centerX" secondItem="erw-83-5Cv" secondAttribute="centerX" id="dJZ-w7-5fO"/>
@@ -245,6 +251,7 @@
                             <constraint firstItem="a4Z-E4-HrN" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" constant="15" id="hz0-O2-Hkv"/>
                             <constraint firstItem="Qxp-lH-gID" firstAttribute="trailing" secondItem="Cwj-0V-w5m" secondAttribute="trailing" id="ikk-5U-7Vv"/>
                             <constraint firstItem="a4Z-E4-HrN" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-11" id="kfg-GI-zhT"/>
+                            <constraint firstItem="hbf-nR-g6O" firstAttribute="top" secondItem="FeT-f1-b94" secondAttribute="bottom" constant="8" symbolic="YES" id="mYe-mf-0p8"/>
                             <constraint firstItem="Qxp-lH-gID" firstAttribute="top" secondItem="Cwj-0V-w5m" secondAttribute="bottom" constant="-2" id="ra6-32-r11"/>
                             <constraint firstItem="Cwj-0V-w5m" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="371" id="rvD-Gi-YDR"/>
                             <constraint firstItem="3mB-ov-OBO" firstAttribute="centerX" secondItem="Qxp-lH-gID" secondAttribute="centerX" id="u2F-GX-z8b"/>

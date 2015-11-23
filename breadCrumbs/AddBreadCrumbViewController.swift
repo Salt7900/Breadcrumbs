@@ -29,7 +29,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
 
     //Jen allow save message
     @IBOutlet weak var enterMessageField: UITextView!
-        
+    
     @IBOutlet weak var enterRecipientEmail: UITextField!
 
     //Ben allow to interact with map
