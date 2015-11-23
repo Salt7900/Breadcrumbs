@@ -14,19 +14,21 @@ import MapKit
 class SingleCrumbViewController: UIViewController {
     
     override func viewDidLoad() {
-        //var currentCrumb = findLastCrumb()
-        //setPageData(currentCrumb)
+
     }
     
     override func viewDidAppear(animated: Bool) {
         var currentCrumb = findLastCrumb()
         setPageData(currentCrumb)
+        setPagePhoto(currentCrumb)
     }
     
     @IBOutlet weak var messagePicture: UIImageView!
     @IBOutlet weak var messageFrom: UILabel!
     @IBOutlet weak var messageField: UILabel!
     
+    
+    //Find the correct crumb based on ID -BEN
     func findLastCrumb() -> RetrievedCrumb{
         var crumbIdentity = latestCrumb.last
         for savedItem in everySingleCrumb {
@@ -38,9 +40,17 @@ class SingleCrumbViewController: UIViewController {
         return dummyCrumb
     }
     
+    //Set Page text from crumb object - BEN
     func setPageData(crumb: RetrievedCrumb){
         self.messageFrom.text = crumb.title
         self.messageField.text = crumb.subtitle
+    }
+    
+    //Retirive and display photo - BEN
+    func setPagePhoto(crumb: RetrievedCrumb){
+        ImageLoader.sharedLoader.imageForUrl(crumb.imageURL, completionHandler:{(image: UIImage?, url: String) in
+            self.messagePicture.image = image!
+        })
     }
 
 }
