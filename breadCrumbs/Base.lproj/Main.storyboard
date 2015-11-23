@@ -59,7 +59,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="327"/>
+            <point key="canvasLocation" x="689" y="314"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="VCt-B2-vPD">
+            <objects>
+                <viewController id="bfY-s7-B2I" customClass="SettingsViewController" customModule="breadCrumbs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sYq-NE-TnO"/>
+                        <viewControllerLayoutGuide type="bottom" id="zRe-lk-dq1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bTF-wt-scb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="rainbow.jpg" id="v6k-zA-1Uw"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GF0-np-p4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-230" y="1194"/>
         </scene>
         <!--Add BreadCrumb Scene-->
         <scene sceneID="wg7-f3-ORb">
@@ -264,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639.5" y="1179.5"/>
+            <point key="canvasLocation" x="632.5" y="1207.5"/>
         </scene>
         <!--Show Single Breadcrumb Controller-->
         <scene sceneID="jAT-LA-FCW">
@@ -369,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ez1-lq-oHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624.5" y="-451.5"/>
+            <point key="canvasLocation" x="576.5" y="-579.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="QFG-a5-8YL">
@@ -456,7 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPj-SM-bEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-860.5" y="-468.5"/>
+            <point key="canvasLocation" x="-1316.5" y="280.5"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="GEa-0d-9pf">
@@ -570,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFp-Sc-bcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-441.5" y="-468.5"/>
+            <point key="canvasLocation" x="-837.5" y="280.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -589,20 +610,23 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="A3c-ZZ-5Mu" kind="relationship" relationship="viewControllers" id="qGr-JY-bFX"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="bfY-s7-B2I" kind="relationship" relationship="viewControllers" id="HeR-JS-fBo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-273.5" y="280.5"/>
+            <point key="canvasLocation" x="-229.5" y="280.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Bread Filled-32" width="32" height="32"/>
         <image name="Icon-Small-50" width="50" height="50"/>
         <image name="Near Me Filled-32" width="32" height="32"/>
+        <image name="Settings" width="32" height="32"/>
         <image name="Star" width="32" height="32"/>
         <image name="add-photo-icon" width="300" height="300"/>
         <image name="addPin" width="75" height="75"/>
         <image name="findLocation" width="15" height="15"/>
+        <image name="rainbow.jpg" width="244" height="126"/>
     </resources>
 </document>
