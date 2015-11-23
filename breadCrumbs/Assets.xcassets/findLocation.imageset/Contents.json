@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Geo-fence-32.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "CurrentLocation@2x.png",
       "scale" : "2x"
     },
     {
