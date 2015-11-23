@@ -31,8 +31,8 @@ class CrumbUser {
     
     func setUserDefaults() {
         defaults.setObject(self.email, forKey: emailKey)
-        defaults.setObject(self.firstName, forKey: nameKey)
-        defaults.setObject("yes", forKey: loggedinKey)
+//        defaults.setObject(self.firstName, forKey: nameKey)
+      defaults.setObject("yes", forKey: loggedinKey)
         print("\(self.email) logged in")
     }
     
@@ -40,7 +40,7 @@ class CrumbUser {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject("no", forKey: "loggedin")
         defaults.setObject("none", forKey: "email")
-        defaults.setObject("none", forKey: "name")
+     //   defaults.setObject("none", forKey: "name")
     }
     
     

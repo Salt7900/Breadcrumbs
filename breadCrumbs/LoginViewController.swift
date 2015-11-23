@@ -52,9 +52,9 @@ class LoginViewController: UIViewController {
                     let user = JSON(value)
                     print(user)
                     
-                    // set NSUserDefaults
-//                    let sessionUser = CrumbUser(firstName: "jane", lastName: "smith", email: sentUsername)
-//                    sessionUser.setUserDefaults()
+                    // set user and NSUserDefaults
+                    let sessionUser = CrumbUser(firstName: "jane", lastName: "smith", email: enteredEmail)
+                    sessionUser.setUserDefaults()
                     
                     //send logged in user to main tabbar controller
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)

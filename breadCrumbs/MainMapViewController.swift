@@ -24,15 +24,22 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     let locationManager = CLLocationManager()
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+
+    
 
     //Pull user geolocations and crumbs before view loads - BEN and JEN
     override func viewDidLoad() {
+        let userEmail = userDefaults.objectForKey("email") as! String
+
+        
         super.viewDidLoad()
         self.mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.requestAlwaysAuthorization()
         everySingleCrumb = [RetrievedCrumb]()
-        pullCrumbs("crazy@email.com")
+        pullCrumbs(userEmail)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -76,7 +83,10 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
     
     func convertCrumbToRetrivedCrumb(crumb: Crumb){
-       let newCrumb = RetrievedCrumb(lat: crumb.latitude, long: crumb.longitude, identifier: crumb.identity!, title: crumb.title!, subtitle: crumb.subtitle!, imageURL: crumb.imageString!, creatorEmail: "crazy@email.com")
+        let userEmail = userDefaults.objectForKey("email") as! String
+
+        
+       let newCrumb = RetrievedCrumb(lat: crumb.latitude, long: crumb.longitude, identifier: crumb.identity!, title: crumb.title!, subtitle: crumb.subtitle!, imageURL: crumb.imageString!, creatorEmail: userEmail)
         
         self.addCrumbs(newCrumb)
         everySingleCrumb.append(newCrumb)
