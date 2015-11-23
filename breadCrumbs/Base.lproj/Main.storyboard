@@ -172,7 +172,7 @@
                                     <action selector="takePicture:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ONT-oL-DVl"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter recipient email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-f1-b94">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="recipient email (leave blank to send to yourself)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-f1-b94">
                                 <rect key="frame" x="20" y="359" width="335" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.86073407842454197" green="0.88760737159404923" blue="0.96439790575916229" alpha="1" colorSpace="calibratedRGB"/>
