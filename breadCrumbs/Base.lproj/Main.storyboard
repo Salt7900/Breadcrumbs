@@ -381,7 +381,7 @@
                             <constraint firstItem="czc-aH-goR" firstAttribute="top" secondItem="rkp-PB-LG2" secondAttribute="bottom" constant="344" id="vuf-yP-j0T"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Last Found" image="Star" id="FaK-bD-VVA"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="FaK-bD-VVA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="messageField" destination="LDy-FX-bzo" id="XUq-HQ-Ini"/>
@@ -613,7 +613,6 @@
     <resources>
         <image name="Bread Filled-32" width="32" height="32"/>
         <image name="Near Me Filled-32" width="32" height="32"/>
-        <image name="Star" width="50" height="50"/>
         <image name="add-photo-icon" width="300" height="300"/>
         <image name="addPin" width="75" height="75"/>
     </resources>
