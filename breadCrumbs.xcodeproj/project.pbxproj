@@ -250,7 +250,7 @@
 				TargetAttributes = {
 					9EABA44D1BFBE65A0094EC6A = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = W56D96232W;
+						DevelopmentTeam = GBRQ8M89YU;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -536,7 +536,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = breadCrumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ben-fallon";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benfallon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -552,7 +552,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = breadCrumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ben-fallon";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benfallon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
