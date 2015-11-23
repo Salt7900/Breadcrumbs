@@ -14,7 +14,7 @@ import CoreLocation
 
 var everySingleCrumb = [RetrievedCrumb]()
 var newCrumbs = [Crumb]()
-var latestCrumb = [RetrievedCrumb]()
+var latestCrumb = [String]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
