@@ -9,5 +9,13 @@
 import UIKit
 
 class AboutPageViewController: UIViewController {
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toSettings" {
+            let destinationViewController = segue.destinationViewController as! SettingsViewController;
+            // setup the destination controller
+        }
+    }
+
 
 }

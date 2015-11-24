@@ -35,4 +35,7 @@ class SettingsViewController: UIViewController {
         appDelegate.window?.rootViewController = loginVC
 
     }
+    
+    @IBAction func backButton(segue:UIStoryboardSegue) {
+    }
 }
