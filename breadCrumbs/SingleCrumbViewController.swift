@@ -21,12 +21,14 @@ class SingleCrumbViewController: UIViewController {
         var currentCrumb = findLastCrumb()
         setPageData(currentCrumb)
         setPagePhoto(currentCrumb)
+        setMapArea(currentCrumb)
     }
     
     @IBOutlet weak var messagePicture: UIImageView!
     @IBOutlet weak var messageFrom: UILabel!
     @IBOutlet weak var messageField: UILabel!
     
+    @IBOutlet weak var mapView: MKMapView!
     
     //Find the correct crumb based on ID -BEN
     func findLastCrumb() -> RetrievedCrumb{
@@ -50,6 +52,13 @@ class SingleCrumbViewController: UIViewController {
     func setPagePhoto(crumb: RetrievedCrumb){
         messagePicture.imageFromUrl(crumb.imageURL!)
     
+    }
+    
+    func setMapArea(crumb: RetrievedCrumb){
+        let region = MKCoordinateRegionMakeWithDistance(
+            crumb.coordinate, 1500, 1500)
+        
+        mapView.setRegion(region, animated: true)
     }
 
 }
