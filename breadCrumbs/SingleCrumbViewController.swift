@@ -18,7 +18,7 @@ class SingleCrumbViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
-
+        mapView.showsUserLocation = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -65,7 +65,7 @@ class SingleCrumbViewController: UIViewController {
     
     func setMapArea(crumb: RetrievedCrumb){
         let region = MKCoordinateRegionMakeWithDistance(
-            crumb.coordinate, 1500, 1500)
+            crumb.coordinate, 1000, 1000)
         
         mapView.setRegion(region, animated: true)
     }
