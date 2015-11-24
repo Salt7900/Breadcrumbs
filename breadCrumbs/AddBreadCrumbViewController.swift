@@ -25,12 +25,24 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
 
         //Ben - dealing with map and user location
         mapView.showsUserLocation = true
+        
+        
     }
+    
+    //Jen dismiss keyboard when touch outside keyboard
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
 
     //Jen allow save message
-    @IBOutlet weak var enterMessageField: UITextView!
     
+    @IBOutlet weak var enterMessageField: UITextField!
     @IBOutlet weak var enterRecipientEmail: UITextField!
+    
+
 
     //Ben allow to interact with map
     @IBOutlet weak var mapView: MKMapView!
