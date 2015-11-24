@@ -26,6 +26,13 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         //Ben - dealing with map and user location
         mapView.showsUserLocation = true
     }
+    
+    //Jen dismiss keyboard when adding email and message in text field done
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
 
     //Jen allow save message
     
