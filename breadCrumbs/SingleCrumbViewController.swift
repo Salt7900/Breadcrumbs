@@ -9,9 +9,13 @@
 import UIKit
 import MobileCoreServices
 import MapKit
+import CoreLocation
 
 
 class SingleCrumbViewController: UIViewController {
+    
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
 
@@ -32,13 +36,18 @@ class SingleCrumbViewController: UIViewController {
     
     //Find the correct crumb based on ID -BEN
     func findLastCrumb() -> RetrievedCrumb{
+        
+        let userLocation = mapView.userLocation.coordinate
+        let userEmail = userDefaults.objectForKey("email") as! String
+
         var crumbIdentity = latestCrumb.last
         for savedItem in everySingleCrumb {
             if savedItem.identity == crumbIdentity {
                 return savedItem
             }
         }
-        var dummyCrumb = RetrievedCrumb(lat: 41.88790, long: -87.6375, identifier: "HELLO", title: "Your Message", subtitle: "Hello to your world, coders", imageURL: "https://pbs.twimg.com/profile_images/634740140003295234/bpnVhq8Z.jpg", creatorEmail: "crazy@email.com")
+        
+        var dummyCrumb = RetrievedCrumb(lat: userLocation.latitude, long: userLocation.longitude, identifier: "HELLO", title: "You haven't found any crumbs recently.", subtitle: "", imageURL: "https://s3.amazonaws.com/breadcrumbs-assets/breadcrumbs/do-not-delete/bread180.png", creatorEmail: userEmail)
         return dummyCrumb
     }
     
