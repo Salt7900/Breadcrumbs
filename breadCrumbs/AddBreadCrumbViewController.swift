@@ -110,7 +110,8 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     // access camera roll when button pressed
-    @IBAction func openCameraRoll(sender: UIButton) {
+
+    @IBAction func openCameralRoll(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
             imagePicker.allowsEditing = true
             imagePicker.sourceType = .PhotoLibrary
