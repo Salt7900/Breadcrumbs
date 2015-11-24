@@ -39,14 +39,14 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     override func viewDidAppear(animated: Bool) {
         let userEmail = userDefaults.objectForKey("email") as! String
         stopMonitoringAll()
-        everySingleCrumb.removeAll()
+        stopDisplayingAll()
         pullCrumbs(userEmail)
 
     }
 
     //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
     func pullCrumbs(email: String){
-        everySingleCrumb = [RetrievedCrumb]()
+        everySingleCrumb.removeAll()
         var counter = 0
         let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
         let apiKey = userDefaults.objectForKey("apiKey")!
@@ -96,6 +96,14 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         self.mapView.addAnnotation(crumb)
         addRadiusCircle(crumb)
         startMonitoringCrumb(crumb)
+    }
+    
+    func stopDisplayingAll(){
+        for crumb in everySingleCrumb{
+            stopMonitoringGeolocation(crumb)
+            removeRadiusOverlayForGeotification(crumb)
+            mapView.removeAnnotation(crumb)
+        }
     }
 
 
