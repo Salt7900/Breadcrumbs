@@ -526,7 +526,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mej-fP-C6N">
-                                <rect key="frame" x="164" y="319" width="62" height="30"/>
+                                <rect key="frame" x="160" y="319" width="68" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.0" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Submit">
@@ -553,7 +553,7 @@
                                 <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srJ-LJ-HGP">
-                                <rect key="frame" x="94" y="392" width="201" height="30"/>
+                                <rect key="frame" x="84" y="392" width="221" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.0" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Not a Member? Go Register!">
@@ -615,7 +615,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHE-Mb-TAH">
-                                <rect key="frame" x="156" y="319" width="62" height="30"/>
+                                <rect key="frame" x="153" y="319" width="68" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.0" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Submit">
@@ -660,7 +660,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYo-F6-BTT">
-                                <rect key="frame" x="76" y="403" width="213" height="30"/>
+                                <rect key="frame" x="75" y="403" width="224" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.0" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Already a Member? Go Login!">
@@ -688,7 +688,7 @@
                             <constraint firstItem="1sY-Rs-xPJ" firstAttribute="top" secondItem="hZQ-bl-k7Y" secondAttribute="bottom" constant="15" id="QaE-dZ-zVc"/>
                             <constraint firstItem="hZQ-bl-k7Y" firstAttribute="leading" secondItem="lvZ-7q-Jtg" secondAttribute="leading" id="Rmc-yU-L3c"/>
                             <constraint firstItem="9fD-HQ-IYk" firstAttribute="top" secondItem="VEq-GP-ZRC" secondAttribute="bottom" constant="8" symbolic="YES" id="S2P-MD-k5V"/>
-                            <constraint firstItem="9fD-HQ-IYk" firstAttribute="centerX" secondItem="HYo-F6-BTT" secondAttribute="centerX" id="Yah-w8-qDv"/>
+                            <constraint firstItem="9fD-HQ-IYk" firstAttribute="centerX" secondItem="HYo-F6-BTT" secondAttribute="centerX" constant="-4.5" id="Yah-w8-qDv"/>
                             <constraint firstItem="hZQ-bl-k7Y" firstAttribute="trailing" secondItem="1sY-Rs-xPJ" secondAttribute="trailing" id="Yph-9V-uHM"/>
                             <constraint firstItem="HYo-F6-BTT" firstAttribute="top" secondItem="JHE-Mb-TAH" secondAttribute="bottom" constant="54" id="aux-46-fWf"/>
                             <constraint firstItem="xre-1u-ZYB" firstAttribute="leading" secondItem="lvZ-7q-Jtg" secondAttribute="leading" id="gv7-Yi-wqL"/>
