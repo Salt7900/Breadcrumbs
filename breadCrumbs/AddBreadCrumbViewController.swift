@@ -69,7 +69,11 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             newCrumbs.append(crumb)
         }
         
-        self.performSegueWithIdentifier("backToMainMap", sender: self)
+        //JEN -- send user to main tabbar controller after save
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.window?.rootViewController = tabBarController
     }
 
 
