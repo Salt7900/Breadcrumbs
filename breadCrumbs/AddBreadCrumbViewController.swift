@@ -50,6 +50,8 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     //JEN CAMERA LINKS TO VIEW
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var currentImage: UIImageView!
+    @IBOutlet weak var cameraRollButton: UIButton!
+
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     //END JEN LINKS TO VIEW
     
@@ -91,7 +93,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
-    //function to check for cameras and if the exist open camera when photobutton pressed
+    //function to check for cameras and if they exist open camera when add photo pressed
     @IBAction func takePicture(sender: UIButton) {
         if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
             if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
@@ -104,6 +106,17 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             }
         } else {
             postAlert("Camera not available", message: "breadCrumbs cannot access the camera")
+        }
+    }
+    
+    // access camera roll when button pressed
+    @IBAction func openCameraRoll(sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = .PhotoLibrary
+            presentViewController(imagePicker, animated: true, completion: {})
+        } else {
+            postAlert("Photo Library not available", message: "breadCrumbs cannot access your photo library")
         }
     }
 
