@@ -47,13 +47,13 @@ class SingleCrumbViewController: UIViewController {
             }
         }
         
-        var dummyCrumb = RetrievedCrumb(lat: userLocation.latitude, long: userLocation.longitude, identifier: "HELLO", title: "You haven't found any crumbs recently.", subtitle: "", imageURL: "https://s3.amazonaws.com/breadcrumbs-assets/breadcrumbs/do-not-delete/bread180.png", creatorEmail: userEmail)
+        var dummyCrumb = RetrievedCrumb(lat: userLocation.latitude, long: userLocation.longitude, identifier: "HELLO", title: "You haven't found any crumbs recently.", subtitle: "You haven't found any crumbs recently.", imageURL: "https://s3.amazonaws.com/breadcrumbs-assets/breadcrumbs/do-not-delete/littlebread.png", creatorEmail: userEmail)
         return dummyCrumb
     }
     
     //Set Page text from crumb object - BEN
     func setPageData(crumb: RetrievedCrumb){
-        self.messageFrom.text = " breadCrumb sent by \(crumb.creatorEmail)"
+        self.messageFrom.text = "breadCrumb sent by \(crumb.creatorEmail)"
         self.messageField.text = crumb.subtitle
     }
     
