@@ -12,7 +12,7 @@ import UIKit
 
 class CrumbUser {
     let firstName: String
-    let userAPI: String
+    let userAPI: String!
     let email: String
     
     let emailKey = "email"

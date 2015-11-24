@@ -54,7 +54,11 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         everySingleCrumb = [RetrievedCrumb]()
         var counter = 0
         let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
-        Alamofire.request(.GET, getCrumbUrl, parameters:["receiverEmail": email]).validate().responseJSON { response in
+        let apiKey = userDefaults.objectForKey("apiKey")!
+        
+        let header = ["Authorization": "Token token=\(apiKey)"]
+
+        Alamofire.request(.GET, getCrumbUrl, headers: header, parameters:["receiverEmail": email]).validate().responseJSON { response in
             switch response.result {
             case .Success:
                 if let value = response.result.value {
@@ -206,8 +210,12 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
     
     func removeCrumbFromDatabase(crumbID: String!){
+        let apiKey = userDefaults.objectForKey("apiKey")!
+        let header = ["Authorization": "Token token=\(apiKey)"]
+
+    
         let deleteCrumbURL = "https://gentle-fortress-2146.herokuapp.com/breadcrumbs/\(crumbID)"
-        Alamofire.request(.DELETE, deleteCrumbURL)
+        Alamofire.request(.DELETE, deleteCrumbURL, headers: header)
     }
     
     //When deleteed, remove the radius -BEN
@@ -234,12 +242,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 //            }
 //    }
     
-    //Jen - login button logs out ADD CONNECTION
-//    @IBAction func userLogout(sender: AnyObject) {
-//        CrumbUser.logOut()
-//        dismissViewControllerAnimated(true, completion: {
-//        })
-//    }
+
 
 
 }
