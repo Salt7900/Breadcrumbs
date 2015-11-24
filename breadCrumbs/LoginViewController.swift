@@ -49,11 +49,14 @@ class LoginViewController: UIViewController {
             switch response.result {
             case .Success:
                 if let value = response.result.value {
-                    let user = JSON(value)
-                    print(user)
+                    let json = JSON(value)
+                    print(json)
+                    
+                    let apiKey : String = json["api_key"].stringValue
+                    let first_name : String = json["first_name"].stringValue
                     
                     // set user and NSUserDefaults
-                    let sessionUser = CrumbUser(firstName: "jane", lastName: "smith", email: enteredEmail)
+                    let sessionUser = CrumbUser(firstName: first_name, userAPI: apiKey, email: enteredEmail)
                     sessionUser.setUserDefaults()
                     
                     //send logged in user to main tabbar controller

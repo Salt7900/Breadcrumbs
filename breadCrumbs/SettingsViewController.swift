@@ -20,8 +20,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         //set label to user email
-        let userEmail = userDefaults.objectForKey("email") as! String
-        userEmailLabel.text = "Hey there, \(userEmail)"
+        let userName = userDefaults.objectForKey("name") as! String
+        userEmailLabel.text = "Hey there, \(userName)"
     }
     
 // JEN attach logout button, send back to login screen on logout
