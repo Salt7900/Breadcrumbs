@@ -30,7 +30,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     //Pull user geolocations and crumbs before view loads - BEN and JEN
     override func viewDidLoad() {
         let userEmail = userDefaults.objectForKey("email") as! String
-
         super.viewDidLoad()
         self.mapView.delegate = self
         mapView.showsUserLocation = true
@@ -40,6 +39,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     override func viewDidAppear(animated: Bool) {
         let userEmail = userDefaults.objectForKey("email") as! String
         stopMonitoringAll()
+        everySingleCrumb.removeAll()
         pullCrumbs(userEmail)
 
     }
