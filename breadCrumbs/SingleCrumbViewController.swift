@@ -44,7 +44,7 @@ class SingleCrumbViewController: UIViewController {
     
     //Set Page text from crumb object - BEN
     func setPageData(crumb: RetrievedCrumb){
-        self.messageFrom.text = crumb.title
+        self.messageFrom.text = "\(crumb.title!) sent from \(crumb.creatorEmail)"
         self.messageField.text = crumb.subtitle
     }
     
