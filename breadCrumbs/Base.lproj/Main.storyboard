@@ -474,6 +474,7 @@
                     <tabBarItem key="tabBarItem" title="Last Found" image="Star" id="FaK-bD-VVA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="mapView" destination="jXH-mh-dk7" id="wG6-E8-Fb5"/>
                         <outlet property="messageField" destination="LDy-FX-bzo" id="XUq-HQ-Ini"/>
                         <outlet property="messageFrom" destination="rkp-PB-LG2" id="OMC-Xn-Mc7"/>
                         <outlet property="messagePicture" destination="olb-NX-OhN" id="Jis-FE-9QA"/>
