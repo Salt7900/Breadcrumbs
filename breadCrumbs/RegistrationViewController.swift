@@ -3,7 +3,7 @@
 //  breadCrumbs
 //
 //  Created by Jen Trudell on 11/23/15.
-//  Copyright © 2015 Ben Fallon. All rights reserved.
+//  Copyright © 2015 Ben Fallon, Katelyn Dinkgrave and Jeanette K. Trudell, Esq. All rights reserved.
 //
 
 import UIKit
@@ -65,7 +65,6 @@ class RegistrationViewController: UIViewController {
                     case .Success:
                         if let value = response.result.value {
                             let json = JSON(value)
-
                         }
                         
                         // if registration succeeds go back to login view
@@ -90,14 +89,6 @@ class RegistrationViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: {})
     }
 
-    
-    
-    
-    
-
-
-    
-    
 
     /*
     // MARK: - Navigation

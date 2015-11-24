@@ -12,35 +12,36 @@ import UIKit
 
 class CrumbUser {
     let firstName: String
-    let lastName: String
+    let userAPI: String!
     let email: String
-    let fullName: String
     
     let emailKey = "email"
     let nameKey = "name"
+    let apiKey = "apiKey"
     let loggedinKey = "loggedin"
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
-    init(firstName: String, lastName: String, email: String) {
+    init(firstName: String, userAPI: String, email: String) {
         self.firstName = firstName
-        self.lastName = lastName
+        self.userAPI = userAPI
         self.email = email
-        self.fullName = "\(firstName) \(lastName)"
     }
     
     func setUserDefaults() {
         defaults.setObject(self.email, forKey: emailKey)
-//        defaults.setObject(self.firstName, forKey: nameKey)
-      defaults.setObject("yes", forKey: loggedinKey)
+        defaults.setObject(self.firstName, forKey: nameKey)
+        defaults.setObject(self.userAPI, forKey: apiKey)
+        defaults.setObject("yes", forKey: loggedinKey)
         print("\(self.email) logged in")
     }
     
     class func logOut() {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject("no", forKey: "loggedin")
-        defaults.setObject("none", forKey: "email")
-     //   defaults.setObject("none", forKey: "name")
+        defaults.setObject("no user", forKey: "email")
+        defaults.setObject("no user", forKey: "name")
+        defaults.setObject("no user", forKey: "apiKey")
     }
     
     

@@ -60,8 +60,12 @@ class Crumb: NSObject, MKAnnotation {
             ]
         ]
         
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let apiKey = userDefaults.objectForKey("apiKey")!
+        
+        let header = ["Authorization": "Token token=\(apiKey)"]
         let newCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/breadcrumbs"
-        Alamofire.request(.POST, newCrumbUrl, parameters: crumb)
+        Alamofire.request(.POST, newCrumbUrl, headers: header, parameters: crumb)
 
     }
 
