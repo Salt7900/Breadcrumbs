@@ -371,7 +371,6 @@
                         <outlet property="enterMessageField" destination="Dkg-vx-pl8" id="ROk-mi-9Kp"/>
                         <outlet property="enterRecipientEmail" destination="FeT-f1-b94" id="O4I-3g-5Aq"/>
                         <outlet property="mapView" destination="7Ad-SG-Cx9" id="fqc-1K-R1i"/>
-                        <segue destination="49e-Tb-3d3" kind="show" identifier="backToMainMap" id="qrs-Qf-o1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
