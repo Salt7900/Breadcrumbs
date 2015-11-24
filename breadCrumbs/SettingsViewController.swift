@@ -21,10 +21,10 @@ class SettingsViewController: UIViewController {
         
         //set label to user email
         let userEmail = userDefaults.objectForKey("email") as! String
-        userEmailLabel.text = userEmail
+        userEmailLabel.text = "Hey there, \(userEmail)"
     }
     
-// JEN attach logout button
+// JEN attach logout button, send back to login screen on logout
 
     @IBAction func logoutPressed(sender: AnyObject) {
         CrumbUser.logOut()
