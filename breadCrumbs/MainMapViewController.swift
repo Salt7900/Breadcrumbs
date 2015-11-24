@@ -33,7 +33,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     override func viewDidLoad() {
         let userEmail = userDefaults.objectForKey("email") as! String
 
-        
         super.viewDidLoad()
         self.mapView.delegate = self
         mapView.showsUserLocation = true
@@ -44,9 +43,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let userEmail = userDefaults.objectForKey("email") as! String
         stopMonitoringAll()
         pullCrumbs(userEmail)
-        if newCrumbs.count != 0{
-            convertCrumbToRetrivedCrumb(newCrumbs[0])
-        }
+
     }
 
     //Pull and parse JSON for locations - BEN (and then Jen and Katelyn for image URL)
@@ -233,15 +230,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             }
         }
     }
-
-//    //Ben- Allow map to track location
-//    func mapView(mapView: MKMapView!, didUpdateUserLocation
-//        userLocation: MKUserLocation!){
-//            if (userLocation != nil){
-//                mapView.centerCoordinate = userLocation.location!.coordinate
-//            }
-//    }
-    
 
 
 
