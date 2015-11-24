@@ -77,9 +77,10 @@
                                 <rect key="frame" x="151" y="430" width="72" height="72"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-Yf-Orr">
-                                <rect key="frame" x="166" y="126" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-Yf-Orr">
+                                <rect key="frame" x="37" y="126" width="295" height="204"/>
                                 <animations/>
+                                <string key="text">This project was conceived and built by Ben Fallon, Jen Trudell, and Katelyn Dinkgrave as their final project at DBC Chicago. All logos and icons are sourced from icons8.com.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -97,6 +98,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Yg0-E6-Oyf" kind="unwind" identifier="toSettings" unwindAction="backButton:" id="GuU-u1-ZkU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -105,6 +109,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bab-TD-bPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Yg0-E6-Oyf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-745.5" y="1189.5"/>
         </scene>
