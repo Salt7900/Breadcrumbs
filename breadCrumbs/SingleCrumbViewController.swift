@@ -9,12 +9,16 @@
 import UIKit
 import MobileCoreServices
 import MapKit
+import CoreLocation
 
 
 class SingleCrumbViewController: UIViewController {
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
-
+        mapView.showsUserLocation = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -32,19 +36,24 @@ class SingleCrumbViewController: UIViewController {
     
     //Find the correct crumb based on ID -BEN
     func findLastCrumb() -> RetrievedCrumb{
+        
+        let userLocation = mapView.userLocation.coordinate
+        let userEmail = userDefaults.objectForKey("email") as! String
+
         var crumbIdentity = latestCrumb.last
         for savedItem in everySingleCrumb {
             if savedItem.identity == crumbIdentity {
                 return savedItem
             }
         }
-        var dummyCrumb = RetrievedCrumb(lat: 41.88790, long: -87.6375, identifier: "HELLO", title: "Your Message", subtitle: "Hello to your world, coders", imageURL: "https://pbs.twimg.com/profile_images/634740140003295234/bpnVhq8Z.jpg", creatorEmail: "crazy@email.com")
+        
+        var dummyCrumb = RetrievedCrumb(lat: userLocation.latitude, long: userLocation.longitude, identifier: "HELLO", title: "You haven't found any crumbs recently.", subtitle: "You haven't found any crumbs recently.", imageURL: "https://s3.amazonaws.com/breadcrumbs-assets/breadcrumbs/do-not-delete/littlebread.png", creatorEmail: userEmail)
         return dummyCrumb
     }
     
     //Set Page text from crumb object - BEN
     func setPageData(crumb: RetrievedCrumb){
-        self.messageFrom.text = " breadCrumb sent by \(crumb.creatorEmail)"
+        self.messageFrom.text = "breadCrumb sent by \(crumb.creatorEmail)"
         self.messageField.text = crumb.subtitle
     }
     
@@ -56,7 +65,7 @@ class SingleCrumbViewController: UIViewController {
     
     func setMapArea(crumb: RetrievedCrumb){
         let region = MKCoordinateRegionMakeWithDistance(
-            crumb.coordinate, 1500, 1500)
+            crumb.coordinate, 1000, 1000)
         
         mapView.setRegion(region, animated: true)
     }

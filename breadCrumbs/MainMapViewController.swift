@@ -27,8 +27,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
 
-    
-
     //Pull user geolocations and crumbs before view loads - BEN and JEN
     override func viewDidLoad() {
         let userEmail = userDefaults.objectForKey("email") as! String
