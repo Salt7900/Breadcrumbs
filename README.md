@@ -1,11 +1,8 @@
 ## breadCrumbs
 *And Hansel said to Gretel, 'Let us drop these bread crumbs so that together we find our way home…'*
 
-<div style=text-align:center>
 ![Main map](/breadCrumbs-photos/IMG_2378.JPG)
 ![New crumb](/breadCrumbs-photos/IMG_2383.JPG)
-<br><br>
-</div>
 
 **Note**: This repo is for the breadCrumbs frontend. There is a [separate repo](https://github.com/dinkengraven/breadcrumbs-db) for its backend, written in Ruby.
 
