@@ -8,7 +8,7 @@
 
 import UIKit
 
-let userDefaults = NSUserDefaults.standardUserDefaults()
+let userName = NSUserDefaults.standardUserDefaults().objectForKey("name") as! String
 
 class SettingsViewController: UIViewController {
     
@@ -18,9 +18,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //set label to user email
-        let userName = userDefaults.objectForKey("name") as! String
         userEmailLabel.text = "Hey there, \(userName)"
     }
     
