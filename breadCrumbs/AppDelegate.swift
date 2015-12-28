@@ -29,7 +29,6 @@ let locationManager = CLLocationManager()
         }
         
         //BEN map and notifications
-        
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
 
