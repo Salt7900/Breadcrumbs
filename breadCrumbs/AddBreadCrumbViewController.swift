@@ -14,7 +14,7 @@ import MapKit
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userEmail = NSUserDefaults.standardUserDefaults().objectForKey("email") as! String
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +49,6 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     //Ben - Save all info into a new crumb object
     @IBAction func saveCrumb(sender: AnyObject) {
         let pinLocation = mapView.centerCoordinate
-        let userEmail = userDefaults.objectForKey("email") as! String
-
 
         let crumb = Crumb(lat: pinLocation.latitude, long: pinLocation.longitude, identifier: NSUUID().UUIDString, title: "You've got a breadCrumb!", subtitle: enterMessageField.text!, photo: self.currentImage.image!, creatorEmail: userEmail, receiverEmail: enterRecipientEmail.text!)
         
