@@ -14,8 +14,13 @@ import CoreLocation
 
 class SingleCrumbViewController: UIViewController {
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userEmail = NSUserDefaults.standardUserDefaults().objectForKey("email") as! String
     let locationManager = CLLocationManager()
+    
+    @IBOutlet weak var messagePicture: UIImageView!
+    @IBOutlet weak var messageFrom: UILabel!
+    @IBOutlet weak var messageField: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         mapView.showsUserLocation = true
@@ -28,18 +33,11 @@ class SingleCrumbViewController: UIViewController {
         setMapArea(currentCrumb)
     }
     
-    @IBOutlet weak var messagePicture: UIImageView!
-    @IBOutlet weak var messageFrom: UILabel!
-    @IBOutlet weak var messageField: UILabel!
-    
-    @IBOutlet weak var mapView: MKMapView!
-    
     //Find the correct crumb based on ID -BEN
     func findLastCrumb() -> RetrievedCrumb{
         
         let userLocation = mapView.userLocation.coordinate
-        let userEmail = userDefaults.objectForKey("email") as! String
-
+        
         var crumbIdentity = latestCrumb.last
         for savedItem in everySingleCrumb {
             if savedItem.identity == crumbIdentity {
