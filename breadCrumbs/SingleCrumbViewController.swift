@@ -27,7 +27,7 @@ class SingleCrumbViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        var currentCrumb = findLastCrumb()
+        let currentCrumb = findLastCrumb()
         setPageData(currentCrumb)
         setPagePhoto(currentCrumb)
         setMapArea(currentCrumb)
@@ -38,7 +38,7 @@ class SingleCrumbViewController: UIViewController {
         
         let userLocation = mapView.userLocation.coordinate
         
-        var crumbIdentity = latestCrumb.last
+        let crumbIdentity = latestCrumb.last
         for savedItem in everySingleCrumb {
             if savedItem.identity == crumbIdentity {
                 return savedItem
