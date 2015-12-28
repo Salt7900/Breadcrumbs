@@ -13,7 +13,6 @@ import Alamofire
 import CoreLocation
 
 var everySingleCrumb = [RetrievedCrumb]()
-var newCrumbs = [Crumb]()
 var latestCrumb = [String]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {

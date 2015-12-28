@@ -18,19 +18,12 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        // Jen - sets controller as the camera delegate
         imagePicker.delegate = self
-
-        //Ben - dealing with map and user location
         mapView.showsUserLocation = true
-        
         
     }
     
     //Jen dismiss keyboard when touch outside keyboard
-    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
@@ -38,7 +31,6 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     
 
     //Jen allow save message
-    
     @IBOutlet weak var enterMessageField: UITextField!
     @IBOutlet weak var enterRecipientEmail: UITextField!
     
@@ -53,8 +45,6 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var cameraRollButton: UIButton!
 
     let imagePicker: UIImagePickerController! = UIImagePickerController()
-    //END JEN LINKS TO VIEW
-    
 
     //Ben - Save all info into a new crumb object
     @IBAction func saveCrumb(sender: AnyObject) {
@@ -65,9 +55,6 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         let crumb = Crumb(lat: pinLocation.latitude, long: pinLocation.longitude, identifier: NSUUID().UUIDString, title: "You've got a breadCrumb!", subtitle: enterMessageField.text!, photo: self.currentImage.image!, creatorEmail: userEmail, receiverEmail: enterRecipientEmail.text!)
         
         crumb.saveToWeb()
-        if crumb.receiverEmail.isEmpty{
-            newCrumbs.append(crumb)
-        }
         
         //JEN -- send user to main tabbar controller after save
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
