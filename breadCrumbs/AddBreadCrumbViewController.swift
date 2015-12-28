@@ -152,7 +152,4 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
 
-// END JEN ALL NEW CAMERA CODE
-
-
 }
