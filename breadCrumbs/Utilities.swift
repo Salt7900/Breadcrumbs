@@ -18,8 +18,13 @@ func showSimpleAlertWithTitle(title: String!, message: String, viewController: U
     viewController.presentViewController(alert, animated: true, completion: nil)
 }
 
+func createDummyCrumb(userLocation: CLLocationCoordinate2D, userEmail: String) -> RetrievedCrumb{
+    let dummyCrumb = RetrievedCrumb(lat: userLocation.latitude, long: userLocation.longitude, identifier: "HELLO", title: "You haven't found any crumbs recently.", subtitle: "You haven't found any crumbs recently.", imageURL: "https://s3.amazonaws.com/breadcrumbs-assets/breadcrumbs/do-not-delete/littlebread.png", creatorEmail: userEmail)
+    return dummyCrumb
+}
 
-//Used to download photo 
+
+//Used to download photo
 extension UIImageView {
     public func imageFromUrl(urlString: String) {
         if let url = NSURL(string: urlString) {

@@ -46,9 +46,8 @@ class SingleCrumbViewController: UIViewController {
                 return savedItem
             }
         }
-        
-        var dummyCrumb = RetrievedCrumb(lat: userLocation.latitude, long: userLocation.longitude, identifier: "HELLO", title: "You haven't found any crumbs recently.", subtitle: "You haven't found any crumbs recently.", imageURL: "https://s3.amazonaws.com/breadcrumbs-assets/breadcrumbs/do-not-delete/littlebread.png", creatorEmail: userEmail)
-        return dummyCrumb
+
+        return createDummyCrumb(userLocation, userEmail: userEmail)
     }
     
     //Set Page text from crumb object - BEN
