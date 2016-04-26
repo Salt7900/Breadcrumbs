@@ -52,6 +52,8 @@ class SingleCrumbViewController: UIViewController {
     func setPageData(crumb: RetrievedCrumb){
         self.messageFrom.text = "breadCrumb sent by \(crumb.creatorEmail)"
         self.messageField.text = crumb.subtitle
+        self.mapView.addAnnotation(crumb)
+
     }
     
     //Retirive and display photo - BEN
