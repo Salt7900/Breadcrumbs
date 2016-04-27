@@ -472,69 +472,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to breadCrumbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6f-qM-Nwc">
-                                <rect key="frame" x="20" y="28" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mej-fP-C6N">
-                                <rect key="frame" x="160" y="319" width="68" height="30"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.0" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitPressed:" destination="flD-5c-aYd" eventType="touchUpInside" id="zyp-gX-6li"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vbc-kI-KlM">
-                                <rect key="frame" x="90" y="261" width="209" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pJB-fM-gfd">
-                                <rect key="frame" x="90" y="214" width="209" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon-Small-50" translatesAutoresizingMaskIntoConstraints="NO" id="8j7-kR-sVx">
-                                <rect key="frame" x="158" y="487" width="58" height="58"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NLO-Fc-jIE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dV2-OE-2dF">
+                                <rect key="frame" x="0.0" y="223" width="375" height="221"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="bDM-6I-0xW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srJ-LJ-HGP">
+                                            <rect key="frame" x="77" y="175" width="221" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" title="Not a Member? Go Register!">
+                                                <color key="titleColor" red="0.21176470589999999" green="0.0" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="goToRegister:" destination="flD-5c-aYd" eventType="touchUpInside" id="sUu-Zk-GcA"/>
+                                                <action selector="gotToLogin:" destination="FEC-Qf-MT0" eventType="touchUpInside" id="wyK-De-BU8"/>
+                                                <segue destination="FEC-Qf-MT0" kind="show" identifier="goRegister" id="HIU-Kq-WFl"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mej-fP-C6N">
+                                            <rect key="frame" x="153" y="126" width="68" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" title="Submit">
+                                                <color key="titleColor" red="0.21176470589999999" green="0.0" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="submitPressed:" destination="flD-5c-aYd" eventType="touchUpInside" id="zyp-gX-6li"/>
+                                            </connections>
+                                        </button>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vbc-kI-KlM">
+                                            <rect key="frame" x="58" y="70" width="258" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pJB-fM-gfd">
+                                            <rect key="frame" x="58" y="15" width="258" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon-Small-50" translatesAutoresizingMaskIntoConstraints="NO" id="RKw-b9-J3j">
+                                <rect key="frame" x="158" y="589" width="58" height="58"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srJ-LJ-HGP">
-                                <rect key="frame" x="84" y="392" width="221" height="30"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.0" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Not a Member? Go Register!">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToRegister:" destination="flD-5c-aYd" eventType="touchUpInside" id="sUu-Zk-GcA"/>
-                                    <action selector="gotToLogin:" destination="FEC-Qf-MT0" eventType="touchUpInside" id="wyK-De-BU8"/>
-                                    <segue destination="FEC-Qf-MT0" kind="show" identifier="goRegister" id="HIU-Kq-WFl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.047058823529411764" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="srJ-LJ-HGP" firstAttribute="top" secondItem="mej-fP-C6N" secondAttribute="bottom" constant="43" id="2IH-Z0-1h2"/>
-                            <constraint firstItem="E6f-qM-Nwc" firstAttribute="leading" secondItem="Q6N-VB-X3o" secondAttribute="leadingMargin" constant="4" id="6bp-Dq-RjT"/>
-                            <constraint firstItem="E6f-qM-Nwc" firstAttribute="top" secondItem="cv9-fN-h6m" secondAttribute="bottom" constant="8" symbolic="YES" id="EBS-Nn-2c9"/>
-                            <constraint firstItem="Vbc-kI-KlM" firstAttribute="top" secondItem="pJB-fM-gfd" secondAttribute="bottom" constant="17" id="Fui-Hb-95X"/>
-                            <constraint firstItem="pJB-fM-gfd" firstAttribute="centerX" secondItem="srJ-LJ-HGP" secondAttribute="centerX" id="Hru-Jr-zAs"/>
-                            <constraint firstItem="pJB-fM-gfd" firstAttribute="leading" secondItem="Q6N-VB-X3o" secondAttribute="leadingMargin" constant="74" id="Ty7-0j-WvA"/>
-                            <constraint firstItem="E6f-qM-Nwc" firstAttribute="centerX" secondItem="Q6N-VB-X3o" secondAttribute="centerX" id="VvJ-zf-QIa"/>
-                            <constraint firstItem="pJB-fM-gfd" firstAttribute="trailing" secondItem="Vbc-kI-KlM" secondAttribute="trailing" id="arZ-Ib-vOD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pJB-fM-gfd" secondAttribute="trailing" constant="60" id="blK-o9-6ms"/>
-                            <constraint firstItem="pJB-fM-gfd" firstAttribute="leading" secondItem="Vbc-kI-KlM" secondAttribute="leading" id="fGV-Ix-qXB"/>
-                            <constraint firstItem="mej-fP-C6N" firstAttribute="centerY" secondItem="Q6N-VB-X3o" secondAttribute="centerY" id="qqw-st-Jwc"/>
-                            <constraint firstItem="pJB-fM-gfd" firstAttribute="centerX" secondItem="mej-fP-C6N" secondAttribute="centerX" id="unB-Bh-JAM"/>
-                            <constraint firstItem="pJB-fM-gfd" firstAttribute="top" secondItem="Q6N-VB-X3o" secondAttribute="top" constant="214" id="xby-ta-d0f"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RbU-9D-pNM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="email" destination="pJB-fM-gfd" id="QPp-L1-h0L"/>
+                        <outlet property="mapView" destination="NLO-Fc-jIE" id="GYl-h3-SBF"/>
                         <outlet property="password" destination="Vbc-kI-KlM" id="iIq-KD-yYg"/>
                     </connections>
                 </viewController>
