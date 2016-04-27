@@ -9,15 +9,22 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import MapKit
 
 class LoginViewController: UIViewController {
     
     
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let center = CLLocationCoordinate2D(latitude: 41.887, longitude: -87.66)
+        let region = MKCoordinateRegionMakeWithDistance(
+            center, 10000, 10000)
+        
+        mapView.setRegion(region, animated: true)
 
         // Do any additional setup after loading the view.
     }
