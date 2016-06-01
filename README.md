@@ -4,6 +4,8 @@
 ![Main map](/breadCrumbs-photos/IMG_2378.JPG)
 ![New crumb](/breadCrumbs-photos/IMG_2383.JPG)
 
+**Upcoming**: The next iteration of this project is going to be a web based application for running on desktop. It will operate the same way the iOS version does, and connect to all the same information.
+
 **Note**: This repo is for the breadCrumbs frontend. There is a [separate repo](https://github.com/dinkengraven/breadcrumbs-db) for its backend, written in Ruby.
 
 breadCrumbs is a Dev Bootcamp Phase 3 final project by three students from the 2015 Chicago Purple Martins. It was created over a period of 8 days in November 2015.
