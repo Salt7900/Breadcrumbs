@@ -13,28 +13,25 @@ import MapKit
 
 
 class SecondViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
+
     let userEmail = NSUserDefaults.standardUserDefaults().objectForKey("email") as! String
 
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         mapView.showsUserLocation = true
-        
+
     }
-    
+
     //Jen dismiss keyboard when touch outside keyboard
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
-    
 
     //Jen allow save message
     @IBOutlet weak var enterMessageField: UITextField!
     @IBOutlet weak var enterRecipientEmail: UITextField!
-    
-
 
     //Ben allow to interact with map
     @IBOutlet weak var mapView: MKMapView!
@@ -51,16 +48,15 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
         let pinLocation = mapView.centerCoordinate
 
         let crumb = Crumb(lat: pinLocation.latitude, long: pinLocation.longitude, identifier: NSUUID().UUIDString, title: "You've got a breadCrumb!", subtitle: enterMessageField.text!, photo: self.currentImage.image!, creatorEmail: userEmail, receiverEmail: enterRecipientEmail.text!)
-        
+
         crumb.saveToWeb()
-        
+
         //JEN -- send user to main tabbar controller after save
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.window?.rootViewController = tabBarController
     }
-
 
     //BEN Zoom in functionality
     @IBAction func zoomIn(sender: AnyObject) {
@@ -97,7 +93,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             postAlert("Camera not available", message: "breadCrumbs cannot access the camera")
         }
     }
-    
+
     // access camera roll when button pressed
 
     @IBAction func openCameralRoll(sender: AnyObject) {
@@ -140,9 +136,9 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate, UI
             } else {
                 print("Displaying")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                
+
                 let rotatedImage = fixImageOrientation(image)
-                    
+
                 self.currentImage.image = rotatedImage
                 self.photoButton.setTitle("Change Photo", forState: .Normal)
                 })
