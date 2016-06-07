@@ -16,16 +16,16 @@ var everySingleCrumb = [RetrievedCrumb]()
 var latestCrumb = [String]()
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    
+
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     @IBOutlet weak var mapView: MKMapView!
 
     let locationManager = CLLocationManager()
-    
+
     let userDefaults = NSUserDefaults.standardUserDefaults()
     let userEmail = NSUserDefaults.standardUserDefaults().objectForKey("email") as! String
-    
+
 
     //Pull user geolocations and crumbs before view loads - BEN and JEN
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         var counter = 0
         let getCrumbUrl = "https://gentle-fortress-2146.herokuapp.com/fetch"
         let apiKey = userDefaults.objectForKey("apiKey")!
-        
+
         let header = ["Authorization": "Token token=\(apiKey)"]
 
         Alamofire.request(.GET, getCrumbUrl, headers: header, parameters:["receiverEmail": email]).validate().responseJSON { response in
@@ -67,7 +67,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                             let creatorEmail : String = crumb["creator_email"]!.stringValue
                             let retrievedCrumb = RetrievedCrumb(lat: lat, long: long, identifier: identifier, title: title, subtitle: subtitle, imageURL: imageURL, creatorEmail: creatorEmail)
                             counter += 1
-                            
+
                             self.addCrumbs(retrievedCrumb)
                             everySingleCrumb.append(retrievedCrumb)
                     }
@@ -78,10 +78,10 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             }
         }
     }
-    
+
     func convertCrumbToRetrivedCrumb(crumb: Crumb){
        let newCrumb = RetrievedCrumb(lat: crumb.latitude, long: crumb.longitude, identifier: crumb.identity!, title: crumb.title!, subtitle: crumb.subtitle!, imageURL: crumb.imageString!, creatorEmail: userEmail)
-        
+
         self.addCrumbs(newCrumb)
         everySingleCrumb.append(newCrumb)
     }
@@ -113,8 +113,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     //Start to monitor the region BEN
     func startMonitoringCrumb(crumb: RetrievedCrumb) {
         if !CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion) {
-            showSimpleAlertWithTitle("Error", message: "Geofencing is not supported on this device!", viewController: self)
-            return
+          showSimpleAlertWithTitle("Error", message: "Geofencing is not supported on this device!", viewController: self)
+          return
         }
         // 2
         if CLLocationManager.authorizationStatus() != .AuthorizedAlways {
@@ -165,10 +165,10 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let userLocation = mapView.userLocation
         let region = MKCoordinateRegionMakeWithDistance(
             userLocation.location!.coordinate, 2000, 2000)
-        
+
         mapView.setRegion(region, animated: true)
     }
-    
+
     //Allow the annotations to display the delete button
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView! {
         let identifier = "myCrumb"
@@ -195,27 +195,27 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let crumb = view.annotation as! RetrievedCrumb
         removeCrumb(crumb)
     }
-    
+
     func removeCrumb(crumb: RetrievedCrumb) {
         if let indexInArray = everySingleCrumb.indexOf(crumb) {
             everySingleCrumb.removeAtIndex(indexInArray)
         }
-        
+
         mapView.removeAnnotation(crumb)
         stopMonitoringGeolocation(crumb)
         removeRadiusOverlayForGeotification(crumb)
         removeCrumbFromDatabase(crumb.identity)
     }
-    
+
     func removeCrumbFromDatabase(crumbID: String!){
         let apiKey = userDefaults.objectForKey("apiKey")!
         let header = ["Authorization": "Token token=\(apiKey)"]
 
-    
+
         let deleteCrumbURL = "https://gentle-fortress-2146.herokuapp.com/breadcrumbs/\(crumbID)"
         Alamofire.request(.DELETE, deleteCrumbURL, headers: header)
     }
-    
+
     //When deleteed, remove the radius -BEN
     func removeRadiusOverlayForGeotification(crumb: RetrievedCrumb) {
         // Find exactly one overlay which has the same coordinates & radius to remove
